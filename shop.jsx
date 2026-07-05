@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 
 const SALES_OPEN = true;
-const WAVE_PAUSED = true; // ← imposta false per mostrare il widget
+const WAVE_PAUSED = false;
 
 const TT_URL = 'https://www.tickettailor.com/checkout/new-session/id/7914588/chk/054c/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true';
 
