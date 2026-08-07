@@ -69,7 +69,7 @@ const AperturaNazionale = () => {
       ],
       timeline: [
         { t: '10:00', title: 'Lavori nazionali', d: 'Sala Maddalena · Via Santa Maddalena, 7, Monza (Istituto Scolastico "T. Confalonieri", centro città).' },
-        { t: '14:00', title: 'Attività pomeridiane facoltative', d: 'Coming soon — pacchetti di attività opzionali in corso di definizione.' },
+        { t: '14:00', title: 'Attività pomeridiane facoltative', d: 'Pacchetti extra opzionali: Galleria Campari, Autodromo Experience, Visita della Città, Beauty Care e Wine Experience. Scopri tutti i dettagli qui sotto.' },
         { t: '18:30', title: 'Navetta → Autodromo', d: 'Partenza indicativa dall\'Hotel Falcone.' },
         { t: '19:00', title: 'Aperitivo standing', d: 'Nell\'area box con auto da esposizione dello sponsor. DJ set. Allestimento floreale.' },
         { t: '20:00', title: 'Cena di gala', d: 'Antipasto · Primo · Secondo · Dolce. Vino senza limiti + drink incluso. Mise en place curata.' },
@@ -107,6 +107,57 @@ const AperturaNazionale = () => {
         { l: 'Ospite', v: 'Seguiranno Sorprese' },
         { l: 'Prezzo', v: '€55', s: 'biglietto singolo' },
       ],
+    },
+  ];
+
+  const extras = [
+    {
+      icon: '🍹',
+      name: 'Galleria Campari',
+      date: 'Sabato 19 Settembre · 14:30',
+      loc: 'Viale A. Gramsci 161, Sesto S. Giovanni (MI)',
+      desc: 'Scopri l\'arte, il gusto e l\'iconico rosso Campari con una visita esclusiva alla Galleria Campari.',
+      price: '€20',
+    },
+    {
+      icon: '🪔',
+      name: 'Narghilè',
+      date: 'Venerdì 18 Settembre',
+      loc: 'El Jadida',
+      desc: 'Rendi il tuo venerdì sera ancora più magico prenotando il tuo narghilè.',
+      price: '€45',
+    },
+    {
+      icon: '💅',
+      name: 'Beauty Care',
+      date: 'Sab 19 Set · 11:00 / 17:00 — Dom 20 Set · 10:30',
+      loc: 'La Rinascente Monza',
+      desc: 'Trattamento mani e viso donna, in collaborazione con la Rinascente Monza.',
+      price: '€10',
+    },
+    {
+      icon: '🏁',
+      name: 'Autodromo Experience',
+      date: 'Sabato 19 Settembre · 18:00',
+      loc: 'Autodromo Nazionale Monza',
+      desc: 'Tour in pullman guidato della pista e visita dell\'autodromo con foto sul podio.',
+      price: '€35',
+    },
+    {
+      icon: '⛪',
+      name: 'Visita della Città — Quater Pass',
+      date: 'Sabato 19 Settembre · 15:00',
+      loc: 'Centro storico di Monza',
+      desc: 'Scopri i segreti dell\'incantevole centro storico di Monza in una visita guidata.',
+      price: '€10',
+    },
+    {
+      icon: '🍷',
+      name: 'Wine Experience & Masterclass',
+      date: 'Sab 19 Set · 11:00 / 17:00 — Dom 20 Set · 11:00',
+      loc: 'La Rinascente Monza',
+      desc: 'Un viaggio tra i migliori vini e i segreti della degustazione, guidato da esperti sommelier.',
+      price: '€10',
     },
   ];
 
@@ -439,31 +490,25 @@ const AperturaNazionale = () => {
           </div>
         </div>
 
-        {/* ── ATTIVITÀ FACOLTATIVE (SEGRETE) ── */}
+        {/* ── PACCHETTI EXTRA ── */}
         <div className="an-activities-wrap">
           <div className="an-activities-head">
             <h3 className="an-pack-group-title an-pack-group-title--activities">
-              Attività <em>Facoltative</em>
+              Pacchetti <em>Extra</em>
             </h3>
-            <p className="an-activities-sub">Coming Soon</p>
+            <p className="an-activities-sub">Esperienze esclusive · Posti limitati</p>
           </div>
-          <div className="an-activities-grid">
-            {[
-              { name: 'PizzAut', price: 'TBD' },
-              { name: 'Gita a Monza', price: 'TBD' },
-              { name: 'Gita a Milano', price: 'TBD' },
-              { name: 'Museo Campari', price: 'TBD' },
-              { name: 'Experience Rinascente', price: 'TBD' },
-              { name: 'Giro in pista sul bus', price: 'TBD' },
-            ].map((a, i) => (
-              <div key={i} className="an-activity-card">
-                <div className="an-activity-content">
-                  <div className="an-activity-name">{a.name}</div>
-                  <div className="an-activity-price">{a.price}</div>
-                </div>
-                <div className="an-activity-overlay">
-                  <div className="an-activity-lock">🔒</div>
-                  <div className="an-activity-coming">Presto svelato</div>
+          <div className="an-extra-grid">
+            {extras.map((a, i) => (
+              <div key={i} className="an-extra-card">
+                <div className="an-extra-icon">{a.icon}</div>
+                <h4 className="an-extra-name">{a.name}</h4>
+                <div className="an-extra-meta">{a.date}</div>
+                <div className="an-extra-meta an-extra-meta-loc">{a.loc}</div>
+                <p className="an-extra-desc">{a.desc}</p>
+                <div className="an-extra-footer">
+                  <div className="an-extra-price">{a.price}</div>
+                  <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-extra-cta">Prenota →</a>
                 </div>
               </div>
             ))}
