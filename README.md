@@ -214,7 +214,7 @@ L'Apertura Nazionale 2026 (18-20 settembre 2026) è conclusa e il sito la presen
 
 - Vendite aperte (`salesOpen`): oggi **spento**. Con vendite spente la pagina Shop mostra il messaggio "vendite chiuse" (Contenuti MDIO > Shop) e non carica lo script Ticket Tailor. Se acceso, la pagina mostra il widget di acquisto. Il pulsante di acquisto non compare più nella pagina Apertura Nazionale: pacchetti e prezzi restano come elenco di ciò che era proposto.
 - Link di acquisto Ticket Tailor (`ticketTailorUrl`): indirizzo del checkout, usato solo se le vendite sono accese.
-- Etichetta "evento concluso" (`closedLabel`): per esempio "Evento concluso · 18–20 Settembre 2026". Compare nel banner dell'evento (home e pagine distretto) e nella fascia sotto l'hero della pagina Apertura Nazionale.
+- Etichetta "evento concluso" (`closedLabel`): per esempio "Evento concluso · 18–20 Settembre 2026". Compare nel banner dell'evento delle pagine distretto e nella fascia sotto l'hero della pagina Apertura Nazionale. La home usa invece il gruppo "Ringraziamento nella home" (`event.homeThanks`), con sopratitolo e testo del riquadro propri.
 
 Il countdown non esiste più: non c'è alcun conto alla rovescia, né data di riferimento, né aggiornamento al secondo. Per un evento futuro andrebbe reintrodotto un componente apposito (e un campo data nello schema).
 

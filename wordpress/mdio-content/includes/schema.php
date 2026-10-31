@@ -123,7 +123,7 @@ function mdio_docs() {
 			'menu'   => 'Sito',
 			'file'   => 'site',
 			'fields' => array(
-				mdio_T( 'closedLabel', 'Etichetta "evento concluso"', array( 'tab' => $ctl, 'h' => 'Mostrata al posto del conto alla rovescia in home, Apertura Nazionale e pagine distretto, per esempio "Evento concluso · 18–20 Settembre 2026".' ) ),
+				mdio_T( 'closedLabel', 'Etichetta "evento concluso"', array( 'tab' => $ctl, 'h' => 'Mostrata in Apertura Nazionale e nelle pagine distretto (la home usa "Ringraziamento nella home"), per esempio "Evento concluso · 18–20 Settembre 2026".' ) ),
 				mdio_T( 'ticketTailorUrl', 'Link di acquisto Ticket Tailor', array( 'tab' => $ctl, 'h' => 'Indirizzo completo del checkout.' ) ),
 				mdio_B( 'salesOpen', 'Vendite aperte', array( 'tab' => $ctl, 'h' => 'Attivo: mostra il widget di acquisto (e carica lo script Ticket Tailor). Spento: la pagina Shop mostra il messaggio di vendite chiuse.' ) ),
 				mdio_G( 'footer', 'Piè di pagina', array(
@@ -143,6 +143,10 @@ function mdio_docs() {
 					mdio_G( 'buttons', 'Pulsanti', array(
 						mdio_G( 'home', 'Pulsante nella home', array( mdio_T( 'text', 'Testo' ), mdio_T( 'href', 'Link' ) ) ),
 						mdio_G( 'district', 'Pulsante nelle pagine distretto', array( mdio_T( 'text', 'Testo' ), mdio_T( 'href', 'Link' ) ) ),
+					) ),
+					mdio_G( 'homeThanks', 'Ringraziamento nella home', array(
+						mdio_T( 'eyebrow', 'Sopratitolo' ),
+						mdio_T( 'label', 'Testo nel riquadro' ),
 					) ),
 				) ),
 			),

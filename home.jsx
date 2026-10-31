@@ -88,7 +88,7 @@ const Home = () => {
       </section>
 
       {/* CTA APERTURA NAZIONALE — TICKER */}
-      <EventBanner starText="✦" button={site.event.buttons.home} />
+      <EventBanner starText="✦" button={site.event.buttons.home} thanks={site.event.homeThanks} />
 
       {/* MANIFESTO */}
       <section id="manifesto" className="vb-manifesto">
