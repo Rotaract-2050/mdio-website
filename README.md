@@ -92,7 +92,6 @@ Perché i contenuti si scaricano in fase di build e non dal browser:
 │   └── seo-plugin.mjs                               plugin Vite per la SEO
 ├── wordpress/mdio-content/                          plugin WordPress (vedi sezione 8)
 ├── .github/workflows/deploy.yml                     build e deploy
-├── robots.txt, sitemap.xml, llms.txt                copie in root (Vite NON le pubblica)
 ├── vite.config.js, package.json
 └── convert-webp.js, check_error.js, signature.js    utilità (vedi sezione 14)
 ```
@@ -147,7 +146,7 @@ Ogni pagina ha un HTML (con `<script type="module">` verso il suo `.jsx`), un en
 3. Crea `content/nuova.json`.
 4. Se vuoi che sia modificabile da WordPress: aggiungi un documento allo schema (sezione 8) e la chiave `nuova` all'elenco `KEYS` di `scripts/fetch-content.mjs`.
 5. Per la SEO automatica aggiungila a `PAGES` in `scripts/seo-plugin.mjs` e dai al JSON un gruppo `seo`.
-6. Aggiungi l'URL a `sitemap.xml` (e `public/sitemap.xml`, vedi sezione 10).
+6. Aggiungi l'URL a `public/sitemap.xml` (vedi sezione 10).
 
 ### Aggiungere un campo a una pagina esistente
 
@@ -292,7 +291,7 @@ Resta fisso nel codice dello script: organizzatore, immagine di condivisione, lu
 
 ### File root e public/
 
-Vite pubblica solo il contenuto di `public/`, più le pagine HTML elencate in `vite.config.js`. In `dist/` finiscono quindi `public/robots.txt`, `public/sitemap.xml`, `public/llms.txt` e `public/llms-full.txt`. I file `robots.txt`, `sitemap.xml`, `llms.txt` nella root del repo non vengono pubblicati e sono più recenti: vanno allineati (vedi sezione 14).
+Vite pubblica solo il contenuto di `public/`, più le pagine HTML elencate in `vite.config.js`. In `dist/` finiscono quindi `public/robots.txt`, `public/sitemap.xml`, `public/llms.txt` e `public/llms-full.txt`. Le copie in root di questi file sono state eliminate: l'unica versione valida è quella in `public/`. `public/llms-full.txt` è scritto a partire dai dati di `content/` e va aggiornato a mano quando cambiano cifre, prezzi o date; `public/llms.txt` e `public/sitemap.xml` idem (le cifre di club e soci compaiono anche negli `.html` statici e in `scripts/seo-plugin.mjs`).
 
 ## 11. Build e deploy
 
@@ -354,7 +353,6 @@ Controlla la sintassi del file modificato (`node -e "JSON.parse(require('fs').re
 - Pubblicazione: oggi solo cron oraria o avvio manuale. Il tipo `repository_dispatch` è già nel workflow ma manca un webhook da WordPress che lo invii.
 - Mu-plugin `mdio-headless` solo sul server (sezione 9).
 - FAQ e pacchetti sono identificati per posizione: l'import dopo un riordino li scambia (sezione 8).
-- Incoerenze nei dati: le cifre di club e soci differiscono tra le pagine. Esempio 2041: 13 club/350 soci in home e nell'hero del distretto, 28/612 nei "Numeri" della stessa pagina distretto e nel `noscript` di Apertura; totali in home: 61 club/1.013 soci nei numeri, 73/1.497 nei testi SEO. Vanno uniformate.
-- `public/llms.txt`, `public/llms-full.txt` e `public/sitemap.xml` sono obsoleti rispetto ai file omonimi in root, che però Vite non pubblica. Va deciso quale versione tenere e spostarla in `public/`.
+- Cifre di club e soci duplicate: compaiono in `content/` (WordPress), nei `<meta>` e `noscript` statici degli `.html` e in `scripts/seo-plugin.mjs`. Serie corrente: MDIO 61 club / 1.013 soci; 2041 13/350; 2042 18/260; 2050 30/403. Se cambiano vanno aggiornate in tutti questi punti e in `public/llms*.txt`.
 - Script `convert-webp.js` (`npm run optimize-images`) cerca una cartella `assets/` in root che non esiste più (le immagini sono in `public/assets/`): va corretto prima di usarlo. `check_error.js` richiede `puppeteer`, che non è tra le dipendenze. `signature.js` è importato da `components/Header.jsx` e stampa solo i crediti nella console del browser.
 - Il campo `seo` e il `noscript` non coprono tutte le pagine allo stesso modo (cartoline: solo title e description).

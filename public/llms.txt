@@ -1,32 +1,137 @@
 # MDIO — Multidistretto Rotaract Italia Ovest
+> Sito ufficiale: https://multidistrettolombardo.org
 
-> Coordinamento alla pari di tre distretti Rotaract in Lombardia e Provincia di Piacenza.
-> 73 club · 1.497 soci attivi under 30 · 12 province · 180+ service all'anno · Fondato nel 1968.
+MDIO è il coordinamento alla pari dei tre distretti Rotaract della Lombardia e della Provincia di Piacenza: 2041, 2042 e 2050. Totale: 61 club, 1.013 soci under 30 attivi, 12 province.
 
-Il MDIO (Multidistretto Italia Ovest) unisce i distretti Rotaract 2041, 2042 e 2050 in un modello di coordinamento orizzontale: nessuno guida, tutti contribuiscono. Copre l'intera Lombardia e la Provincia di Piacenza, dalla metropoli milanese alle valli alpine, dai laghi alla pianura del Po.
+---
 
-I quattro pilastri del MDIO: Parità (tre distretti, peso uguale), Servizio (progetti che durano oltre l'evento), Territorio (capillarità dalla città alla valle), Amicizia (la rete viene prima di tutto).
+## Apertura Nazionale Rotaract 2026
 
-## Pagine
+Il principale evento nazionale del Rotaract italiano per l'anno associativo 2026–2027. Il primo evento nazionale diffuso su tre distretti contemporaneamente.
 
-- [Home](https://multidistrettolombardo.org/): panoramica MDIO, tre distretti, numeri aggregati, mappa del territorio
-- [Apertura Nazionale 2026](https://multidistrettolombardo.org/apertura-nazionale.html): evento 19–21 settembre 2026, Milano · Monza · Iseo — programma, pacchetti e iscrizioni
-- [Distretto 2041](https://multidistrettolombardo.org/distretti/2041.html): Area Metropolitana di Milano, 28 club, 612 soci
-- [Distretto 2042](https://multidistrettolombardo.org/distretti/2042.html): Lombardia Centro & Nord, 24 club, 487 soci
-- [Distretto 2050](https://multidistrettolombardo.org/distretti/2050.html): Lombardia Sud & Piacenza, 21 club, 398 soci
+- **Date:** 18, 19 e 20 Settembre 2026
+- **Città:** Milano (venerdì), Monza (sabato), Sale Marasino / Lago d'Iseo (domenica)
+- **Pagina evento:** https://multidistrettolombardo.org/apertura-nazionale.html
+- **Biglietti:** https://multidistrettolombardo.org/shop.html
 
-## Dati evento (aggiornati frequentemente)
+### Programma giornaliero
 
-La pagina Apertura Nazionale è dinamica (React). Per dati strutturati sempre aggiornati su date, programma, prezzi e iscrizioni usa il file JSON:
+**Venerdì 18 Settembre 2026 — Milano · Serata "Mille e una Notte"**
+- Ambientazione ispirata ad Agrabah
+- Ore 20:00: ingresso e accoglienza
+- Cena con live show orientale (4 portate)
+- Dopocena: DJ set esclusivo
+- Navette di rientro verso le 2:00 per chi alloggia in hotel
+- Location: zona Tibaldi-Bocconi, Milano (bus 65)
+- Dress code: tocco arabeggiante obbligatorio
+- Biglietto singolo: €80
 
-- [apertura-nazionale.json](https://multidistrettolombardo.org/apertura-nazionale.json): fonte autorevole e machine-readable dell'evento, aggiornata ad ogni modifica
+**Sabato 19 Settembre 2026 — Monza · Gala all'Autodromo Nazionale**
+- Mattina ore 10:00: lavori nazionali — Sala Maddalena, Via Santa Maddalena 7, Monza
+- Pomeriggio: attività facoltative (in definizione)
+- Ore 18:30: navetta dall'Hotel Falcone → Autodromo
+- Ore 19:00: aperitivo standing nell'area box con auto da esposizione sponsor + DJ set + allestimento floreale
+- Ore 20:00: cena di gala — antipasto, primo, secondo, dolce — vino senza limiti + drink incluso
+- Dress code: black tie (abito lungo donna, smoking o abito scuro uomo)
+- Location: Autodromo Nazionale di Monza, Viale di Vedano 5, 20900 Monza
+- Biglietto singolo (solo serata): €155
+- Hotel ufficiale: Hotel Falcone 4★, Monza centro
 
-## Contenuto completo
+**Domenica 20 Settembre 2026 — Sale Marasino · Conviviale sul Lago d'Iseo**
+- Ore 12:30: arrivo e accoglienza
+- Conviviale con relatori d'eccezione
+- Chiusura ufficiale dell'Apertura Nazionale
+- Passaggio di consegne al Distretto Rotaract 2071 per l'organizzazione del S.I.R.D.E.
+- Location: Sale Marasino, Lago d'Iseo, Provincia di Brescia
+- Dress code: casual elegante
+- Biglietto singolo (pranzo incluso): €55
 
-- [llms-full.txt](https://multidistrettolombardo.org/llms-full.txt): dump Markdown di tutto il contenuto statico del sito (distretti, manifesto, servizi, contatti)
+---
 
-## Contatti per distretto
+## Pacchetti e prezzi — Apertura Nazionale 2026
 
-- Distretto 2041: info@rotaract2041.com — https://www.rotaract2041.com/
-- Distretto 2042: info@distrettorotaract2042.it — https://www.distrettorotaract2042.it/
-- Distretto 2050: segreteria@rotaract2050.org — https://www.rotaract2050.org/
+Prezzi bloccati. Nessun dynamic pricing. Navette sempre incluse nei pacchetti con pernotto.
+
+### Pacchetti Experience (hotel + navette inclusi)
+
+| Pacchetto | Giorni | Contenuto | Prezzo |
+|---|---|---|---|
+| Sotto il cielo di Lombardia | 18+19+20 Set | Milano + Monza + Iseo · 2 notti Hotel Falcone 4★ · navette | €435 |
+| Aladino in pista | 18+19 Set | Milano + Monza · 2 notti Hotel Falcone 4★ · navette | €380 |
+| 3…2…1… lancio | 19+20 Set | Monza + Iseo · 1 notte Hotel Falcone 4★ · navette | €285 |
+| Pit Stop | 19 Set | Monza · 1 notte Hotel Falcone 4★ · navette hotel ↔ autodromo | €230 |
+
+### Biglietti Singoli (senza hotel, senza navette)
+
+| Biglietto | Data | Città | Prezzo |
+|---|---|---|---|
+| Le mille e una notte | Ven 18 Set | Milano | €80 |
+| Il tempio della velocità | Sab 19 Set | Monza (Autodromo) | €155 |
+| Un lago di stelle | Dom 20 Set | Sale Marasino (Lago d'Iseo) | €55 |
+
+**Nota navette:** Le navette (hotel ↔ sedi evento) sono incluse esclusivamente nei pacchetti con pernotto. I biglietti singoli non includono navette né hotel.
+
+---
+
+## FAQ — Domande frequenti
+
+**Posso partecipare a un solo giorno?**
+Sì. Biglietti singoli disponibili: Milano €80, Monza €155, Iseo €55.
+
+**Le navette sono incluse?**
+Sì, sempre incluse nei pacchetti con pernotto. Non incluse nei biglietti singoli.
+
+**Qual è l'hotel ufficiale?**
+Hotel Falcone 4★, centro di Monza. Incluso in tutti i pacchetti multi-giorno.
+
+**Qual è il dress code?**
+- Venerdì Milano: tocco arabeggiante (tema Mille e una Notte)
+- Sabato Monza: black tie (abito lungo donna / smoking o abito scuro uomo)
+- Domenica Iseo: casual elegante
+
+**Come arrivo a Monza?**
+- Da Milano Centrale: 15 minuti in treno
+- Da Malpensa: Malpensa Express + cambio Centrale (~1h)
+- Da Linate: bus o metro → Centrale → treno
+- Da Bergamo Orio al Serio: navetta → treno (~1h15)
+
+**Entro quando posso iscrivermi?**
+Fino ad esaurimento posti. I posti per il sabato a Monza sono limitati a 350. Prezzo bloccato, nessun aumento last-minute.
+
+---
+
+## Distretti MDIO
+
+### Distretto Rotaract 2041 — Area Metropolitana di Milano
+- **Club:** 13 · **Soci:** 350
+- **Territorio:** Area Metropolitana di Milano (Milano Centro, Est, Nord, Ovest, Sud)
+- **Ambiti:** innovazione, solidarietà, network professionale, cultura
+- **Sito:** https://www.rotaract2041.com/
+- **Instagram:** https://www.instagram.com/distrettorotaract2041/
+- **Pagina MDIO:** https://multidistrettolombardo.org/distretti/2041.html
+
+### Distretto Rotaract 2042 — Lombardia Centro & Nord
+- **Club:** 18 · **Soci:** 260
+- **Territorio:** Bergamo, Como, Lecco, Monza Brianza, Sondrio, Varese
+- **Zone:** Briantea (Monza/Brianza), Lariana (Como/Lecco/Sondrio), Olona (Varese), Orobica (Bergamo)
+- **Sito:** https://www.distrettorotaract2042.it/
+- **Instagram:** https://www.instagram.com/rotaract2042/
+- **Pagina MDIO:** https://multidistrettolombardo.org/distretti/2042.html
+
+### Distretto Rotaract 2050 — Lombardia Sud & Piacenza
+- **Club:** 30 · **Soci:** 403
+- **Territorio:** Brescia, Cremona, Lodi, Mantova, Pavia, Piacenza
+- **Zone:** Francigena (Piacenza/Lodi/Cremona Nord), Leonessa (Brescia), Navigli (Pavia), Padana (Cremona/Mantova)
+- **Sito:** https://www.rotaract2050.org/
+- **Instagram:** https://www.instagram.com/rotaract2050/
+- **Pagina MDIO:** https://multidistrettolombardo.org/distretti/2050.html
+
+---
+
+## Link utili
+
+- **Sito MDIO:** https://multidistrettolombardo.org
+- **Apertura Nazionale 2026:** https://multidistrettolombardo.org/apertura-nazionale.html
+- **Acquisto biglietti:** https://multidistrettolombardo.org/shop.html
+- **Instagram MDIO:** https://www.instagram.com/multidistrettolombardo/
+- **Rotaract International:** https://www.rotary.org/en/get-involved/rotaract-clubs

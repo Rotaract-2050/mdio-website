@@ -61,7 +61,7 @@
   "marquee": [
     "DISTRETTO ROTARACT 2041",
     "AREA METROPOLITANA DI MILANO",
-    "28 CLUB · 612 SOCI",
+    "13 CLUB · 350 SOCI",
     "INNOVAZIONE · SOLIDARIETÀ · NETWORK"
   ],
   "identity": {
@@ -72,7 +72,7 @@
       "La forte vocazione europea e internazionale del distretto si riflette anche nella sua Fellowship, fatta di momenti di networking, eventi di rilievo e occasioni di confronto che favoriscono la crescita personale e professionale dei soci.",
       "Milano è una città che non si ferma mai: il Distretto Rotaract 2041 ne incarna pienamente lo spirito, unendo energia, innovazione e impegno concreto al servizio della comunità."
     ],
-    "founding": "Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2041 riunisce 18 Club Rotaract nell'Area Metropolitana di Milano.",
+    "founding": "Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2041 riunisce 13 Club Rotaract nell'Area Metropolitana di Milano.",
     "pillars": [
       {
         "n": "01",
@@ -98,12 +98,12 @@
   },
   "numbers": [
     {
-      "n": "28",
+      "n": "13",
       "l": "CLUB",
       "s": "Rotaract sul territorio"
     },
     {
-      "n": "612",
+      "n": "350",
       "l": "SOCI",
       "s": "attivi under 30"
     },
@@ -224,11 +224,11 @@
   },
   "seo": {
     "title": "Distretto Rotaract 2041 — Area Metropolitana di Milano",
-    "description": "Distretto Rotaract 2041: Area Metropolitana di Milano. 28 club, 612 soci. Innovazione, solidarietà, network professionale.",
+    "description": "Distretto Rotaract 2041: Area Metropolitana di Milano. 13 club, 350 soci. Innovazione, solidarietà, network professionale.",
     "ogTitle": "Distretto Rotaract 2041 — Area Metropolitana di Milano",
-    "ogDescription": "28 club, 612 soci nell'Area Metropolitana di Milano. Innovazione, solidarietà e network professionale nel cuore della metropoli.",
+    "ogDescription": "13 club, 350 soci nell'Area Metropolitana di Milano. Innovazione, solidarietà e network professionale nel cuore della metropoli.",
     "twitterTitle": "Distretto Rotaract 2041 — Area Metropolitana di Milano",
-    "twitterDescription": "28 club, 612 soci nell'Area Metropolitana di Milano. Innovazione, solidarietà e network professionale nel cuore della metropoli.",
-    "jsonLdDescription": "Il Distretto Rotaract 2041 riunisce 28 club nell'Area Metropolitana di Milano. Innovazione, solidarietà, network professionale."
+    "twitterDescription": "13 club, 350 soci nell'Area Metropolitana di Milano. Innovazione, solidarietà e network professionale nel cuore della metropoli.",
+    "jsonLdDescription": "Il Distretto Rotaract 2041 riunisce 13 club nell'Area Metropolitana di Milano. Innovazione, solidarietà, network professionale."
   }
 }

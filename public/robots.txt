@@ -4,13 +4,19 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: Applebot-Extended
 Allow: /
 
 User-agent: cohere-ai

@@ -2,183 +2,199 @@
 ## Contenuto completo del sito
 
 Fonte: https://multidistrettolombardo.org
-Aggiornato: 2026-05-06
-Nota: per i dati dell'Apertura Nazionale 2026 (programma, prezzi, iscrizioni) vedi il file aggiornato: https://multidistrettolombardo.org/apertura-nazionale.json
+Aggiornato: 2026-10-31
+Nota: i contenuti derivano dai dati pubblicati sul sito. L'Apertura Nazionale 2026 (18–20 Settembre 2026) è un evento già concluso: la sezione dedicata riporta le informazioni pubblicate sul sito.
 
 ---
 
 ## Il MDIO
 
-Il MDIO — Multidistretto Italia Ovest — unisce i distretti Rotaract 2041, 2042 e 2050 in un coordinamento alla pari. Copre l'intera Lombardia e la Provincia di Piacenza: 73 club, 1.497 soci attivi under 30, 12 province, 180+ service all'anno. Fondato nel 1968.
+Il MDIO — Multidistretto Italia Ovest — unisce i distretti Rotaract 2041, 2042 e 2050 in un coordinamento alla pari. Copre la Lombardia e la Provincia di Piacenza: 61 club, 1.013 soci attivi under 30, 12 province, 180+ service all'anno.
 
-Nessun distretto guida: tutti e tre contribuiscono con peso uguale.
+Il MDIO unisce 2041, 2042 e 2050 — tre distretti rotaractiani che coprono Lombardia e Provincia di Piacenza — in un coordinamento alla pari. Nessuno guida, tutti contribuiscono. Una rete giovane, capillare, profondamente diversa: dalla metropoli milanese alle valli alpine, dai laghi alla pianura del Po. Tre identità, una sola comunità.
 
-### I quattro pilastri
-
-1. **Parità** — Tre distretti, peso uguale.
-2. **Servizio** — Progetti che durano oltre l'evento.
-3. **Territorio** — Capillarità dalla città alla valle.
-4. **Amicizia** — La rete viene prima di tutto.
-
----
-
-## Distretto 2041 — Area Metropolitana di Milano
-
-**Numeri:** 28 club · 612 soci · Solo Milano Metropolitana
-**Sito:** https://www.rotaract2041.com/
-**Instagram:** https://www.instagram.com/distrettorotaract2041/
-**Email:** info@rotaract2041.com
-**Fondato:** 1968
-
-### Identità: Il Cuore Metropolitano
-
-Il Distretto 2041 coincide con l'area metropolitana di Milano, capitale economica e del design d'Italia. È l'unico distretto interamente metropolitano del paese: ambiente dinamico, internazionale, in continua evoluzione. I club sono hub di progettazione e sviluppo. Forte vocazione europea e internazionale, riflessa nel networking e negli eventi ad alto impatto per la crescita personale e professionale.
-
-**Quattro pilastri distrettuali:**
-1. Dinamismo — Il ritmo della metropoli al servizio
-2. Visione — Sempre proiettati verso il futuro
-3. Connessione — Hub professionale e internazionale
-4. Inclusione — Nessuno escluso o lasciato indietro
-
-### Tre aree di focus
-
-**INNOVAZIONE** (Startup · Ricerca · Accademia)
-Hub di pitch competition, borse di studio, premi tesi. L'ecosistema accademico e imprenditoriale milanese è l'incubatore naturale.
-
-**SOLIDARIETÀ** (Terzo settore · Periferie · Inclusione)
-Partnership storiche con Opera San Francesco, Pane Quotidiano, City Angels. Milano non lascia indietro nessuno.
-
-**NETWORK** (Mentorship · International · Career)
-Revisioni CV, incontri con CEO e leader di settore, partnership europee. Il vero valore aggiunto è la rete che costruisci.
-
-### Service principali
-
-- **Inclusione Sociale & Supporto agli Ultimi** — Partner: Opera San Francesco, Pane Quotidiano, City Angels, Ronda della Carità. Food drive, raccolte coperte, servizio diretto a senzatetto e famiglie in difficoltà.
-- **Salute & Ricerca Scientifica** — Partner: LILT, Fondazione Veronesi. Campagne di sensibilizzazione, fundraising per borse di studio e attrezzature diagnostiche ospedaliere.
-- **Sostenibilità Urbana** — Piantumazioni al Parco Agricolo Sud, campagne di pulizia urbana, progetti di economia circolare.
-
-### Riconoscimenti storici
-
-- Premi & Borse di Studio per l'Innovazione — finanziamento startup, progetti di ricerca, tesi brillanti
-- Azione Professionale & Mentorship — incontri one-to-one, revisioni CV, seminari con CEO
-- RYLA Metropolitano — focus manageriale e internazionale
-- Paul Harris Fellow — numerosi soci e club premiati per eccezionale capacità di fundraising
+Pilastri:
+- Parità: Tre distretti, peso uguale.
+- Servizio: Progetti che durano oltre l'evento.
+- Territorio: Capillarità dalla città alla valle.
+- Amicizia: La rete viene prima di tutto.
 
 ---
 
-## Distretto 2042 — Lombardia Centro & Nord
+## Apertura Nazionale Rotaract 2026
 
-**Numeri:** 24 club · 487 soci · 6 province
-**Province:** Bergamo · Como · Lecco · Monza Brianza · Sondrio · Varese
-**Sito:** https://www.distrettorotaract2042.it/
-**Instagram:** https://www.instagram.com/rotaract2042/
-**Email:** info@distrettorotaract2042.it
-**Fondato:** 1968
+- Date: 18, 19 e 20 Settembre 2026 (evento concluso)
+- Città: Milano (venerdì), Monza (sabato), Sale Marasino / Lago d'Iseo (domenica)
+- Pagina evento: https://multidistrettolombardo.org/apertura-nazionale.html
+- Biglietti: https://multidistrettolombardo.org/shop.html
+- Hotel ufficiale: Hotel Falcone 4★, Monza centro
 
-### Identità: Tra Laghi, Vette e Impresa
+### Venerdì 18 Settembre 2026 — Milano · Mille e una Notte
+- 20:00: Ingresso & accoglienza — Immergiti nella magia di Agrabah e se fortunato tieniti pronto ad esprimere 3 desideri.
+- A seguire: Cena con live show — Gusta le delizie d'oriente e lasciati trasportare in un'atmosfera unica.
+- Dopocena: DJ set esclusivo — La serata continua con musica e divertimento per tutti.
+- 02:00: Navette di rientro — Navette disponibili verso le 2:00 circa per chi alloggia negli hotel.
+- Prezzo: €80 (biglietto singolo)
+- Posti: Limitati (su prenotazione)
+- Come arrivare: Auto o mezzi (Tibaldi-Bocconi, bus 65)
+- Dress code: Mille e una notte (tocco arabeggiante)
 
-Il 2042 abbraccia l'anima nordica della Lombardia: eccellenza industriale delle valli e della Brianza da un lato, patrimonio naturale dei grandi laghi prealpini e della Valtellina dall'altro. Autentica fellowship vissuta a stretto contatto con territorio e natura. Forte senso di appartenenza legato alla bellezza dei luoghi.
+### Sabato 19 Settembre 2026 — Monza · Gala all'Autodromo
+- 10:00: Lavori nazionali — Sala Maddalena · Via Santa Maddalena, 7, Monza (Istituto Scolastico "T. Confalonieri", centro città).
+- 14:00: Attività pomeridiane facoltative — Pacchetti extra opzionali: Galleria Campari, Autodromo Experience, Visita della Città, Beauty Care e Wine Experience. Scopri tutti i dettagli qui sotto.
+- 18:30: Navetta → Autodromo — Partenza indicativa dall'Hotel Falcone.
+- 19:00: Aperitivo standing — Nell'area box con auto da esposizione dello sponsor. DJ set. Allestimento floreale.
+- 20:00: Cena di gala — Antipasto · Primo · Secondo · Dolce. Vino senza limiti + drink incluso. Mise en place curata.
+- Prezzo: €155 (biglietto singolo serata)
+- Hotel: Falcone 4★ (Monza centro)
+- Trasporti: Navette incluse (hotel ↔ autodromo)
+- Da Milano: 15 min (in treno da Centrale)
 
-**Quattro pilastri distrettuali:**
-1. Concretezza — Fare prima di dire, sempre
-2. Natura — Il territorio è la nostra identità
-3. Impresa — La vocazione produttiva lombarda
-4. Appartenenza — Fellowship viscerale e radicata
-
-### Quattro aree geografiche
-
-**LAGHI** (Como · Lecco · Varese)
-Dai grandi laghi prealpini alle ville Liberty: la fellowship più scenografica d'Italia, con gite in barca e aperitivi al tramonto.
-
-**VALTELLINA** (Sondrio)
-Le Alpi come palestra di vita: RYLA immersivi, servizi al soccorso alpino, la resilienza che solo la montagna insegna.
-
-**BRIANZA** (Monza e Brianza)
-Il cuore del Made in Italy manifatturiero: design, PMI e artigianato d'eccellenza come terreno fertile per servizi concreti.
-
-**BERGAMASCA** (Bergamo)
-La provincia più operosa d'Italia: spirito imprenditoriale, comunità solidale, un distretto che non si è mai fermato neanche nei momenti più difficili.
-
-### Service principali
-
-- **Tutela del Patrimonio Naturale** — Rimboschimenti montani, pulizia laghi e rive, ripristino sentieri alpini storici.
-- **Sanità & Soccorso sul Territorio** — Grandi service per attrezzature diagnostiche ospedaliere, ambulanze, mezzi per Soccorso Alpino e Protezione Civile.
-- **Inclusione attraverso Sport e Natura** — Impianti para-ski, giornate di vela, ippoterapia per bambini con vulnerabilità fisiche e cognitive.
-
-### Riconoscimenti storici
-
-- Premi per l'Imprenditoria e l'Artigianato Giovanile — borse di studio e supporto startup a giovani talenti
-- Riconoscimenti per la Sostenibilità Ambientale — riconosciuti a livello nazionale per la protezione degli ecosistemi lacustri e montani
-- RYLA Immersivo — approccio outdoor, location in montagna e lago
-- Paul Harris Fellow — numerosi club premiati per il supporto in crisi (supporto ospedaliero durante la pandemia)
+### Domenica 20 Settembre 2026 — Sale Marasino · Chiusura sul Lago
+- 12:30: Arrivo e accoglienza — Apri gli occhi e preparati a contemplare la bellezza di un panorama mozzafiato.
+- A seguire: Conviviale con relatori d'eccezione — Coccolato dal dolce bisbiglio del Lago d'Iseo, ti riempirai di entusiasmo interagendo con persone dalle vite eccezionali.
+- In chiusura: Chiusura ufficiale dell'Apertura Nazionale — Vedrai passare le consegne al Distretto Rotaract 2071 per l'organizzazione del S.I.R.D.E.
+- Location: Lago d'Iseo (Provincia di Brescia)
+- Da Monza: ~1h (in auto o treno)
+- Navette: Incluse (da e per l'albergo)
+- Ospite: Seguiranno Sorprese
+- Prezzo: €55 (biglietto singolo)
 
 ---
 
-## Distretto 2050 — Lombardia Sud & Piacenza
+## Pacchetti e prezzi
 
-**Numeri:** 21 club · 398 soci · 6+ province
-**Province:** Brescia · Cremona · Lodi · Mantova · Pavia · Piacenza + comuni Città M. di MI
-**Sito:** https://www.rotaract2050.org/
-**Instagram:** https://www.instagram.com/rotaract2050/
-**Email:** segreteria@rotaract2050.org
-**Fondato:** 1968
+Prezzo unico e bloccato, nessun dynamic pricing. Navette incluse nei pacchetti con pernotto.
 
-### Identità: Il Mosaico della Pianura
+### Pacchetti Experience (con hotel)
+- Sotto il cielo di Lombardia — €435 a persona — 18 · 19 · 20 SET · 3 GIORNI — Milano · Monza · Lago d'Iseo
+  - Serata Mille e una Notte (Milano)
+  - Gala all'Autodromo (Monza)
+  - Pranzo conviviale sul Lago (Iseo)
+  - 2 Notti in Hotel 4★ a Monza
+  - Navette incluse tra hotel ed eventi
+- Aladino in pista — €380 a persona — 18 · 19 SET — Venerdì + Sabato
+  - Serata Mille e una Notte (Milano)
+  - Gala all'Autodromo (Monza)
+  - 2 Notti in Hotel 4★
+  - Navette incluse
+- 3…2…1… lancio — €285 a persona — 19 · 20 SET — Sabato + Domenica
+  - Gala all'Autodromo (Monza)
+  - Pranzo conviviale sul Lago (Iseo)
+  - 1 Notte in Hotel 4★
+  - Navette incluse
+- Pit Stop — €230 a persona — 19 SET + HOTEL — Sabato + notte in hotel
+  - Gala all'Autodromo (Monza)
+  - 1 Notte in Hotel 4★ a Monza
+  - Navette incluse hotel ↔ autodromo
 
-Il Distretto 2050 è un affascinante mosaico territoriale che fa da ponte tra Lombardia ed Emilia-Romagna. Identità multiforme che unisce la forza produttiva di importanti centri industriali, la profonda tradizione agricola e gastronomica della Pianura Padana, e la raffinata bellezza di antiche città universitarie e capitali rinascimentali. Fellowship genuina e calda: l'ospitalità è sempre il tratto distintivo.
+### Biglietti singoli (senza hotel e senza navette)
+- Le mille ed una notte — €80 a persona — 18 SET · UN GIORNO — Venerdì · Milano
+  - Ingresso ad Agrabah, cena con live show orientale e DJ set esclusivo.
+- Il tempio della velocità — €155 a persona — 19 SET · UN GIORNO — Sabato · Monza
+  - Aperitivo standing nell'area box, cena di gala 4 portate e DJ set.
+- Un lago di stelle — €55 a persona — 20 SET · UN GIORNO — Domenica · Sale Marasino
+  - Relatore d'eccezione e pranzo conviviale sul Lago d'Iseo.
 
-**Quattro pilastri distrettuali:**
-1. Tradizione — Cultura gastronomica e padana
-2. Convivialità — L'ospitalità è il nostro tratto distintivo
-3. Territorio — Dalla città alla pianura
-4. Sinergia — Rete intergenerazionale con il Rotary
-
-### Quattro macro-zone
-
-**FRANCIGENA** (Pavia · Lodi)
-Il tracciato della Via Francigena, città universitarie, pianura agricola e la tradizione del Po.
-
-**LEONESSA** (Brescia)
-Brescia, la Leonessa d'Italia: storia, industria, tradizione bresciana e forte identità territoriale.
-
-**NAVIGLI** (Cremona · Milano Sud)
-I Navigli, il fiume Po, Cremona e la sua tradizione liutaria, un territorio di confine ricco di storia.
-
-**PADANA** (Mantova · Piacenza)
-Mantova, città dei Gonzaga e patrimonio UNESCO, e Piacenza, porta dell'Emilia: gastronomia, cultura e tradizione padana.
-
-### Service principali
-
-- **Azione Pubblica e Sanitaria** — Grandi fundraising per attrezzature mediche ospedaliere, donazioni di defibrillatori a piccoli Comuni, miglioramento spazi pediatrici.
-- **Patrimonio Culturale** — Investimento costante nella protezione e promozione culturale: teatri storici, arte locale, università (Università di Pavia), siti UNESCO.
-- **Sensibilizzazione & Intervento Diretto** — Campagne di sensibilizzazione sanitaria e riqualificazione di spazi urbani. L'azione è sempre tangibile e radicata nel territorio.
-
-### Riconoscimenti storici
-
-- Premio Maturità & Premio Università — riconoscimenti per eccellenza accademica, spesso in sinergia con i distretti 2041 e 2042
-- RYLA — collaborazione storica con Rotary 2050
-- Attestati Presidenziali & Riconoscimenti Service — Certificati di Apprezzamento e Attestati Presidenziali di Rotary International
+### Pacchetti Extra (opzionali)
+- Galleria Campari — €20 — Sabato 19 Settembre · 14:30 — Viale A. Gramsci 161, Sesto S. Giovanni (MI): Scopri l'arte, il gusto e l'iconico rosso Campari con una visita esclusiva alla Galleria Campari.
+- Narghilè — €45 — Venerdì 18 Settembre — El Jadida: Rendi il tuo venerdì sera ancora più magico prenotando il tuo narghilè.
+- Beauty Care — €10 — Sab 19 Set · 11:00 / 17:00 — Dom 20 Set · 10:30 — La Rinascente Monza: Trattamento mani e viso donna, in collaborazione con la Rinascente Monza.
+- Autodromo Experience — €35 — Sabato 19 Settembre · 18:00 — Autodromo Nazionale Monza: Tour in pullman guidato della pista e visita dell'autodromo con foto sul podio.
+- Visita della Città — Quater Pass — €10 — Sabato 19 Settembre · 15:00 — Centro storico di Monza: Scopri i segreti dell'incantevole centro storico di Monza in una visita guidata.
+- Wine Experience & Masterclass — €10 — Sab 19 Set · 11:00 / 17:00 — Dom 20 Set · 11:00 — La Rinascente Monza: Un viaggio tra i migliori vini e i segreti della degustazione, guidato da esperti sommelier.
 
 ---
 
-## Apertura Nazionale 2026 — Panoramica
+## FAQ
 
-> Per dati aggiornati su programma, prezzi e iscrizioni vedi: https://multidistrettolombardo.org/apertura-nazionale.json
+**Posso partecipare a un solo giorno?**
+Certo. Puoi scegliere i Biglietti Singoli per partecipare solo alle singole giornate: Milano (€80), Monza (€155) e Iseo (€55). Oppure puoi scegliere uno dei Pacchetti Experience con hotel incluso.
 
-**Evento:** Apertura Nazionale Rotaract 2026
-**Organizzatore:** MDIO — Multidistretto Italia Ovest
-**Date:** 19–21 Settembre 2026
-**Città:** Milano (Ven 19) · Monza (Sab 20) · Iseo (Dom 21)
-**Hotel ufficiale:** Hotel Falcone 4★, Monza centro
-**Posti Gala Monza:** 350 (limitati)
-**Distretti partecipanti:** 14 distretti d'Italia
+**L'hotel è incluso nel pacchetto?**
+Sì, tutti i Pacchetti Experience (Full Weekend, Venerdì & Sabato, Sabato & Domenica) includono il pernottamento all'Hotel Falcone 4★ e le navette. Per i Biglietti Singoli, l'hotel non è incluso.
 
-**Giorno 1 — Milano:** Serata "Mille e una Notte", cena orientale 4 portate, danzatrici del ventre, ~€75 tutto incluso, max 130 posti.
+**Come arrivo a Monza dall'aeroporto?**
+Da Malpensa: Malpensa Express + cambio a Centrale (~1h). Da Linate: bus + metro o taxi. Da Bergamo Orio: navetta + treno per Monza (~1h15). Per il sabato sono previste navette tra l'Hotel Falcone e l'Autodromo.
 
-**Giorno 2 — Monza:** Gala all'Autodromo Nazionale, tour pista in bus, salita sul podio, cena di gala con vino illimitato, €75 + IVA. Navette dall'Hotel Falcone incluse.
+**Qual è il dress code?**
+Venerdì sera tema "Mille e una Notte" — mettiti un tocco arabeggiante!
+Sabato gala all'Autodromo: black tie / abito lungo per le donne, smoking o abito scuro per gli uomini.
+Domenica casual elegante.
 
-**Giorno 3 — Iseo:** Sessione ufficiale, presentazioni 14 distretti, passaggio di consegne, pranzo con relatore d'eccezione (astronauta ESA in corso di conferma).
+**Entro quando posso iscrivermi?**
+Le iscrizioni sono aperte fino ad esaurimento posti. Non ci sono aumenti di prezzo last minute: la quota è bloccata. I posti per il sabato a Monza sono limitati a 350.
 
-**Pacchetti disponibili:** Solo Milano · Solo Monza · Weekend Completo (tutti e tre i giorni + hotel + navette)
+**Voglio partecipare a tutte e tre le serate: come acquisto?**
+Aggiungi al carrello separatamente i biglietti per Milano, Monza e Iseo, poi procedi al pagamento. I Biglietti Singoli non includono il pernottamento: i Pacchetti sono pensati solo per chi desidera anche l'hotel.
 
-**Iscrizioni:** 3 wave — Early Bird (entro maggio), Standard (giugno-luglio), Last Call (agosto)
+---
+
+## Distretti
+
+### Distretto Rotaract 2041 — Area Metropolitana di Milano
+- Club: 13 · Soci: 350
+- Il Distretto Rotaract 2041 coincide con l'area metropolitana di Milano, capitale economica, del design e dell'innovazione in Italia. È l'unico distretto interamente metropolitano del Paese, caratterizzato da un contesto dinamico, internazionale e in continua evoluzione.
+- In questo ambiente altamente connesso, i Rotaract Club del 2041 rappresentano veri e propri centri di progettazione e sviluppo: studenti provenienti da università di eccellenza e giovani professionisti di diversi settori collaborano per ideare e realizzare service ad alto impatto sul territorio e oltre.
+- La forte vocazione europea e internazionale del distretto si riflette anche nella sua Fellowship, fatta di momenti di networking, eventi di rilievo e occasioni di confronto che favoriscono la crescita personale e professionale dei soci.
+- Milano è una città che non si ferma mai: il Distretto Rotaract 2041 ne incarna pienamente lo spirito, unendo energia, innovazione e impegno concreto al servizio della comunità.
+- Pilastri: Dinamismo (I ritmi della metropoli nel servizio.); Visione (Sempre proiettati verso il futuro.); Connessione (Hub professionale e internazionale.); Inclusione (Nessuno escluso, nessuno lasciato indietro.)
+- Aree Di Focus:
+  - INNOVAZIONE (Startup · Ricerca · Accademia). Hub di pitch competition, borse di studio e premi di laurea. Il tessuto accademico e imprenditoriale milanese è il nostro incubatore naturale.
+  - SOLIDARIETÀ (Terzo settore · Periferie · Inclusione). Partnership storiche con Opera San Francesco, Pane Quotidiano, City Angels. Milano non lascia indietro nessuno — e noi siamo in prima linea.
+  - NETWORK (Mentorship · Internazionale · Career). Revisioni CV, incontri con CEO e leader di settore, gemellaggi europei. Il vero valore aggiunto del 2041 è la rete che costruisci.
+- Service:
+  - Inclusione Sociale & Supporto agli Ultimi: I club collaborano da anni con i giganti della solidarietà milanese — Opera San Francesco, Pane Quotidiano, City Angels e Ronda della Carità — organizzando raccolte alimentari, di coperte e prestando servizio diretto per supportare i senza fissa dimora e le famiglie in difficoltà.
+  - Salute & Ricerca Scientifica: Storico è l'impegno a fianco di enti come LILT e Fondazione Veronesi. Le campagne di sensibilizzazione e i grandi eventi di raccolta fondi del 2041 hanno finanziato borse di studio per giovani ricercatori e macchinari diagnostici per gli ospedali cittadini.
+  - Sostenibilità Urbana: Anche in una metropoli dominata dal cemento, il distretto porta avanti service legati al verde urbano — piantumazioni nel Parco Agricolo Sud, campagne di clean-up cittadino — e all'economia circolare.
+- Sito: https://www.rotaract2041.com/
+- Instagram: https://www.instagram.com/distrettorotaract2041/
+- Contatto: info@rotaract2041.com
+- Pagina MDIO: https://multidistrettolombardo.org/distretti/2041.html
+
+### Distretto Rotaract 2042 — Lombardia Centro & Nord
+- Club: 18 · Soci: 260
+- Il Distretto 2042 abbraccia l'anima settentrionale della Lombardia: due anime complementari che si fondono alla perfezione — l'eccellenza industriale delle valli e la Brianza da un lato, il patrimonio naturalistico mozzafiato dei grandi laghi prealpini e della Valtellina dall'altro.
+- Visitare il 2042 significa scoprire una Fellowship autentica, vissuta a stretto contatto con il territorio e la natura. Dai weekend in baita alle gite in barca sul Lago di Como, fino alle degustazioni dei prodotti tipici locali, il senso di appartenenza qui è profondo e indissolubilmente legato alla bellezza dei luoghi.
+- Pilastri: Concretezza (Il fare prima del dire, sempre.); Natura (Il territorio è la nostra identità.); Impresa (La vocazione produttiva della Lombardia.); Appartenenza (Fellowship viscerale e radicata.)
+- Aree Geografiche:
+  - BRIANTEA (Monza e Brianza): club di Merate, Monza, Monza Brianza, Vimercate. Il cuore del Made in Italy manifatturiero: design, PMI e artigianato d'eccellenza come terreno fertile per i service più concreti.
+  - LARIANA (Como · Lecco · Sondrio): club di Cantù, Como, Erba-Laghi, Lecco, Sondrio. Dalle Alpi ai laghi: fellowship scenografica, che fa da cornice a service sia storici che innovativi.
+  - OLONA (Varese): club di Magenta, Malpensa, Saronno, Varese. Dalle contrade del palio all'innovazione tecnologica, una zona eterogenea che sa ascoltare i bisogni del territorio.
+  - OROBICA (Bergamo): club di Bergamo, Clusone, Treviglio. Zona madre del service più ambizioso del Rotary, l'End Polio Now. Dalle valli alle città continua a produrre service solidi e concreti.
+- Service:
+  - Tutela del Patrimonio Naturale: Continua collaborazione con comuni e realtà come Plastic Free per concretizzare un sentito interesse per il nostro territorio.
+  - Sanità & Soccorso sul Territorio: Grande impegno per la sensibilizzazione su tematiche che spaziano dalla salute mentale alla ricerca scientifica, in particolare con il service di punta "Brainy, coltiviamo la ricerca". Promozione di corsi BLSD e di progetti tra cui il Teddy Bear.
+  - Inclusione e Attenzione: Il 2042 lavora collaborando anche con associazioni del territorio per essere di supporto a persone con fragilità. Il Camp dell'Amicizia e la collaborazione con l'Arca del Seprio sono esempi di service storici del distretto.
+- Sito: https://www.distrettorotaract2042.it/
+- Instagram: https://www.instagram.com/rotaract2042/
+- Contatto: info@distrettorotaract2042.it
+- Pagina MDIO: https://multidistrettolombardo.org/distretti/2042.html
+
+### Distretto Rotaract 2050 — Lombardia Sud & Piacenza
+- Club: 30 · Soci: 403
+- Il Distretto 2050 è un affascinante mosaico territoriale che fa da ponte tra la Lombardia e l'Emilia-Romagna, abbracciando le province di Brescia, Cremona, Lodi, Mantova, Pavia, Piacenza e alcune aree limitrofe.
+- È un distretto dall'identità poliedrica: unisce la forza produttiva di importanti poli industriali, la profonda tradizione agricola ed enogastronomica della Pianura Padana e la raffinata bellezza di antiche città universitarie e capitali del Rinascimento.
+- Visitare il 2050 significa immergersi in una Fellowship genuina e calorosa. Che si tratti di un aperitivo in Piazza della Loggia a Brescia, di una visita ai palazzi ducali di Mantova o di una cena a base di eccellenze culinarie locali a Piacenza o Cremona, l'accoglienza è sempre il nostro marchio di fabbrica.
+- Pilastri: Tradizione (Enogastronomia e cultura padana.); Convivialità (L'accoglienza è il nostro marchio.); Territorio (Dalla città alla pianura.); Sinergia (Rete intergenerazionale con il Rotary.)
+- Macro-Zone:
+  - FRANCIGENA (Piacenza · Lodi · Cremona Nord): club di Codogno, Fiorenzuola d'Arda, Lodi-Adda, Piacenza, Terre Cremasche. Tra Lombardia ed Emilia, lungo la più antica via di pellegrinaggio.
+  - LEONESSA (Brescia): club di Brescia, Brescia Franciacorta, Brescia Ovest Castello, Brescia Sud-Est Montichiari, Brescia Veronica Gambara, Brescia Vittoria Alata, Garda Valle Sabbia, Valtrompia. Sotto il manto della Leonessa d'Italia.
+  - NAVIGLI (Pavia · Milano Sud): club di Abbiategrasso, Morimondo Abbazia, Pavia, Pavia Nord, Pavia Terre Viscontee, Vigevano Castello, Vigevano Lomellina, Voghera. Nel cuore della Langombardia Maior.
+  - PADANA (Cremona · Mantova): club di Andes Di Virgilio-Curtatone, Casalmaggiore-Viadana-Sabbioneta, Castiglione delle Stiviere e Alto Mantovano, Cremona, Gonzaga-Suzzara, Mantova, Piadena-Casalmaggiore-Asola. In riva al Po, fra arte, storia e natura.
+- Service:
+  - Azione Pubblica e Sanitaria: Imponenti raccolte fondi per macchinari medici negli ospedali locali, donazioni di defibrillatori per i piccoli comuni e riqualificazione di spazi di degenza pediatrica. L'impegno sanitario è storicamente il cuore del distretto.
+  - Patrimonio Culturale: Operando in territori ricchi di siti UNESCO e antichi atenei — come l'Università di Pavia — il distretto investe costantemente in Service volti a tutelare e promuovere la cultura, i teatri storici e l'arte locale.
+  - Sensibilizzazione & Intervento Diretto: Dalle campagne di sensibilizzazione sanitaria — con forte impegno nel periodo post-pandemico — alla riqualificazione degli spazi urbani: l'azione è sempre tangibile e radicata nel territorio.
+- Sito: https://www.rotaract2050.org/
+- Instagram: https://www.instagram.com/rotaract2050/
+- Contatto: segreteria@rotaract2050.org
+- Pagina MDIO: https://multidistrettolombardo.org/distretti/2050.html
+
+---
+
+## Contatti e link
+
+- Segreteria: segreteria@rotaract2050.org
+- Instagram MDIO: https://www.instagram.com/multidistrettolombardo/
+- Sito: https://multidistrettolombardo.org
