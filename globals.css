@@ -37,29 +37,16 @@ a {
   text-decoration: none;
 }
 
-/* Base styles for Countdown shared across pages */
-.vb-cd-grid { 
-  display: grid; 
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 4px; 
-}
-.vb-cd-cell { 
-  border: 1px solid var(--line); 
-  padding: 20px 10px; 
-  text-align: center; 
-}
-.vb-cd-num { 
-  font-size: clamp(32px, 4vw, 56px); 
-  font-family: 'Archivo', sans-serif; 
-  font-weight: 900; 
-  line-height: 1; 
-  letter-spacing: -0.04em; 
-  font-variant-numeric: tabular-nums;
-}
-.vb-cd-lab { 
-  font-size: 11px; 
-  text-transform: uppercase; 
-  letter-spacing: 2px; 
-  margin-top: 6px; 
-  font-weight: 600; 
+/* Evento concluso (sostituisce il vecchio countdown) */
+.vb-closed {
+  display: inline-block;
+  border: 1px solid var(--line);
+  padding: 20px 28px;
+  text-align: center;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: clamp(18px, 2.4vw, 28px);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.4;
 }

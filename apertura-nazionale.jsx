@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './globals.css';
 import './apertura-nazionale.css';
-import Countdown from './components/Countdown';
+import EventClosed from './components/EventClosed';
 import CookieBanner from './components/CookieBanner';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import RichText from './components/RichText';
 import content from './content/apertura.json';
 
-const Package = ({ pack: p, shopUrl }) => {
+const Package = ({ pack: p }) => {
   if (p.featured) {
     return (
       <div className="an-pack-hero an-pack featured">
@@ -25,7 +25,6 @@ const Package = ({ pack: p, shopUrl }) => {
         <div className="an-pack-hero-right">
           <div className="an-pack-price">{p.price}</div>
           <div className="an-pack-price-sub">{p.priceSub}</div>
-          <a href={shopUrl} className="an-pack-cta">{p.ctaLabel}</a>
         </div>
       </div>
     );
@@ -43,7 +42,6 @@ const Package = ({ pack: p, shopUrl }) => {
           <span className="an-pack-desc-muted"><RichText text={p.note} /></span>
         </p>
         <div className="an-pack-guarantee">{p.guarantee}</div>
-        <a href={shopUrl} className="an-pack-cta">{p.ctaLabel}</a>
       </div>
     );
   }
@@ -57,7 +55,6 @@ const Package = ({ pack: p, shopUrl }) => {
       <ul className="an-pack-includes">
         {p.includes.map((t, i) => <li key={i}>{t}</li>)}
       </ul>
-      <a href={shopUrl} className="an-pack-cta">{p.ctaLabel}</a>
     </div>
   );
 };
@@ -79,7 +76,7 @@ const AperturaNazionale = () => {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
 
-  const { days, faq, shopUrl } = content;
+  const { days, faq } = content;
   const experience = content.packages.filter((p) => p.group === 'experience');
   const singoli = content.packages.filter((p) => p.group === 'singoli');
   const featuredPack = experience.find((p) => p.featured);
@@ -118,7 +115,6 @@ const AperturaNazionale = () => {
               <RichText text={content.hero.lede} />
             </p>
             <div className="an-hero-actions">
-              <a href={shopUrl} className="an-btn-primary">{content.hero.primaryCta}</a>
               <a href={content.hero.ghostCta.href} className="an-btn-ghost">{content.hero.ghostCta.text}</a>
             </div>
           </div>
@@ -139,15 +135,13 @@ const AperturaNazionale = () => {
         </div>
       </section>
 
-      {/* COUNTDOWN */}
-      <section className="an-countdown">
-        <div className="an-countdown-inner">
-          <div className="an-countdown-label">
-            {content.countdown.labelPrefix}<em className="an-countdown-em">{content.countdown.labelEmph}</em>
+      {/* EVENTO CONCLUSO */}
+      <section className="an-closed">
+        <div className="an-closed-inner">
+          <div className="an-closed-label">
+            {content.closed.labelPrefix}<em className="an-closed-em">{content.closed.labelEmph}</em>
           </div>
-          <div className="an-countdown-numbers">
-            <Countdown />
-          </div>
+          <EventClosed />
         </div>
       </section>
 
@@ -237,12 +231,12 @@ const AperturaNazionale = () => {
         </div>
 
         {/* ── EXPERIENCE: hero (3 giorni) ── */}
-        {featuredPack && <Package pack={featuredPack} shopUrl={shopUrl} />}
+        {featuredPack && <Package pack={featuredPack} />}
 
         {/* ── EXPERIENCE: pacchetti bigiorno ── */}
         <div className="an-pack-grid an-pack-grid--experience">
           {experienceGrid.map((p, i) => (
-            <Package key={i} pack={p} shopUrl={shopUrl} />
+            <Package key={i} pack={p} />
           ))}
         </div>
 
@@ -265,7 +259,7 @@ const AperturaNazionale = () => {
         {/* ── SINGOLI: giornate ── */}
         <div className="an-pack-grid an-pack-grid--singoli">
           {singoli.map((p, i) => (
-            <Package key={i} pack={p} shopUrl={shopUrl} />
+            <Package key={i} pack={p} />
           ))}
         </div>
 
@@ -287,7 +281,6 @@ const AperturaNazionale = () => {
                 <p className="an-extra-desc">{a.desc}</p>
                 <div className="an-extra-footer">
                   <div className="an-extra-price">{a.price}</div>
-                  <a href={shopUrl} className="an-extra-cta">{content.extras.ctaLabel}</a>
                 </div>
               </div>
             ))}
@@ -351,7 +344,6 @@ const AperturaNazionale = () => {
           <p className="an-cta-final-text">
             {content.ctaFinal.text}
           </p>
-          <a href={shopUrl} className="an-cta-final-btn">{content.ctaFinal.button}</a>
         </div>
       </section>
 
@@ -399,7 +391,6 @@ const AperturaNazionale = () => {
                     ))}
                   </div>
                 </div>
-                <a href={shopUrl} className="an-mod-cta">{content.buyLabel}</a>
               </div>
             </div>
           </React.Fragment>

@@ -159,13 +159,13 @@
 .an-hero-cit-tag-3 { left: 4%; bottom: 12%; background: var(--gold); color: var(--ink); }
 .an-hero-cit-tag-3 span:first-child { color: var(--coral-d); }
 
-/* COUNTDOWN bar */
-.an-countdown {
+/* Fascia evento concluso */
+.an-closed {
   background: var(--ink);
   color: #fff;
   border-top: 1px solid #2a2a2a;
 }
-.an-countdown-inner {
+.an-closed-inner {
   max-width: 1400px;
   margin: 0 auto;
   padding: 80px 32px;
@@ -175,7 +175,7 @@
   justify-content: center;
   gap: 40px;
 }
-.an-countdown-label {
+.an-closed-label {
   font-family: 'Archivo', sans-serif;
   font-weight: 800;
   font-size: 20px;
@@ -184,37 +184,6 @@
   color: var(--gold);
   line-height: 1.4;
   text-align: center;
-}
-.an-countdown-numbers {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  width: 100%;
-  max-width: 800px;
-}
-.an-countdown-cell {
-  border: 1px solid #2a2a2a;
-  padding: 32px 16px;
-  text-align: center;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.an-countdown-num {
-  font-family: 'Archivo', sans-serif;
-  font-weight: 800;
-  font-size: clamp(48px, 6vw, 96px);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  font-variant-numeric: tabular-nums;
-}
-.an-countdown-lab {
-  margin-top: 12px;
-  font-size: 13px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #918a78;
 }
 
 /* MARQUEE */
@@ -1017,7 +986,6 @@
   .an-hero-inner { grid-template-columns: 1fr; gap: 48px; }
   .an-hero-right { display: none; }
 
-  .an-countdown-numbers { grid-template-columns: repeat(4, 1fr); }
 
   .an-programma-head { grid-template-columns: 200px 1fr; gap: 40px; }
   .an-programma-head > p { grid-column: 1 / -1; }
@@ -1057,15 +1025,12 @@
   .an-btn-primary, .an-btn-ghost { text-align: center; justify-content: center; }
 
   /* COUNTDOWN */
-  .an-countdown-inner {
+  .an-closed-inner {
     grid-template-columns: 1fr;
     padding: 40px 16px;
     gap: 28px;
   }
-  .an-countdown-label { max-width: 100%; }
-  .an-countdown-numbers { grid-template-columns: repeat(4, 1fr); gap: 2px; }
-  .an-countdown-cell { padding: 16px 8px; }
-  .an-countdown-num { font-size: clamp(36px, 9vw, 64px); }
+  .an-closed-label { max-width: 100%; }
 
   /* MARQUEE */
   .an-marquee-track { font-size: 14px; }
@@ -1141,7 +1106,6 @@
   .an-info-cell:nth-child(2) { border-right: none; border-top: 1.5px solid var(--ink); }
   .an-info-cell:nth-child(n+2) { border-top: 1.5px solid var(--ink); }
 
-  .an-countdown-cell:nth-child(n+3) { border-top: 1px solid #2a2a2a; }
 }
 
 .an-pack-grid-4 {
@@ -1203,7 +1167,7 @@
 .an-hero-dates { margin-bottom: 16px; }
 
 /* em nel countdown label (testo bianco non corsivo) */
-.an-countdown-em {
+.an-closed-em {
   color: #fff;
   font-style: normal;
   font-family: inherit;
@@ -1485,4 +1449,10 @@
 .an-soon {
   opacity: 0.55;
   filter: grayscale(0.5);
+}
+
+/* Stato evento concluso nella fascia scura */
+.an-closed .vb-closed {
+  border-color: #2a2a2a;
+  color: #fff;
 }

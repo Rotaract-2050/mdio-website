@@ -9,7 +9,7 @@ import content from './content/gratta-vinci.json';
 
 const premi = content.prizes;
 
-const termini = `L'iniziativa denominata "Apertura Nazionale Rotaract 2026" è organizzata congiuntamente dal Multidistretto Lombardia e Provincia di Piacenza, costituito dai Distretti Rotaract 2041, 2042 e 2050, nell'ambito delle attività istituzionali, associative e promozionali connesse all'evento nazionale previsto nei giorni 18, 19 e 20 settembre 2026.
+const termini = `L'iniziativa denominata "Apertura Nazionale Rotaract 2026" è organizzata congiuntamente dal Multidistretto Lombardia e Provincia di Piacenza, costituito dai Distretti Rotaract 2041, 2042 e 2050, nell'ambito delle attività istituzionali, associative e promozionali connesse all'evento nazionale svoltosi nei giorni 18, 19 e 20 settembre 2026.
 
 Il Distretto Rotaract 2041, C.F. 97659950154, con sede in Via Antonio Canova 19A, 20145 Milano (MI), è rappresentato per l'anno sociale 2026-2027 dal proprio rappresentante legale pro tempore.
 
@@ -57,7 +57,7 @@ const GrattaVinci = () => (
     <Header
       homeLink="../index.html"
       logoPath="../assets/logo-mdio.jpeg"
-      ctaText="Scopri l'evento →"
+      ctaText="Rivedi l'evento →"
       ctaLink="../apertura-nazionale.html"
     >
       <a href="../index.html">← MDIO</a>
@@ -73,8 +73,8 @@ const GrattaVinci = () => (
         Cartoline<br /><em>Promozionali</em>
       </h1>
       <p className="gv-hero-sub">
-        Distribuzione gratuita di cartoline celebrative dell'Apertura Nazionale 2026.
-        Alcune cartoline riportano utilità promozionali offerte dai Distretti e dai partner dell'evento.
+        Cartoline celebrative dell'Apertura Nazionale 2026, distribuite gratuitamente.
+        Alcune riportavano utilità promozionali offerte dai Distretti e dai partner dell'evento.
       </p>
       <div className="gv-hero-badge">Distribuzione gratuita · Nessun obbligo di acquisto</div>
     </section>
@@ -91,7 +91,7 @@ const GrattaVinci = () => (
     <section id="premi" className="gv-premi">
       <div className="gv-premi-inner">
         <div className="gv-premi-eyebrow">Utilità promozionali</div>
-        <h2 className="gv-premi-title">Le liberalità<br />disponibili</h2>
+        <h2 className="gv-premi-title">Le liberalità<br />previste</h2>
         <div className="gv-premi-grid">
           {premi.map((p, i) => (
             <div key={i} className="gv-premio">
@@ -108,8 +108,8 @@ const GrattaVinci = () => (
 
     {/* CTA */}
     <section className="gv-cta">
-      <h2 className="gv-cta-title">Vuoi partecipare all'evento?</h2>
-      <p className="gv-cta-sub">Scopri il programma completo dell'Apertura Nazionale 2026.</p>
+      <h2 className="gv-cta-title">L'evento è concluso</h2>
+      <p className="gv-cta-sub">Rivedi il programma completo dell'Apertura Nazionale 2026.</p>
       <a href="../apertura-nazionale.html">Vai all'Apertura Nazionale →</a>
     </section>
 

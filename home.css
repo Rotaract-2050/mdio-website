@@ -159,7 +159,7 @@
 }
 .vb-dot { width: 6px; height: 6px; border-radius: 50%; }
 
-/* EVENT MARQUEE + COUNTDOWN */
+/* EVENT MARQUEE + STATO EVENTO */
 .vb-event {
   background: var(--ink);
   color: var(--paper);
@@ -233,35 +233,13 @@
   transform: translateY(-3px);
 }
 
-.vb-cd-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
+/* Evento concluso: variante nel banner scuro */
+.vb-event .vb-closed {
+  display: block;
   border: 2px solid var(--paper);
-}
-.vb-cd-cell {
-  padding: 32px 24px;
-  border-right: 2px solid var(--paper);
-  border-bottom: 2px solid var(--paper);
-  text-align: center;
-}
-.vb-cd-cell:nth-child(2n) { border-right: none; }
-.vb-cd-cell:nth-child(n+3) { border-bottom: none; }
-.vb-cd-num {
-  font-family: 'Archivo', sans-serif;
-  font-weight: 900;
-  font-size: clamp(64px, 7vw, 112px);
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  padding: 48px 24px;
   color: var(--gold);
-  font-variant-numeric: tabular-nums;
-}
-.vb-cd-lab {
-  margin-top: 12px;
-  font-size: 11px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--paper);
+  font-size: clamp(22px, 3vw, 40px);
 }
 
 /* MANIFESTO */
@@ -696,7 +674,6 @@
     gap: 40px;
   }
   .vb-event-title { font-size: clamp(22px, 7.5vw, 36px); }
-  .vb-cd-grid { grid-template-columns: repeat(2, 1fr); }
 
   /* MANIFESTO */
   .vb-manifesto {

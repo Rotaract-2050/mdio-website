@@ -19,7 +19,6 @@ const ORGANIZER = {
 };
 const EVENT_URL = `${SITE}/apertura-nazionale.html`;
 const SHOP_URL = `${SITE}/shop.html`;
-const VALID_FROM = '2026-05-19';
 const EVENT_LOCATION = [
   { '@type': 'Place', name: 'Venue serata Mille e una Notte — Milano', address: { '@type': 'PostalAddress', streetAddress: 'Via Tibaldi / Bocconi', addressLocality: 'Milano', addressRegion: 'Lombardia', addressCountry: 'IT' } },
   { '@type': 'Place', name: 'Autodromo Nazionale di Monza', address: { '@type': 'PostalAddress', streetAddress: 'Viale di Vedano, 5', addressLocality: 'Monza', postalCode: '20900', addressRegion: 'Lombardia', addressCountry: 'IT' } },
@@ -92,7 +91,8 @@ function offerOf(p) {
     description: desc,
     price: pr,
     priceCurrency: 'EUR',
-    availability: 'https://schema.org/InStock',
+    // evento concluso, vendite chiuse: nessuna disponibilita' di acquisto
+    availability: 'https://schema.org/SoldOut',
   };
 }
 const faqLd = (faq) => ({
@@ -106,7 +106,6 @@ const faqLd = (faq) => ({
 });
 function eventLd(ap) {
   const seo = ap.seo;
-  const offers = (ap.packages ?? []).map(offerOf).filter(Boolean).map((o) => ({ ...o, validFrom: VALID_FROM, url: SHOP_URL }));
   return {
     '@context': 'https://schema.org',
     '@type': 'Event',
@@ -124,7 +123,6 @@ function eventLd(ap) {
       description: (d.bullets ?? []).map(stripDot).join('. ') + '.',
       ...(DAY_CONST[d.id] ?? {}),
     })),
-    offers,
     image: IMG,
     url: EVENT_URL,
     keywords: seo.keywords,
@@ -163,31 +161,31 @@ function aperturaNoscript(ap, site) {
   return `<noscript>
   <main>
     <h1>${esc(seo.eventName)}</h1>
-    <p>L'Apertura Nazionale Rotaract 2026 è il primo evento nazionale diffuso su tre distretti: tre giorni per aprire l'anno rotaractiano tutti insieme tra Milano, Monza e il Lago d'Iseo — 18, 19 e 20 Settembre 2026. Organizzato da MDIO — Multidistretto Rotaract Italia Ovest (distretti 2041, 2042, 2050). Prezzo bloccato, nessun dynamic pricing. Navette incluse in tutti i pacchetti con pernotto.</p>
+    <p>L'Apertura Nazionale Rotaract 2026 è stata il primo evento nazionale diffuso su tre distretti: tre giorni per aprire l'anno rotaractiano tutti insieme tra Milano, Monza e il Lago d'Iseo — 18, 19 e 20 Settembre 2026. Evento concluso. Organizzato da MDIO — Multidistretto Rotaract Italia Ovest (distretti 2041, 2042, 2050). I pacchetti erano a prezzo bloccato, senza dynamic pricing, con navette incluse in tutti i pacchetti con pernotto.</p>
 
     <h2>Programma delle tre giornate</h2>
     <ul>
-      <li><strong>Venerdì 18 Settembre — Milano · Serata "Mille e una Notte":</strong> Ambientazione ispirata ad Agrabah. Ore 20:00 ingresso e accoglienza, cena con live show orientale (4 portate), DJ set esclusivo. Navette di rientro verso le 2:00 per chi alloggia in hotel. Dress code: tocco arabeggiante. Zona Tibaldi-Bocconi (bus 65). Biglietto singolo: ${esc(p1)}.</li>
+      <li><strong>Venerdì 18 Settembre — Milano · Serata "Mille e una Notte":</strong> Ambientazione ispirata ad Agrabah. Ore 20:00 ingresso e accoglienza, cena con live show orientale (4 portate), DJ set esclusivo. Navette di rientro verso le 2:00 per chi alloggiava in hotel. Dress code: tocco arabeggiante. Zona Tibaldi-Bocconi (bus 65). Biglietto singolo: ${esc(p1)}.</li>
       <li><strong>Sabato 19 Settembre — Monza · Gala all'Autodromo:</strong> Mattina: lavori nazionali alla Sala Maddalena (Via Santa Maddalena 7, Monza). Pomeriggio: pacchetti extra facoltativi (Galleria Campari, Autodromo Experience, Visita della Città, Beauty Care, Wine Experience). Ore 18:30 navetta dall'Hotel Falcone verso l'Autodromo. Ore 19:00 aperitivo standing nell'area box con auto da esposizione dello sponsor e DJ set. Ore 20:00 cena di gala 4 portate (antipasto, primo, secondo, dolce), vino senza limiti, drink incluso. Dress code: black tie. Biglietto singolo: ${esc(p2)} (hotel e navette non inclusi).</li>
       <li><strong>Domenica 20 Settembre — Sale Marasino · Conviviale sul Lago d'Iseo:</strong> Ore 12:30 arrivo e accoglienza. Conviviale con relatori d'eccezione. Chiusura ufficiale con passaggio di consegne al Distretto Rotaract 2071 per il S.I.R.D.E. Biglietto singolo: ${esc(p3)} (hotel e navette non inclusi).</li>
     </ul>
 
     <h2>Hotel ufficiale</h2>
-    <p>Hotel Falcone 4★ — centro di Monza. Incluso in tutti i pacchetti multi-giorno (Experience). A 15 minuti da Milano in treno.</p>
+    <p>Hotel Falcone 4★ — centro di Monza. Era incluso in tutti i pacchetti multi-giorno (Experience). A 15 minuti da Milano in treno.</p>
 
-    <h2>Pacchetti Experience (con hotel incluso — navette sempre incluse)</h2>
+    <h2>Pacchetti Experience proposti (con hotel incluso — navette sempre incluse)</h2>
     <ul>
 ${exp}
     </ul>
 
-    <h2>Biglietti Singoli (senza hotel, senza navette)</h2>
+    <h2>Biglietti Singoli proposti (senza hotel, senza navette)</h2>
     <ul>
 ${sing}
     </ul>
 
-    <p><a href="shop.html">Acquista i biglietti — Apertura Nazionale Rotaract 2026</a></p>
+    <p>Le vendite sono chiuse.</p>
 
-    <h2>Pacchetti Extra (esperienze facoltative, posti limitati)</h2>
+    <h2>Pacchetti Extra proposti (esperienze facoltative, posti limitati)</h2>
     <ul>
 ${extras}
     </ul>
@@ -214,24 +212,22 @@ function shopLi(p) {
     : [plain(p.dates), plain(p.tag), ...(p.includes ?? []).map(stripDot)].join(' · ');
   return `      <li><strong>${esc(plain(p.name))}</strong> — ${esc(detail)}: <strong>${esc(p.price)}</strong></li>`;
 }
-function shopNoscript(shop, ap, site) {
+function shopNoscript(shop, ap) {
   const pk = ap?.packages ?? [];
   const exp = pk.filter((p) => p.group === 'experience').map(shopLi).join('\n');
   const sing = pk.filter((p) => p.group === 'singoli').map(shopLi).join('\n');
-  const url = site?.ticketTailorUrl ?? '';
   return `<noscript>
   <main>
-    <h1>Biglietti — Apertura Nazionale Rotaract 2026</h1>
-    <p>Acquista i biglietti per l'Apertura Nazionale Rotaract 2026: Milano (ven 18 Set), Monza (sab 19 Set), Sale Marasino sul Lago d'Iseo (dom 20 Set). Prezzi bloccati, nessun dynamic pricing. Navette incluse in tutti i pacchetti con pernotto.</p>
-    <h2>Pacchetti Experience (hotel + navette inclusi)</h2>
+    <h1>Vendite chiuse — Apertura Nazionale Rotaract 2026</h1>
+    <p>L'Apertura Nazionale Rotaract 2026 si è svolta a Milano (ven 18 Set), Monza (sab 19 Set) e Sale Marasino sul Lago d'Iseo (dom 20 Set). Le vendite sono chiuse. Pacchetti e biglietti proposti, a prezzi bloccati e senza dynamic pricing, con navette incluse in tutti i pacchetti con pernotto.</p>
+    <h2>Pacchetti Experience proposti (hotel + navette inclusi)</h2>
     <ul>
 ${exp}
     </ul>
-    <h2>Biglietti Singoli (senza hotel, senza navette)</h2>
+    <h2>Biglietti Singoli proposti (senza hotel, senza navette)</h2>
     <ul>
 ${sing}
     </ul>
-    <p><a href="${escAttr(url)}">Acquista i biglietti</a></p>
     <p><a href="apertura-nazionale.html">Torna alla pagina dell'evento — Apertura Nazionale 2026</a></p>
   </main>
 </noscript>`;
@@ -283,11 +279,9 @@ function aperturaJson(ap, site) {
       prezzo: p.price,
       include: p.group === 'singoli' ? [plain(p.description)].filter(Boolean) : (p.includes ?? []).map(plain),
     })),
-    iscrizioni: {
-      vendite_aperte: site?.salesOpen ?? null,
-      wave_in_pausa: site?.wavePaused ?? null,
-      link: site?.ticketTailorUrl ?? '',
-      pagina: `${EVENT_URL}#pacchetti`,
+    stato: {
+      evento_concluso: true,
+      vendite_aperte: site?.salesOpen ?? false,
     },
     faq: (ap.faq?.items ?? []).map((i) => ({ domanda: plain(i.q), risposta: plain(i.a) })),
     organizzatore: { nome: ORGANIZER.name, url: SITE, distretti: ['2041', '2042', '2050'] },
@@ -324,7 +318,7 @@ export default function seoPlugin() {
           html = html.replace(/<noscript>[\s\S]*?<\/noscript>/, () => aperturaNoscript(data, site));
         } else if (key === 'shop') {
           html = mapJsonLd(html, () => shopLd(data, ap));
-          html = html.replace(/<noscript>[\s\S]*?<\/noscript>/, () => shopNoscript(data, ap, site));
+          html = html.replace(/<noscript>[\s\S]*?<\/noscript>/, () => shopNoscript(data, ap));
         } else if (seo.jsonLdDescription !== undefined) {
           html = mapJsonLd(html, (o) => ({ ...o, description: seo.jsonLdDescription }));
         }

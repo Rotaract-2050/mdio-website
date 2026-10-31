@@ -3,7 +3,7 @@
 
 Fonte: https://multidistrettolombardo.org
 Aggiornato: 2026-10-31
-Nota: i contenuti derivano dai dati pubblicati sul sito. L'Apertura Nazionale 2026 (18–20 Settembre 2026) è un evento già concluso: la sezione dedicata riporta le informazioni pubblicate sul sito.
+Nota: i contenuti derivano dai dati pubblicati sul sito. L'Apertura Nazionale 2026 (18–20 Settembre 2026) è un evento concluso e le vendite sono chiuse: la sezione dedicata è un archivio delle informazioni pubblicate sul sito.
 
 ---
 
@@ -25,23 +25,23 @@ Pilastri:
 
 - Date: 18, 19 e 20 Settembre 2026 (evento concluso)
 - Città: Milano (venerdì), Monza (sabato), Sale Marasino / Lago d'Iseo (domenica)
-- Pagina evento: https://multidistrettolombardo.org/apertura-nazionale.html
-- Biglietti: https://multidistrettolombardo.org/shop.html
+- Pagina evento (archivio): https://multidistrettolombardo.org/apertura-nazionale.html
+- Vendite: chiuse (https://multidistrettolombardo.org/shop.html)
 - Hotel ufficiale: Hotel Falcone 4★, Monza centro
 
 ### Venerdì 18 Settembre 2026 — Milano · Mille e una Notte
-- 20:00: Ingresso & accoglienza — Immergiti nella magia di Agrabah e se fortunato tieniti pronto ad esprimere 3 desideri.
-- A seguire: Cena con live show — Gusta le delizie d'oriente e lasciati trasportare in un'atmosfera unica.
-- Dopocena: DJ set esclusivo — La serata continua con musica e divertimento per tutti.
-- 02:00: Navette di rientro — Navette disponibili verso le 2:00 circa per chi alloggia negli hotel.
+- 20:00: Ingresso & accoglienza — Ingresso nella magia di Agrabah, con tre desideri da esprimere per i più fortunati.
+- A seguire: Cena con live show — Le delizie d'oriente in un'atmosfera unica.
+- Dopocena: DJ set esclusivo — La serata è proseguita con musica e divertimento per tutti.
+- 02:00: Navette di rientro — Navette disponibili verso le 2:00 circa per chi alloggiava negli hotel.
 - Prezzo: €80 (biglietto singolo)
-- Posti: Limitati (su prenotazione)
+- Posti: Limitati (erano su prenotazione)
 - Come arrivare: Auto o mezzi (Tibaldi-Bocconi, bus 65)
 - Dress code: Mille e una notte (tocco arabeggiante)
 
 ### Sabato 19 Settembre 2026 — Monza · Gala all'Autodromo
 - 10:00: Lavori nazionali — Sala Maddalena · Via Santa Maddalena, 7, Monza (Istituto Scolastico "T. Confalonieri", centro città).
-- 14:00: Attività pomeridiane facoltative — Pacchetti extra opzionali: Galleria Campari, Autodromo Experience, Visita della Città, Beauty Care e Wine Experience. Scopri tutti i dettagli qui sotto.
+- 14:00: Attività pomeridiane facoltative — Pacchetti extra opzionali: Galleria Campari, Autodromo Experience, Visita della Città, Beauty Care e Wine Experience. I dettagli sono riportati più sotto.
 - 18:30: Navetta → Autodromo — Partenza indicativa dall'Hotel Falcone.
 - 19:00: Aperitivo standing — Nell'area box con auto da esposizione dello sponsor. DJ set. Allestimento floreale.
 - 20:00: Cena di gala — Antipasto · Primo · Secondo · Dolce. Vino senza limiti + drink incluso. Mise en place curata.
@@ -51,22 +51,22 @@ Pilastri:
 - Da Milano: 15 min (in treno da Centrale)
 
 ### Domenica 20 Settembre 2026 — Sale Marasino · Chiusura sul Lago
-- 12:30: Arrivo e accoglienza — Apri gli occhi e preparati a contemplare la bellezza di un panorama mozzafiato.
-- A seguire: Conviviale con relatori d'eccezione — Coccolato dal dolce bisbiglio del Lago d'Iseo, ti riempirai di entusiasmo interagendo con persone dalle vite eccezionali.
-- In chiusura: Chiusura ufficiale dell'Apertura Nazionale — Vedrai passare le consegne al Distretto Rotaract 2071 per l'organizzazione del S.I.R.D.E.
+- 12:30: Arrivo e accoglienza — Arrivo con vista su un panorama mozzafiato.
+- A seguire: Conviviale con relatori d'eccezione — Pranzo conviviale sul Lago d'Iseo, in compagnia di relatori d'eccezione.
+- In chiusura: Chiusura ufficiale dell'Apertura Nazionale — Passaggio di consegne al Distretto Rotaract 2071 per l'organizzazione del S.I.R.D.E.
 - Location: Lago d'Iseo (Provincia di Brescia)
 - Da Monza: ~1h (in auto o treno)
 - Navette: Incluse (da e per l'albergo)
-- Ospite: Seguiranno Sorprese
+- Ospite: Erano previste sorprese
 - Prezzo: €55 (biglietto singolo)
 
 ---
 
-## Pacchetti e prezzi
+## Pacchetti proposti e prezzi (vendite chiuse)
 
 Prezzo unico e bloccato, nessun dynamic pricing. Navette incluse nei pacchetti con pernotto.
 
-### Pacchetti Experience (con hotel)
+### Pacchetti Experience proposti (con hotel)
 - Sotto il cielo di Lombardia — €435 a persona — 18 · 19 · 20 SET · 3 GIORNI — Milano · Monza · Lago d'Iseo
   - Serata Mille e una Notte (Milano)
   - Gala all'Autodromo (Monza)
@@ -88,7 +88,7 @@ Prezzo unico e bloccato, nessun dynamic pricing. Navette incluse nei pacchetti c
   - 1 Notte in Hotel 4★ a Monza
   - Navette incluse hotel ↔ autodromo
 
-### Biglietti singoli (senza hotel e senza navette)
+### Biglietti singoli proposti (senza hotel e senza navette)
 - Le mille ed una notte — €80 a persona — 18 SET · UN GIORNO — Venerdì · Milano
   - Ingresso ad Agrabah, cena con live show orientale e DJ set esclusivo.
 - Il tempio della velocità — €155 a persona — 19 SET · UN GIORNO — Sabato · Monza
@@ -96,37 +96,37 @@ Prezzo unico e bloccato, nessun dynamic pricing. Navette incluse nei pacchetti c
 - Un lago di stelle — €55 a persona — 20 SET · UN GIORNO — Domenica · Sale Marasino
   - Relatore d'eccezione e pranzo conviviale sul Lago d'Iseo.
 
-### Pacchetti Extra (opzionali)
-- Galleria Campari — €20 — Sabato 19 Settembre · 14:30 — Viale A. Gramsci 161, Sesto S. Giovanni (MI): Scopri l'arte, il gusto e l'iconico rosso Campari con una visita esclusiva alla Galleria Campari.
-- Narghilè — €45 — Venerdì 18 Settembre — El Jadida: Rendi il tuo venerdì sera ancora più magico prenotando il tuo narghilè.
+### Pacchetti Extra proposti (opzionali)
+- Galleria Campari — €20 — Sabato 19 Settembre · 14:30 — Viale A. Gramsci 161, Sesto S. Giovanni (MI): L'arte, il gusto e l'iconico rosso Campari in una visita esclusiva alla Galleria Campari.
+- Narghilè — €45 — Venerdì 18 Settembre — El Jadida: Un narghilè per rendere il venerdì sera ancora più magico.
 - Beauty Care — €10 — Sab 19 Set · 11:00 / 17:00 — Dom 20 Set · 10:30 — La Rinascente Monza: Trattamento mani e viso donna, in collaborazione con la Rinascente Monza.
 - Autodromo Experience — €35 — Sabato 19 Settembre · 18:00 — Autodromo Nazionale Monza: Tour in pullman guidato della pista e visita dell'autodromo con foto sul podio.
-- Visita della Città — Quater Pass — €10 — Sabato 19 Settembre · 15:00 — Centro storico di Monza: Scopri i segreti dell'incantevole centro storico di Monza in una visita guidata.
+- Visita della Città — Quater Pass — €10 — Sabato 19 Settembre · 15:00 — Centro storico di Monza: I segreti dell'incantevole centro storico di Monza in una visita guidata.
 - Wine Experience & Masterclass — €10 — Sab 19 Set · 11:00 / 17:00 — Dom 20 Set · 11:00 — La Rinascente Monza: Un viaggio tra i migliori vini e i segreti della degustazione, guidato da esperti sommelier.
 
 ---
 
 ## FAQ
 
-**Posso partecipare a un solo giorno?**
-Certo. Puoi scegliere i Biglietti Singoli per partecipare solo alle singole giornate: Milano (€80), Monza (€155) e Iseo (€55). Oppure puoi scegliere uno dei Pacchetti Experience con hotel incluso.
+**Si poteva partecipare a un solo giorno?**
+Sì. Erano disponibili i Biglietti Singoli per le singole giornate: Milano (€80), Monza (€155) e Iseo (€55). In alternativa c'erano i Pacchetti Experience con hotel incluso.
 
-**L'hotel è incluso nel pacchetto?**
-Sì, tutti i Pacchetti Experience (Full Weekend, Venerdì & Sabato, Sabato & Domenica) includono il pernottamento all'Hotel Falcone 4★ e le navette. Per i Biglietti Singoli, l'hotel non è incluso.
+**L'hotel era incluso nel pacchetto?**
+Sì, tutti i Pacchetti Experience (Full Weekend, Venerdì & Sabato, Sabato & Domenica) includevano il pernottamento all'Hotel Falcone 4★ e le navette. Per i Biglietti Singoli l'hotel non era incluso.
 
-**Come arrivo a Monza dall'aeroporto?**
-Da Malpensa: Malpensa Express + cambio a Centrale (~1h). Da Linate: bus + metro o taxi. Da Bergamo Orio: navetta + treno per Monza (~1h15). Per il sabato sono previste navette tra l'Hotel Falcone e l'Autodromo.
+**Come si raggiungeva Monza dall'aeroporto?**
+Da Malpensa: Malpensa Express + cambio a Centrale (~1h). Da Linate: bus + metro o taxi. Da Bergamo Orio: navetta + treno per Monza (~1h15). Per il sabato erano previste navette tra l'Hotel Falcone e l'Autodromo.
 
-**Qual è il dress code?**
-Venerdì sera tema "Mille e una Notte" — mettiti un tocco arabeggiante!
+**Qual era il dress code?**
+Venerdì sera tema "Mille e una Notte": un tocco arabeggiante.
 Sabato gala all'Autodromo: black tie / abito lungo per le donne, smoking o abito scuro per gli uomini.
 Domenica casual elegante.
 
-**Entro quando posso iscrivermi?**
-Le iscrizioni sono aperte fino ad esaurimento posti. Non ci sono aumenti di prezzo last minute: la quota è bloccata. I posti per il sabato a Monza sono limitati a 350.
+**Fino a quando erano aperte le iscrizioni?**
+Le iscrizioni erano aperte fino ad esaurimento posti. Non c'erano aumenti di prezzo last minute: la quota era bloccata. I posti per il sabato a Monza erano limitati a 350.
 
-**Voglio partecipare a tutte e tre le serate: come acquisto?**
-Aggiungi al carrello separatamente i biglietti per Milano, Monza e Iseo, poi procedi al pagamento. I Biglietti Singoli non includono il pernottamento: i Pacchetti sono pensati solo per chi desidera anche l'hotel.
+**Come funzionava per partecipare a tutte e tre le serate?**
+Si aggiungevano al carrello separatamente i biglietti per Milano, Monza e Iseo, poi si procedeva al pagamento. I Biglietti Singoli non includevano il pernottamento: i Pacchetti erano pensati solo per chi desiderava anche l'hotel.
 
 ---
 

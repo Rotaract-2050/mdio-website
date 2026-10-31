@@ -1,8 +1,7 @@
 {
-  "countdownTarget": "2026-09-18T18:00:00",
+  "closedLabel": "Evento concluso · 18–20 Settembre 2026",
   "ticketTailorUrl": "https://www.tickettailor.com/checkout/new-session/id/7914588/chk/054c/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true",
-  "salesOpen": true,
-  "wavePaused": false,
+  "salesOpen": false,
   "footer": {
     "title": "MDIO",
     "subtitle": "LOMBARDIA & PIACENZA",
@@ -84,7 +83,7 @@
       "18 · 19 · 20 SETTEMBRE",
       "MILANO · MONZA · ISEO"
     ],
-    "eyebrow": "— L'EVENTO DELL'ANNO",
+    "eyebrow": "— EVENTO CONCLUSO",
     "titleLines": [
       "Tre giorni.",
       "Tre città."
@@ -92,11 +91,11 @@
     "emph": "Un solo MDIO.",
     "buttons": {
       "home": {
-        "text": "SCOPRI L'EVENTO →",
+        "text": "RIVEDI IL PROGRAMMA →",
         "href": "./apertura-nazionale.html"
       },
       "district": {
-        "text": "SCOPRI L'APERTURA NAZIONALE →",
+        "text": "RIVEDI IL PROGRAMMA →",
         "href": "../apertura-nazionale.html"
       }
     }

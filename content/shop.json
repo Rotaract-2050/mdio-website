@@ -9,44 +9,38 @@
   },
   "hero": {
     "eyebrow": "Apertura Nazionale 2026 — MDIO Lombardo",
-    "title": "Acquista i biglietti",
-    "sub": "Milano · Monza · Sale Marasino — 18 · 19 · 20 Settembre"
+    "title": "Vendite chiuse",
+    "sub": "Milano · Monza · Sale Marasino — 18 · 19 · 20 Settembre 2026"
   },
   "widget": {
-    "fallbackLinkText": "Clicca qui per acquistare i biglietti",
+    "fallbackLinkText": "Apri la pagina dei biglietti",
     "poweredByText": "Sell tickets online with Ticket Tailor",
     "poweredByUrl": "https://www.tickettailor.com?rf=wdg_300465",
     "noticeText": "Non vedi nulla?",
-    "noticeLinkText": "Clicca qui per acquistare →"
+    "noticeLinkText": "Apri la pagina dei biglietti →"
   },
-  "soon": {
-    "eyebrow": "— Prossima wave",
-    "paused": {
-      "title": "<em>Rimani sintonizzato.</em>",
-      "sub": "Stiamo preparando la prossima wave di biglietti.<br/>Seguici sui social per essere il primo a saperlo — l'annuncio arriverà presto."
-    },
-    "open": {
-      "title": "Stiamo arrivando.<br/><em>Ti faremo sapere.</em>",
-      "sub": "Le vendite apriranno a breve.<br/>Seguici su Instagram per essere il primo a saperlo."
-    },
+  "closed": {
+    "eyebrow": "— Evento concluso",
+    "title": "Le vendite<br/><em>sono chiuse.</em>",
+    "sub": "L'Apertura Nazionale si è svolta il 18, 19 e 20 Settembre 2026: i biglietti non sono più in vendita.",
     "instagram": {
       "url": "https://www.instagram.com/multidistrettolombardo/",
       "label": "Seguici su Instagram →"
     },
-    "ctaLabel": "Nel frattempo, scopri il programma completo →",
+    "ctaLabel": "Rivedi il programma dell'evento →",
     "button": {
       "href": "apertura-nazionale.html",
-      "label": "Scopri l'Apertura Nazionale"
+      "label": "Vai all'Apertura Nazionale"
     }
   },
   "seo": {
-    "title": "Biglietti — Apertura Nazionale 2026 | MDIO Lombardo",
-    "description": "Acquista i biglietti per l'Apertura Nazionale Rotaract 2026. Pacchetti da {{prezzoMin}} (Iseo singolo) a {{prezzoMax}} (weekend completo + 2 notti Hotel 4★). Milano 18 Set, Monza 19 Set, Lago d'Iseo 20 Set. Prezzo bloccato.",
-    "ogTitle": "Biglietti — Apertura Nazionale 2026 | MDIO Lombardo",
-    "ogDescription": "Pacchetti da {{prezzoMin}} a {{prezzoMax}}. Prezzo bloccato, navette incluse nei pernotti. Milano 18 Set, Monza 19 Set, Lago d'Iseo 20 Set.",
-    "twitterTitle": "Biglietti — Apertura Nazionale 2026 | MDIO Lombardo",
-    "twitterDescription": "Acquista i biglietti per l'Apertura Nazionale Rotaract 2026.",
-    "listName": "Biglietti Apertura Nazionale Rotaract 2026",
-    "listDescription": "Tutti i pacchetti e biglietti singoli per l'Apertura Nazionale Rotaract 2026 — Milano, Monza, Lago d'Iseo. Prezzi bloccati, nessun dynamic pricing."
+    "title": "Vendite chiuse — Apertura Nazionale 2026 | MDIO Lombardo",
+    "description": "Le vendite dei biglietti per l'Apertura Nazionale Rotaract 2026 sono chiuse: l'evento si è svolto il 18, 19 e 20 Settembre. Pacchetti proposti da {{prezzoMin}} (Iseo singolo) a {{prezzoMax}} (weekend completo + 2 notti Hotel 4★).",
+    "ogTitle": "Vendite chiuse — Apertura Nazionale 2026 | MDIO Lombardo",
+    "ogDescription": "Evento concluso, vendite chiuse. Pacchetti proposti da {{prezzoMin}} a {{prezzoMax}}, a prezzo bloccato. Milano 18 Set, Monza 19 Set, Lago d'Iseo 20 Set.",
+    "twitterTitle": "Vendite chiuse — Apertura Nazionale 2026 | MDIO Lombardo",
+    "twitterDescription": "L'Apertura Nazionale Rotaract 2026 si è svolta il 18, 19 e 20 Settembre: vendite chiuse.",
+    "listName": "Pacchetti proposti — Apertura Nazionale Rotaract 2026",
+    "listDescription": "Pacchetti e biglietti singoli proposti per l'Apertura Nazionale Rotaract 2026 — Milano, Monza, Lago d'Iseo — a prezzi bloccati. Vendite chiuse."
   }
 }

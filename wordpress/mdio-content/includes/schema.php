@@ -123,10 +123,9 @@ function mdio_docs() {
 			'menu'   => 'Sito',
 			'file'   => 'site',
 			'fields' => array(
-				mdio_T( 'countdownTarget', 'Data e ora del countdown', array( 'tab' => $ctl, 'h' => 'Formato AAAA-MM-GGTHH:MM:SS, per esempio 2026-09-18T18:00:00.' ) ),
+				mdio_T( 'closedLabel', 'Etichetta "evento concluso"', array( 'tab' => $ctl, 'h' => 'Mostrata al posto del conto alla rovescia in home, Apertura Nazionale e pagine distretto, per esempio "Evento concluso · 18–20 Settembre 2026".' ) ),
 				mdio_T( 'ticketTailorUrl', 'Link di acquisto Ticket Tailor', array( 'tab' => $ctl, 'h' => 'Indirizzo completo del checkout.' ) ),
-				mdio_B( 'salesOpen', 'Vendite aperte', array( 'tab' => $ctl, 'h' => 'Attivo: mostra il widget di acquisto. Spento: mostra il messaggio "le vendite apriranno a breve".' ) ),
-				mdio_B( 'wavePaused', 'Wave in pausa', array( 'tab' => $ctl, 'h' => 'Attivo: nasconde il widget e mostra "Rimani sintonizzato".' ) ),
+				mdio_B( 'salesOpen', 'Vendite aperte', array( 'tab' => $ctl, 'h' => 'Attivo: mostra il widget di acquisto (e carica lo script Ticket Tailor). Spento: la pagina Shop mostra il messaggio di vendite chiuse.' ) ),
 				mdio_G( 'footer', 'Piè di pagina', array(
 					mdio_T( 'title', 'Titolo' ),
 					mdio_T( 'subtitle', 'Sottotitolo' ),
@@ -205,19 +204,16 @@ function mdio_docs() {
 			'file'   => 'apertura',
 			'fields' => array(
 				mdio_G( 'header', 'Intestazione', mdio_header_fields() ),
-				mdio_T( 'shopUrl', 'Link allo shop', array( 'tab' => 'Link e pulsanti' ) ),
-				mdio_T( 'buyLabel', 'Testo pulsante "Acquista"', array( 'tab' => 'Link e pulsanti' ) ),
 				mdio_G( 'hero', 'Hero', array(
 					mdio_T( 'eyebrow', 'Sopratitolo' ),
 					mdio_RT( 'title', 'Titolo' ),
 					mdio_T( 'dates', 'Date' ),
 					mdio_T( 'badge', 'Etichetta' ),
 					mdio_RT( 'lede', 'Introduzione' ),
-					mdio_T( 'primaryCta', 'Testo pulsante principale' ),
 					mdio_G( 'ghostCta', 'Pulsante secondario', array( mdio_T( 'text', 'Testo' ), mdio_T( 'href', 'Link' ) ) ),
 					mdio_R( 'images', 'Immagini', array( mdio_T( 'src', 'Immagine (percorso)' ), mdio_T( 'day', 'Giorno' ), mdio_T( 'city', 'Città' ) ), array( 'item' => 'Immagine' ) ),
 				) ),
-				mdio_G( 'countdown', 'Countdown', array( mdio_T( 'labelPrefix', 'Testo iniziale', array( 'h' => 'Gli spazi alla fine contano.' ) ), mdio_T( 'labelEmph', 'Testo in evidenza' ) ) ),
+				mdio_G( 'closed', 'Fascia "evento concluso"', array( mdio_T( 'labelPrefix', 'Testo iniziale', array( 'h' => 'Gli spazi alla fine contano.' ) ), mdio_T( 'labelEmph', 'Testo in evidenza' ) ) ),
 				mdio_L( 'marquee', 'Scritte scorrevoli', 'Scritta' ),
 				mdio_G( 'programma', 'Programma', array( mdio_RT( 'title', 'Titolo' ), mdio_T( 'lede', 'Introduzione' ) ) ),
 				mdio_X( 'days', 'Giornate', 'mdio_giornata' ),
@@ -238,7 +234,6 @@ function mdio_docs() {
 				mdio_G( 'extras', 'Pacchetti extra', array(
 					mdio_RT( 'title', 'Titolo' ),
 					mdio_T( 'sub', 'Sottotitolo' ),
-					mdio_T( 'ctaLabel', 'Testo del pulsante' ),
 					mdio_R( 'items', 'Esperienze', array(
 						mdio_T( 'icon', 'Icona' ),
 						mdio_T( 'name', 'Nome' ),
@@ -261,7 +256,6 @@ function mdio_docs() {
 					mdio_T( 'eyebrow', 'Sopratitolo' ),
 					mdio_RT( 'title', 'Titolo' ),
 					mdio_T( 'text', 'Testo' ),
-					mdio_T( 'button', 'Testo pulsante' ),
 				) ),
 				mdio_seo_group( array(
 					mdio_T( 'eventName', 'Nome dell\'evento (dati strutturati)' ),
@@ -297,10 +291,10 @@ function mdio_docs() {
 					mdio_T( 'noticeText', 'Avviso' ),
 					mdio_T( 'noticeLinkText', 'Testo link dell\'avviso' ),
 				) ),
-				mdio_G( 'soon', 'Messaggio "prossima wave"', array(
+				mdio_G( 'closed', 'Messaggio "vendite chiuse"', array(
 					mdio_T( 'eyebrow', 'Sopratitolo' ),
-					mdio_G( 'paused', 'Quando la wave è in pausa', array( mdio_RT( 'title', 'Titolo' ), mdio_RT( 'sub', 'Testo' ) ) ),
-					mdio_G( 'open', 'Quando le vendite non sono ancora aperte', array( mdio_RT( 'title', 'Titolo' ), mdio_RT( 'sub', 'Testo' ) ) ),
+					mdio_RT( 'title', 'Titolo' ),
+					mdio_RT( 'sub', 'Testo' ),
 					mdio_G( 'instagram', 'Instagram', array( mdio_T( 'url', 'Link' ), mdio_T( 'label', 'Testo' ) ) ),
 					mdio_T( 'ctaLabel', 'Testo di invito' ),
 					mdio_G( 'button', 'Pulsante', array( mdio_T( 'href', 'Link' ), mdio_T( 'label', 'Testo' ) ) ),
@@ -455,7 +449,6 @@ function mdio_cpts() {
 				mdio_T( 'description', 'Descrizione', array( 'opt' => 1 ) ),
 				mdio_RT( 'note', 'Nota', array( 'opt' => 1 ) ),
 				mdio_T( 'guarantee', 'Garanzia', array( 'opt' => 1 ) ),
-				mdio_T( 'ctaLabel', 'Testo pulsante' ),
 			),
 		),
 		'mdio_faq'       => array(

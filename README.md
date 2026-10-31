@@ -78,7 +78,7 @@ Perché i contenuti si scaricano in fase di build e non dal browser:
 ├── home.jsx, apertura-nazionale.jsx, shop.jsx,
 │   gratta-vinci.jsx                                 entry React (uno per pagina)
 ├── *.css, globals.css                               stili
-├── components/                                      Header, Footer, Countdown,
+├── components/                                      Header, Footer, EventClosed,
 │                                                    EventBanner, RichText, CookieBanner
 ├── content/                                         snapshot dei contenuti (JSON)
 │   ├── site.json, home.json, apertura.json,
@@ -137,7 +137,7 @@ Ogni pagina ha un HTML (con `<script type="module">` verso il suo `.jsx`), un en
 | Distretto 2042 | `/distretti/2042.html` | `distretti/2042.html` | `distretti/2042.jsx` | `content/distretti/2042.json` + `site.json` |
 | Distretto 2050 | `/distretti/2050.html` | `distretti/2050.html` | `distretti/2050.jsx` | `content/distretti/2050.json` + `site.json` |
 
-`site.json` alimenta anche i componenti condivisi: `Countdown` (data), `EventBanner` (banner evento in home e nei distretti), `Footer`, e lo shop (`salesOpen`, `wavePaused`, link Ticket Tailor).
+`site.json` alimenta anche i componenti condivisi: `EventClosed` (etichetta "evento concluso"), `EventBanner` (banner evento in home e nei distretti), `Footer`, e lo shop (`salesOpen`, link Ticket Tailor).
 
 ### Aggiungere una pagina
 
@@ -160,7 +160,7 @@ Attenzione: `fetch-content.mjs` scarta tutta la risposta se a una chiave di prim
 
 `content/` è la fonte letta da React e dal plugin SEO. I file sono:
 
-- `site.json`: controlli generali (data countdown, link Ticket Tailor, `salesOpen`, `wavePaused`), footer, banner evento.
+- `site.json`: controlli generali (etichetta "evento concluso", link Ticket Tailor, `salesOpen`), footer, banner evento.
 - `home.json`, `apertura.json`, `shop.json`, `gratta-vinci.json`.
 - `distretti/2041.json`, `2042.json`, `2050.json`.
 
@@ -196,29 +196,27 @@ Qui non c'è un editor visuale: non si trascina nulla e non si vede un'anteprima
 
 | Voce | Cosa contiene |
 |---|---|
-| Sito | Controlli principali (countdown, link Ticket Tailor, vendite aperte, wave in pausa), piè di pagina, banner evento. |
+| Sito | Controlli principali (etichetta "evento concluso", link Ticket Tailor, vendite aperte), piè di pagina, banner evento. |
 | Home | Intestazione, hero, schede dei tre distretti, "Chi siamo", numeri, mappa, SEO. |
-| Apertura Nazionale | Pagina dell'evento: hero, programma, pacchetti (testi di sezione), logistica, pacchetti extra (le sei esperienze facoltative), info utili, FAQ (titolo), invito finale, SEO. |
-| Shop | Testi della pagina biglietti e messaggi "prossima wave". |
+| Apertura Nazionale | Pagina dell'evento: hero, fascia "evento concluso", programma, pacchetti (testi di sezione), logistica, pacchetti extra (le sei esperienze facoltative), info utili, FAQ (titolo), testo finale, SEO. |
+| Shop | Testi della pagina biglietti e messaggio "vendite chiuse". |
 | Cartoline | Premi e testo "Come funziona" della pagina gratta-vinci. |
 | Distretti | Un contenuto per distretto (2041, 2042, 2050): hero, identità, zone, riconoscimenti, service, SEO. |
 | Giornate evento | Le tre giornate dell'Apertura Nazionale (programma orario, informazioni). |
-| Pacchetti | I pacchetti in vendita (nome, prezzo, cosa include). L'ordine è quello della colonna "Ordine". |
+| Pacchetti | I pacchetti proposti, ora in archivio (nome, prezzo, cosa include). L'ordine è quello della colonna "Ordine". |
 | FAQ | Le domande frequenti dell'Apertura Nazionale. L'ordine è quello della colonna "Ordine". |
 
 Sotto ogni campo ci sono i suggerimenti sul formato. Nei campi di testo si possono usare solo `<em>`, `<strong>` e `<br/>` (sezione 6).
 
-### Aprire e chiudere le vendite
+### Vendite e stato dell'evento
 
-In Contenuti MDIO > Sito, scheda "Controlli principali":
+L'Apertura Nazionale 2026 (18-20 settembre 2026) è conclusa e il sito la presenta come archivio al passato. In Contenuti MDIO > Sito, scheda "Controlli principali":
 
-- Vendite aperte (`salesOpen`): attivo mostra il widget di acquisto, spento mostra il messaggio "le vendite apriranno a breve".
-- Wave in pausa (`wavePaused`): attivo nasconde il widget e mostra "Rimani sintonizzato".
-- Link di acquisto Ticket Tailor (`ticketTailorUrl`): indirizzo del checkout.
+- Vendite aperte (`salesOpen`): oggi **spento**. Con vendite spente la pagina Shop mostra il messaggio "vendite chiuse" (Contenuti MDIO > Shop) e non carica lo script Ticket Tailor. Se acceso, la pagina mostra il widget di acquisto. Il pulsante di acquisto non compare più nella pagina Apertura Nazionale: pacchetti e prezzi restano come elenco di ciò che era proposto.
+- Link di acquisto Ticket Tailor (`ticketTailorUrl`): indirizzo del checkout, usato solo se le vendite sono accese.
+- Etichetta "evento concluso" (`closedLabel`): per esempio "Evento concluso · 18–20 Settembre 2026". Compare nel banner dell'evento (home e pagine distretto) e nella fascia sotto l'hero della pagina Apertura Nazionale.
 
-### Countdown
-
-Sempre in Sito > "Controlli principali", il campo "Data e ora del countdown" (`countdownTarget`) nel formato `AAAA-MM-GGTHH:MM:SS`, per esempio `2026-09-18T18:00:00`.
+Il countdown non esiste più: non c'è alcun conto alla rovescia, né data di riferimento, né aggiornamento al secondo. Per un evento futuro andrebbe reintrodotto un componente apposito (e un campo data nello schema).
 
 ### Quando compaiono le modifiche
 
@@ -281,13 +279,13 @@ Esiste un mu-plugin `mdio-headless` che sta solo sul server, in `cms/wp-content/
 `scripts/seo-plugin.mjs` è un plugin Vite. In build, per ogni pagina in `PAGES`, legge il JSON corrispondente e riscrive nell'HTML:
 
 - `<title>` e meta description, Open Graph e Twitter, dal gruppo `seo` del JSON (con i segnaposto di prezzo).
-- JSON-LD: `Event` (con `subEvent` per le giornate e `offers` per i pacchetti) e `FAQPage` per l'Apertura; `ItemList` per lo shop; `description` dell'Organization per home e distretti.
+- JSON-LD: `Event` (con `subEvent` per le giornate, stato `EventScheduled` e date reali, senza `offers` perché le vendite sono chiuse) e `FAQPage` per l'Apertura; `ItemList` per lo shop, con le offerte marcate `SoldOut`; `description` dell'Organization per home e distretti.
 - Il blocco `<noscript>` di Apertura e Shop, generato da pacchetti, giornate e FAQ.
 - `FAQPage` contiene solo le FAQ presenti e visibili nel JSON.
 
-Genera inoltre `/apertura-nazionale.json` (file di riepilogo dell'evento per consumo esterno) a ogni build, dai dati correnti. Non va più tenuto in `public/` (il vecchio file è stato rimosso).
+Genera inoltre `/apertura-nazionale.json` (file di riepilogo dell'evento per consumo esterno, con `stato.evento_concluso` e `stato.vendite_aperte`) a ogni build, dai dati correnti. Non va più tenuto in `public/` (il vecchio file è stato rimosso).
 
-Resta fisso nel codice dello script: organizzatore, immagine di condivisione, luoghi, orari delle sotto-giornate (`DAY_CONST`), data di validità delle offerte, URL del sito, numero di distretti partecipanti e hotel ufficiale nel JSON generato, e parte del testo del `noscript` di Apertura. Cambiare questi dati significa modificare lo script.
+Resta fisso nel codice dello script: organizzatore, immagine di condivisione, luoghi, orari delle sotto-giornate (`DAY_CONST`), URL del sito, numero di distretti partecipanti e hotel ufficiale nel JSON generato, e parte del testo del `noscript` di Apertura. Cambiare questi dati significa modificare lo script.
 
 ### File root e public/
 

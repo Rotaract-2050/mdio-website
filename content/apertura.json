@@ -2,8 +2,8 @@
   "header": {
     "homeLink": "./index.html",
     "logoPath": "assets/logo-mdio.jpeg",
-    "ctaText": "Acquista i biglietti →",
-    "ctaLink": "shop.html?back=apertura-nazionale.html%23pacchetti",
+    "ctaText": "Rivedi il programma →",
+    "ctaLink": "#programma",
     "nav": [
       {
         "label": "← MDIO",
@@ -27,15 +27,12 @@
       }
     ]
   },
-  "shopUrl": "shop.html?back=apertura-nazionale.html%23pacchetti",
-  "buyLabel": "Acquista ora →",
   "hero": {
     "eyebrow": "MDIO Lombardo · A.R. 2026—2027",
     "title": "Apertura<br/><em>Nazionale</em><br/>2026.",
     "dates": "18 · 19 · 20 Settembre",
-    "badge": "Il primo evento nazionale diffuso in 3 distretti",
+    "badge": "È stato il primo evento nazionale diffuso in 3 distretti",
     "lede": "Tre giorni per aprire l'anno rotaractiano <em>tutti insieme</em>: <strong>Milano</strong> tra danze e profumi orientali, <strong>Monza</strong> al gala dell'Autodromo, <strong>Sale Marasino</strong> per i lavori e il conviviale sul lago.",
-    "primaryCta": "Acquista i biglietti →",
     "ghostCta": {
       "text": "Programma completo",
       "href": "#programma"
@@ -58,8 +55,8 @@
       }
     ]
   },
-  "countdown": {
-    "labelPrefix": "Manca poco all'apertura ",
+  "closed": {
+    "labelPrefix": "Si è svolta l'apertura ",
     "labelEmph": "nazionale"
   },
   "marquee": [
@@ -78,7 +75,7 @@
   ],
   "programma": {
     "title": "Tre città,<br/><em>tre serate</em>,<br/>una sola apertura.",
-    "lede": "Da venerdì 18 a domenica 20 settembre 2026. Sfoglia le giornate, scopri il programma e scegli quale vivere."
+    "lede": "Da venerdì 18 a domenica 20 settembre 2026. Rivedi le giornate e il programma di ciascuna."
   },
   "days": [
     {
@@ -99,22 +96,22 @@
         {
           "t": "20:00",
           "title": "Ingresso & accoglienza",
-          "d": "Immergiti nella magia di Agrabah e se fortunato tieniti pronto ad esprimere 3 desideri."
+          "d": "Ingresso nella magia di Agrabah, con tre desideri da esprimere per i più fortunati."
         },
         {
           "t": "A seguire",
           "title": "Cena con live show",
-          "d": "Gusta le delizie d'oriente e lasciati trasportare in un'atmosfera unica."
+          "d": "Le delizie d'oriente in un'atmosfera unica."
         },
         {
           "t": "Dopocena",
           "title": "DJ set esclusivo",
-          "d": "La serata continua con musica e divertimento per tutti."
+          "d": "La serata è proseguita con musica e divertimento per tutti."
         },
         {
           "t": "02:00",
           "title": "Navette di rientro",
-          "d": "Navette disponibili verso le 2:00 circa per chi alloggia negli hotel."
+          "d": "Navette disponibili verso le 2:00 circa per chi alloggiava negli hotel."
         }
       ],
       "info": [
@@ -126,7 +123,7 @@
         {
           "l": "Posti",
           "v": "Limitati",
-          "s": "su prenotazione"
+          "s": "erano su prenotazione"
         },
         {
           "l": "Come arrivare",
@@ -165,7 +162,7 @@
         {
           "t": "14:00",
           "title": "Attività pomeridiane facoltative",
-          "d": "Pacchetti extra opzionali: Galleria Campari, Autodromo Experience, Visita della Città, Beauty Care e Wine Experience. Scopri tutti i dettagli qui sotto."
+          "d": "Pacchetti extra opzionali: Galleria Campari, Autodromo Experience, Visita della Città, Beauty Care e Wine Experience. I dettagli sono riportati più sotto."
         },
         {
           "t": "18:30",
@@ -225,17 +222,17 @@
         {
           "t": "12:30",
           "title": "Arrivo e accoglienza",
-          "d": "Apri gli occhi e preparati a contemplare la bellezza di un panorama mozzafiato."
+          "d": "Arrivo con vista su un panorama mozzafiato."
         },
         {
           "t": "A seguire",
           "title": "Conviviale con relatori d'eccezione",
-          "d": "Coccolato dal dolce bisbiglio del Lago d'Iseo, ti riempirai di entusiasmo interagendo con persone dalle vite eccezionali."
+          "d": "Pranzo conviviale sul Lago d'Iseo, in compagnia di relatori d'eccezione."
         },
         {
           "t": "In chiusura",
           "title": "Chiusura ufficiale dell'Apertura Nazionale",
-          "d": "Vedrai passare le consegne al Distretto Rotaract 2071 per l'organizzazione del S.I.R.D.E."
+          "d": "Passaggio di consegne al Distretto Rotaract 2071 per l'organizzazione del S.I.R.D.E."
         }
       ],
       "info": [
@@ -256,7 +253,7 @@
         },
         {
           "l": "Ospite",
-          "v": "Seguiranno Sorprese"
+          "v": "Erano previste sorprese"
         },
         {
           "l": "Prezzo",
@@ -268,8 +265,8 @@
     }
   ],
   "pacchetti": {
-    "title": "Scegli il tuo<br/><em>pacchetto</em>.",
-    "lede": "Crediamo nel valore della partecipazione, non nell'ansia della prenotazione. Nessun dynamic pricing, nessun aumento dell'ultimo minuto: abbiamo scelto di mantenere un <strong>prezzo unico e bloccato</strong>. Stessa esperienza, massima trasparenza.",
+    "title": "I <em>pacchetti</em><br/>proposti.",
+    "lede": "Avevamo scelto il valore della partecipazione, non l'ansia della prenotazione: nessun dynamic pricing, nessun aumento dell'ultimo minuto, un <strong>prezzo unico e bloccato</strong>. Stessa esperienza, massima trasparenza. Le vendite sono chiuse: questo è l'elenco di ciò che era proposto.",
     "experienceTitle": "Pacchetti <em>Experience</em>",
     "experienceSub": "(Multi-giorno con Hotel)",
     "singoliTitle": "Biglietti Singoli"
@@ -278,7 +275,7 @@
     {
       "group": "experience",
       "featured": true,
-      "badge": "Best Seller Assoluto",
+      "badge": "Il più completo",
       "dates": "18 · 19 · 20 SET · 3 GIORNI",
       "name": "Sotto il cielo<br/>di <em>Lombardia</em>",
       "tag": "Milano · Monza · Lago d'Iseo",
@@ -290,8 +287,7 @@
         "Pranzo conviviale sul Lago (Iseo)",
         "2 Notti in Hotel 4★ a Monza",
         "Navette incluse tra hotel ed eventi"
-      ],
-      "ctaLabel": "Acquista ora →"
+      ]
     },
     {
       "group": "experience",
@@ -305,8 +301,7 @@
         "Gala all'Autodromo (Monza)",
         "2 Notti in Hotel 4★",
         "Navette incluse"
-      ],
-      "ctaLabel": "Acquista ora →"
+      ]
     },
     {
       "group": "experience",
@@ -320,8 +315,7 @@
         "Pranzo conviviale sul Lago (Iseo)",
         "1 Notte in Hotel 4★",
         "Navette incluse"
-      ],
-      "ctaLabel": "Acquista ora →"
+      ]
     },
     {
       "group": "experience",
@@ -334,8 +328,7 @@
         "Gala all'Autodromo (Monza)",
         "1 Notte in Hotel 4★ a Monza",
         "Navette incluse hotel ↔ autodromo"
-      ],
-      "ctaLabel": "Acquista ora →"
+      ]
     },
     {
       "group": "singoli",
@@ -346,8 +339,7 @@
       "priceSub": "a persona",
       "description": "Ingresso ad Agrabah, cena con live show orientale e DJ set esclusivo.",
       "note": "Hotel e navette non inclusi.<br/>Le navette sono incluse solo nei pacchetti con pernotto.",
-      "guarantee": "✓ Prezzo Bloccato",
-      "ctaLabel": "Acquista ora →"
+      "guarantee": "✓ Prezzo Bloccato"
     },
     {
       "group": "singoli",
@@ -358,8 +350,7 @@
       "priceSub": "a persona",
       "description": "Aperitivo standing nell'area box, cena di gala 4 portate e DJ set.",
       "note": "Hotel e navette non inclusi.<br/>Le navette sono incluse solo nei pacchetti con pernotto.",
-      "guarantee": "✓ Prezzo Bloccato",
-      "ctaLabel": "Acquista ora →"
+      "guarantee": "✓ Prezzo Bloccato"
     },
     {
       "group": "singoli",
@@ -370,27 +361,25 @@
       "priceSub": "a persona",
       "description": "Relatore d'eccezione e pranzo conviviale sul Lago d'Iseo.",
       "note": "Hotel e navette non inclusi.<br/>Le navette sono incluse solo nei pacchetti con pernotto.",
-      "guarantee": "✓ Prezzo Bloccato",
-      "ctaLabel": "Acquista ora →"
+      "guarantee": "✓ Prezzo Bloccato"
     }
   ],
   "logistica": {
     "icon": "🚌",
     "label": "Logistica",
-    "strong": "Il servizio navetta è sempre incluso",
-    "text": " per chi acquista i pacchetti comprensivi di hotel! Non dovrai preoccuparti degli spostamenti tra gli eventi e la struttura."
+    "strong": "Il servizio navetta era sempre incluso",
+    "text": " per chi aveva acquistato i pacchetti comprensivi di hotel: gli spostamenti tra gli eventi e la struttura erano coperti."
   },
   "extras": {
     "title": "Pacchetti <em>Extra</em>",
     "sub": "Esperienze esclusive · Posti limitati",
-    "ctaLabel": "Prenota →",
     "items": [
       {
         "icon": "🍹",
         "name": "Galleria Campari",
         "date": "Sabato 19 Settembre · 14:30",
         "loc": "Viale A. Gramsci 161, Sesto S. Giovanni (MI)",
-        "desc": "Scopri l'arte, il gusto e l'iconico rosso Campari con una visita esclusiva alla Galleria Campari.",
+        "desc": "L'arte, il gusto e l'iconico rosso Campari in una visita esclusiva alla Galleria Campari.",
         "price": "€20",
         "seoText": "Sabato 19 Set · 14:30, Viale A. Gramsci 161, Sesto San Giovanni (MI): visita esclusiva alla Galleria Campari."
       },
@@ -399,7 +388,7 @@
         "name": "Narghilè",
         "date": "Venerdì 18 Settembre",
         "loc": "El Jadida",
-        "desc": "Rendi il tuo venerdì sera ancora più magico prenotando il tuo narghilè.",
+        "desc": "Un narghilè per rendere il venerdì sera ancora più magico.",
         "price": "€45",
         "seoText": "Venerdì 18 Set, El Jadida."
       },
@@ -426,7 +415,7 @@
         "name": "Visita della Città — Quater Pass",
         "date": "Sabato 19 Settembre · 15:00",
         "loc": "Centro storico di Monza",
-        "desc": "Scopri i segreti dell'incantevole centro storico di Monza in una visita guidata.",
+        "desc": "I segreti dell'incantevole centro storico di Monza in una visita guidata.",
         "price": "€10",
         "seoText": "Sabato 19 Set · 15:00: visita guidata del centro storico di Monza."
       },
@@ -442,7 +431,7 @@
     ]
   },
   "info": {
-    "title": "Tutto quello<br/>che ti serve <em>sapere</em>.",
+    "title": "Tutto quello<br/>che c'era da <em>sapere</em>.",
     "cells": [
       {
         "h": "→ Date",
@@ -467,49 +456,48 @@
     ]
   },
   "faq": {
-    "title": "Hai un <em>dubbio</em>?<br/>Probabilmente è qui.",
+    "title": "Le domande<br/>più <em>frequenti</em>.",
     "items": [
       {
-        "q": "Posso partecipare a un solo giorno?",
-        "a": "Certo. Puoi scegliere i Biglietti Singoli per partecipare solo alle singole giornate: Milano (€80), Monza (€155) e Iseo (€55). Oppure puoi scegliere uno dei Pacchetti Experience con hotel incluso."
+        "q": "Si poteva partecipare a un solo giorno?",
+        "a": "Sì. Erano disponibili i Biglietti Singoli per le singole giornate: Milano (€80), Monza (€155) e Iseo (€55). In alternativa c'erano i Pacchetti Experience con hotel incluso."
       },
       {
-        "q": "L'hotel è incluso nel pacchetto?",
-        "a": "Sì, tutti i Pacchetti Experience (Full Weekend, Venerdì & Sabato, Sabato & Domenica) includono il pernottamento all'Hotel Falcone 4★ e le navette. Per i Biglietti Singoli, l'hotel non è incluso."
+        "q": "L'hotel era incluso nel pacchetto?",
+        "a": "Sì, tutti i Pacchetti Experience (Full Weekend, Venerdì & Sabato, Sabato & Domenica) includevano il pernottamento all'Hotel Falcone 4★ e le navette. Per i Biglietti Singoli l'hotel non era incluso."
       },
       {
-        "q": "Come arrivo a Monza dall'aeroporto?",
-        "a": "Da Malpensa: Malpensa Express + cambio a Centrale (~1h). Da Linate: bus + metro o taxi. Da Bergamo Orio: navetta + treno per Monza (~1h15). Per il sabato sono previste navette tra l'Hotel Falcone e l'Autodromo."
+        "q": "Come si raggiungeva Monza dall'aeroporto?",
+        "a": "Da Malpensa: Malpensa Express + cambio a Centrale (~1h). Da Linate: bus + metro o taxi. Da Bergamo Orio: navetta + treno per Monza (~1h15). Per il sabato erano previste navette tra l'Hotel Falcone e l'Autodromo."
       },
       {
-        "q": "Qual è il dress code?",
-        "a": "Venerdì sera tema \"Mille e una Notte\" — mettiti un tocco arabeggiante!\nSabato gala all'Autodromo: black tie / abito lungo per le donne, smoking o abito scuro per gli uomini.\nDomenica casual elegante."
+        "q": "Qual era il dress code?",
+        "a": "Venerdì sera tema \"Mille e una Notte\": un tocco arabeggiante.\nSabato gala all'Autodromo: black tie / abito lungo per le donne, smoking o abito scuro per gli uomini.\nDomenica casual elegante."
       },
       {
-        "q": "Entro quando posso iscrivermi?",
-        "a": "Le iscrizioni sono aperte fino ad esaurimento posti. Non ci sono aumenti di prezzo last minute: la quota è bloccata. I posti per il sabato a Monza sono limitati a 350."
+        "q": "Fino a quando erano aperte le iscrizioni?",
+        "a": "Le iscrizioni erano aperte fino ad esaurimento posti. Non c'erano aumenti di prezzo last minute: la quota era bloccata. I posti per il sabato a Monza erano limitati a 350."
       },
       {
-        "q": "Voglio partecipare a tutte e tre le serate: come acquisto?",
-        "a": "Aggiungi al carrello separatamente i biglietti per Milano, Monza e Iseo, poi procedi al pagamento. I Biglietti Singoli non includono il pernottamento: i Pacchetti sono pensati solo per chi desidera anche l'hotel."
+        "q": "Come funzionava per partecipare a tutte e tre le serate?",
+        "a": "Si aggiungevano al carrello separatamente i biglietti per Milano, Monza e Iseo, poi si procedeva al pagamento. I Biglietti Singoli non includevano il pernottamento: i Pacchetti erano pensati solo per chi desiderava anche l'hotel."
       }
     ]
   },
   "ctaFinal": {
-    "eyebrow": "Non perdere il via",
-    "title": "Ti aspettiamo a<br/><em>Milano, Monza e Sale Marasino</em>.",
-    "text": "Tre giorni per aprire l'anno rotaractiano insieme, tra eventi, amicizia e ricordi che resteranno.",
-    "button": "Acquista i biglietti →"
+    "eyebrow": "Evento concluso",
+    "title": "L'Apertura Nazionale si è svolta a<br/><em>Milano, Monza e Sale Marasino</em>.",
+    "text": "Tre giorni per aprire l'anno rotaractiano insieme, tra eventi e amicizia."
   },
   "seo": {
     "title": "Apertura Nazionale Rotaract 2026 — Milano · Monza · Iseo",
-    "description": "Apertura Nazionale Rotaract 2026 — 18, 19 e 20 Settembre. Tre giorni tra Milano, Monza e il Lago d'Iseo. Pacchetti da {{prezzoMin}} (Iseo) a {{prezzoMax}} (weekend completo con 2 notti Hotel 4★). Navette incluse nei pacchetti con pernotto. Prezzo bloccato, nessun dynamic pricing.",
+    "description": "Apertura Nazionale Rotaract 2026, svoltasi il 18, 19 e 20 Settembre. Tre giorni tra Milano, Monza e il Lago d'Iseo. Evento concluso: archivio del programma e dei pacchetti proposti, da {{prezzoMin}} (Iseo) a {{prezzoMax}} (weekend completo con 2 notti Hotel 4★). Prezzo bloccato, vendite chiuse.",
     "ogTitle": "Apertura Nazionale Rotaract 2026 — Milano · Monza · Iseo",
-    "ogDescription": "18–20 Settembre 2026. Serata Mille e una Notte a Milano, Gala all'Autodromo di Monza, pranzo conviviale sul Lago d'Iseo. Pacchetti da {{prezzoMin}} a {{prezzoMax}}. Navette incluse nei pernotti.",
+    "ogDescription": "18–20 Settembre 2026, evento concluso. Serata Mille e una Notte a Milano, Gala all'Autodromo di Monza, pranzo conviviale sul Lago d'Iseo. Pacchetti proposti da {{prezzoMin}} a {{prezzoMax}}, con navette incluse nei pernotti.",
     "twitterTitle": "Apertura Nazionale Rotaract 2026 — Milano · Monza · Iseo",
-    "twitterDescription": "18, 19 e 20 Settembre 2026. Tre giorni tra Milano, Monza e il Lago d'Iseo. Il grande evento annuale del Multidistretto Lombardo.",
+    "twitterDescription": "Si è svolta il 18, 19 e 20 Settembre 2026 tra Milano, Monza e il Lago d'Iseo. Evento concluso.",
     "eventName": "Apertura Nazionale Rotaract 2026 — MDIO",
-    "eventDescription": "Il primo evento nazionale Rotaract diffuso su tre distretti: tre giorni tra Milano, Monza e il Lago d'Iseo. Venerdì 18 Settembre: serata Mille e una Notte a Milano (cena con live show orientale e DJ set). Sabato 19 Settembre: Gala all'Autodromo Nazionale di Monza (aperitivo in area box, cena 4 portate, vino incluso, DJ set). Domenica 20 Settembre: sessione ufficiale e pranzo conviviale sul Lago d'Iseo a Sale Marasino. Prezzo bloccato, nessun dynamic pricing. Navette incluse in tutti i pacchetti con pernotto.",
+    "eventDescription": "Il primo evento nazionale Rotaract diffuso su tre distretti, svoltosi in tre giorni tra Milano, Monza e il Lago d'Iseo. Venerdì 18 Settembre: serata Mille e una Notte a Milano (cena con live show orientale e DJ set). Sabato 19 Settembre: Gala all'Autodromo Nazionale di Monza (aperitivo in area box, cena 4 portate, vino incluso, DJ set). Domenica 20 Settembre: sessione ufficiale e pranzo conviviale sul Lago d'Iseo a Sale Marasino. Evento concluso. I pacchetti erano a prezzo bloccato, senza dynamic pricing, con navette incluse nei pacchetti con pernotto.",
     "startDate": "2026-09-18T20:00:00+02:00",
     "endDate": "2026-09-20T16:00:00+02:00",
     "keywords": "Apertura Nazionale Rotaract 2026, MDIO, Multidistretto Lombardo, Rotaract Milano, Rotaract Monza, Rotaract Iseo, Gala Autodromo Monza, Mille e una Notte, Lago d'Iseo, evento Rotaract settembre 2026"

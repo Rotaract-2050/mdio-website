@@ -11,7 +11,6 @@ import site from './content/site.json';
 import content from './content/shop.json';
 
 const SALES_OPEN = site.salesOpen;
-const WAVE_PAUSED = site.wavePaused;
 
 const TT_URL = site.ticketTailorUrl;
 
@@ -78,7 +77,7 @@ const Shop = () => {
     </section>
 
     {SALES_OPEN && (
-      <section className="shop-widget-wrap" style={WAVE_PAUSED ? { display: 'none' } : {}}>
+      <section className="shop-widget-wrap">
         <TicketTailorWidget />
         <div className="shop-fallback">
           <span>{content.widget.noticeText}</span>
@@ -94,26 +93,26 @@ const Shop = () => {
       </section>
     )}
 
-    {(!SALES_OPEN || WAVE_PAUSED) && (
+    {!SALES_OPEN && (
       <section className="shop-soon">
         <div className="shop-soon-inner">
-          <div className="shop-soon-eyebrow">{content.soon.eyebrow}</div>
+          <div className="shop-soon-eyebrow">{content.closed.eyebrow}</div>
           <h2 className="shop-soon-title">
-            <RichText text={WAVE_PAUSED ? content.soon.paused.title : content.soon.open.title} />
+            <RichText text={content.closed.title} />
           </h2>
           <p className="shop-soon-sub">
-            <RichText text={WAVE_PAUSED ? content.soon.paused.sub : content.soon.open.sub} />
+            <RichText text={content.closed.sub} />
           </p>
           <a
-            href={content.soon.instagram.url}
+            href={content.closed.instagram.url}
             target="_blank"
             rel="noopener noreferrer"
             className="shop-soon-btn shop-soon-btn--ig"
           >
-            {content.soon.instagram.label}
+            {content.closed.instagram.label}
           </a>
-          <p className="shop-soon-cta-label">{content.soon.ctaLabel}</p>
-          <a href={content.soon.button.href} className="shop-soon-btn">{content.soon.button.label}</a>
+          <p className="shop-soon-cta-label">{content.closed.ctaLabel}</p>
+          <a href={content.closed.button.href} className="shop-soon-btn">{content.closed.button.label}</a>
         </div>
       </section>
     )}

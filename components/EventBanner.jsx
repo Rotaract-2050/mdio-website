@@ -1,5 +1,5 @@
 import React from 'react';
-import Countdown from './Countdown';
+import EventClosed from './EventClosed';
 import site from '../content/site.json';
 
 // Sezione "CTA APERTURA NAZIONALE" condivisa da home e pagine distretto.
@@ -34,7 +34,7 @@ const EventBanner = ({ starText, button }) => {
           <a href={button.href} className="vb-btn-block">{button.text}</a>
         </div>
         <div className="vb-event-right">
-          <Countdown />
+          <EventClosed />
         </div>
       </div>
     </section>
