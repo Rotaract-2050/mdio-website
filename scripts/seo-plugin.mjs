@@ -157,6 +157,7 @@ function aperturaNoscript(ap, site) {
   const seo = ap.seo;
   const exp = (ap.packages ?? []).filter((p) => p.group === 'experience').map(pkgLi).join('\n');
   const sing = (ap.packages ?? []).filter((p) => p.group === 'singoli').map(pkgLi).join('\n');
+  const extras = (ap.extras?.items ?? []).map((x) => `      <li><strong>${esc(x.name)}</strong> — ${esc(x.seoText)} <strong>${esc(x.price)} a persona.</strong></li>`).join('\n');
   const faq = (ap.faq?.items ?? []).map((i) => `      <dt>${esc(plain(i.q))}</dt>\n      <dd>${esc(plain(i.a))}</dd>`).join('\n');
   const p1 = dayPrice(ap, 'g1'), p2 = dayPrice(ap, 'g2'), p3 = dayPrice(ap, 'g3');
   return `<noscript>
@@ -167,7 +168,7 @@ function aperturaNoscript(ap, site) {
     <h2>Programma delle tre giornate</h2>
     <ul>
       <li><strong>Venerdì 18 Settembre — Milano · Serata "Mille e una Notte":</strong> Ambientazione ispirata ad Agrabah. Ore 20:00 ingresso e accoglienza, cena con live show orientale (4 portate), DJ set esclusivo. Navette di rientro verso le 2:00 per chi alloggia in hotel. Dress code: tocco arabeggiante. Zona Tibaldi-Bocconi (bus 65). Biglietto singolo: ${esc(p1)}.</li>
-      <li><strong>Sabato 19 Settembre — Monza · Gala all'Autodromo:</strong> Mattina: lavori nazionali alla Sala Maddalena (Via Santa Maddalena 7, Monza). Pomeriggio: attività facoltative. Ore 18:30 navetta dall'Hotel Falcone verso l'Autodromo. Ore 19:00 aperitivo standing nell'area box con auto da esposizione dello sponsor e DJ set. Ore 20:00 cena di gala 4 portate (antipasto, primo, secondo, dolce), vino senza limiti, drink incluso. Dress code: black tie. Biglietto singolo: ${esc(p2)} (hotel e navette non inclusi).</li>
+      <li><strong>Sabato 19 Settembre — Monza · Gala all'Autodromo:</strong> Mattina: lavori nazionali alla Sala Maddalena (Via Santa Maddalena 7, Monza). Pomeriggio: pacchetti extra facoltativi (Galleria Campari, Autodromo Experience, Visita della Città, Beauty Care, Wine Experience). Ore 18:30 navetta dall'Hotel Falcone verso l'Autodromo. Ore 19:00 aperitivo standing nell'area box con auto da esposizione dello sponsor e DJ set. Ore 20:00 cena di gala 4 portate (antipasto, primo, secondo, dolce), vino senza limiti, drink incluso. Dress code: black tie. Biglietto singolo: ${esc(p2)} (hotel e navette non inclusi).</li>
       <li><strong>Domenica 20 Settembre — Sale Marasino · Conviviale sul Lago d'Iseo:</strong> Ore 12:30 arrivo e accoglienza. Conviviale con relatori d'eccezione. Chiusura ufficiale con passaggio di consegne al Distretto Rotaract 2071 per il S.I.R.D.E. Biglietto singolo: ${esc(p3)} (hotel e navette non inclusi).</li>
     </ul>
 
@@ -185,6 +186,11 @@ ${sing}
     </ul>
 
     <p><a href="shop.html">Acquista i biglietti — Apertura Nazionale Rotaract 2026</a></p>
+
+    <h2>Pacchetti Extra (esperienze facoltative, posti limitati)</h2>
+    <ul>
+${extras}
+    </ul>
 
     <h2>Domande frequenti</h2>
     <dl>

@@ -79,7 +79,6 @@ const AperturaNazionale = () => {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
 
-
   const { days, faq, shopUrl } = content;
   const experience = content.packages.filter((p) => p.group === 'experience');
   const singoli = content.packages.filter((p) => p.group === 'singoli');
@@ -270,24 +269,25 @@ const AperturaNazionale = () => {
           ))}
         </div>
 
-        {/* ── ATTIVITÀ FACOLTATIVE (SEGRETE) ── */}
+        {/* ── PACCHETTI EXTRA ── */}
         <div className="an-activities-wrap">
           <div className="an-activities-head">
             <h3 className="an-pack-group-title an-pack-group-title--activities">
-              <RichText text={content.activities.title} />
+              <RichText text={content.extras.title} />
             </h3>
-            <p className="an-activities-sub">{content.activities.sub}</p>
+            <p className="an-activities-sub">{content.extras.sub}</p>
           </div>
-          <div className="an-activities-grid">
-            {content.activities.items.map((a, i) => (
-              <div key={i} className="an-activity-card">
-                <div className="an-activity-content">
-                  <div className="an-activity-name">{a.name}</div>
-                  <div className="an-activity-price">{a.price}</div>
-                </div>
-                <div className="an-activity-overlay">
-                  <div className="an-activity-lock">{content.activities.lockIcon}</div>
-                  <div className="an-activity-coming">{content.activities.overlayText}</div>
+          <div className="an-extra-grid">
+            {content.extras.items.map((a, i) => (
+              <div key={i} className="an-extra-card">
+                <div className="an-extra-icon">{a.icon}</div>
+                <h4 className="an-extra-name">{a.name}</h4>
+                <div className="an-extra-meta">{a.date}</div>
+                <div className="an-extra-meta an-extra-meta-loc">{a.loc}</div>
+                <p className="an-extra-desc">{a.desc}</p>
+                <div className="an-extra-footer">
+                  <div className="an-extra-price">{a.price}</div>
+                  <a href={shopUrl} className="an-extra-cta">{content.extras.ctaLabel}</a>
                 </div>
               </div>
             ))}

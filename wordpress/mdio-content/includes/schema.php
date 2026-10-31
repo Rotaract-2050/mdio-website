@@ -235,12 +235,19 @@ function mdio_docs() {
 					mdio_T( 'strong', 'Testo in grassetto' ),
 					mdio_T( 'text', 'Testo', array( 'h' => 'Gli spazi all\'inizio contano.' ) ),
 				) ),
-				mdio_G( 'activities', 'Attività facoltative', array(
+				mdio_G( 'extras', 'Pacchetti extra', array(
 					mdio_RT( 'title', 'Titolo' ),
 					mdio_T( 'sub', 'Sottotitolo' ),
-					mdio_R( 'items', 'Attività', array( mdio_T( 'name', 'Nome' ), mdio_T( 'price', 'Prezzo' ) ), array( 'item' => 'Attività', 'layout' => 'table' ) ),
-					mdio_T( 'lockIcon', 'Icona lucchetto' ),
-					mdio_T( 'overlayText', 'Testo sovrapposto' ),
+					mdio_T( 'ctaLabel', 'Testo del pulsante' ),
+					mdio_R( 'items', 'Esperienze', array(
+						mdio_T( 'icon', 'Icona' ),
+						mdio_T( 'name', 'Nome' ),
+						mdio_T( 'date', 'Data e orario' ),
+						mdio_T( 'loc', 'Luogo' ),
+						mdio_A( 'desc', 'Descrizione' ),
+						mdio_T( 'price', 'Prezzo' ),
+						mdio_A( 'seoText', 'Testo per i motori di ricerca', array( 'h' => 'Usato solo nella versione senza JavaScript.' ) ),
+					), array( 'item' => 'Esperienza' ) ),
 				) ),
 				mdio_G( 'info', 'Informazioni utili', array(
 					mdio_RT( 'title', 'Titolo' ),

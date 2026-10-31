@@ -199,7 +199,7 @@ Qui non c'è un editor visuale: non si trascina nulla e non si vede un'anteprima
 |---|---|
 | Sito | Controlli principali (countdown, link Ticket Tailor, vendite aperte, wave in pausa), piè di pagina, banner evento. |
 | Home | Intestazione, hero, schede dei tre distretti, "Chi siamo", numeri, mappa, SEO. |
-| Apertura Nazionale | Pagina dell'evento: hero, programma, pacchetti (testi di sezione), logistica, attività, info utili, FAQ (titolo), invito finale, SEO. |
+| Apertura Nazionale | Pagina dell'evento: hero, programma, pacchetti (testi di sezione), logistica, pacchetti extra (le sei esperienze facoltative), info utili, FAQ (titolo), invito finale, SEO. |
 | Shop | Testi della pagina biglietti e messaggi "prossima wave". |
 | Cartoline | Premi e testo "Come funziona" della pagina gratta-vinci. |
 | Distretti | Un contenuto per distretto (2041, 2042, 2050): hero, identità, zone, riconoscimenti, service, SEO. |

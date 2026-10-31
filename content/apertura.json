@@ -165,7 +165,7 @@
         {
           "t": "14:00",
           "title": "Attività pomeridiane facoltative",
-          "d": "Coming soon — pacchetti di attività opzionali in corso di definizione."
+          "d": "Pacchetti extra opzionali: Galleria Campari, Autodromo Experience, Visita della Città, Beauty Care e Wine Experience. Scopri tutti i dettagli qui sotto."
         },
         {
           "t": "18:30",
@@ -380,37 +380,66 @@
     "strong": "Il servizio navetta è sempre incluso",
     "text": " per chi acquista i pacchetti comprensivi di hotel! Non dovrai preoccuparti degli spostamenti tra gli eventi e la struttura."
   },
-  "activities": {
-    "title": "Attività <em>Facoltative</em>",
-    "sub": "Coming Soon",
+  "extras": {
+    "title": "Pacchetti <em>Extra</em>",
+    "sub": "Esperienze esclusive · Posti limitati",
+    "ctaLabel": "Prenota →",
     "items": [
       {
-        "name": "PizzAut",
-        "price": "TBD"
+        "icon": "🍹",
+        "name": "Galleria Campari",
+        "date": "Sabato 19 Settembre · 14:30",
+        "loc": "Viale A. Gramsci 161, Sesto S. Giovanni (MI)",
+        "desc": "Scopri l'arte, il gusto e l'iconico rosso Campari con una visita esclusiva alla Galleria Campari.",
+        "price": "€20",
+        "seoText": "Sabato 19 Set · 14:30, Viale A. Gramsci 161, Sesto San Giovanni (MI): visita esclusiva alla Galleria Campari."
       },
       {
-        "name": "Gita a Monza",
-        "price": "TBD"
+        "icon": "🪔",
+        "name": "Narghilè",
+        "date": "Venerdì 18 Settembre",
+        "loc": "El Jadida",
+        "desc": "Rendi il tuo venerdì sera ancora più magico prenotando il tuo narghilè.",
+        "price": "€45",
+        "seoText": "Venerdì 18 Set, El Jadida."
       },
       {
-        "name": "Gita a Milano",
-        "price": "TBD"
+        "icon": "💅",
+        "name": "Beauty Care",
+        "date": "Sab 19 Set · 11:00 / 17:00 — Dom 20 Set · 10:30",
+        "loc": "La Rinascente Monza",
+        "desc": "Trattamento mani e viso donna, in collaborazione con la Rinascente Monza.",
+        "price": "€10",
+        "seoText": "Sab 19 Set (11:00 / 17:00) e Dom 20 Set (10:30), con la Rinascente Monza: trattamento mani e viso donna."
       },
       {
-        "name": "Museo Campari",
-        "price": "TBD"
+        "icon": "🏁",
+        "name": "Autodromo Experience",
+        "date": "Sabato 19 Settembre · 18:00",
+        "loc": "Autodromo Nazionale Monza",
+        "desc": "Tour in pullman guidato della pista e visita dell'autodromo con foto sul podio.",
+        "price": "€35",
+        "seoText": "Sabato 19 Set · 18:00: tour in pullman guidato della pista e visita dell'autodromo con foto sul podio."
       },
       {
-        "name": "Experience Rinascente",
-        "price": "TBD"
+        "icon": "⛪",
+        "name": "Visita della Città — Quater Pass",
+        "date": "Sabato 19 Settembre · 15:00",
+        "loc": "Centro storico di Monza",
+        "desc": "Scopri i segreti dell'incantevole centro storico di Monza in una visita guidata.",
+        "price": "€10",
+        "seoText": "Sabato 19 Set · 15:00: visita guidata del centro storico di Monza."
       },
       {
-        "name": "Giro in pista sul bus",
-        "price": "TBD"
+        "icon": "🍷",
+        "name": "Wine Experience & Masterclass",
+        "date": "Sab 19 Set · 11:00 / 17:00 — Dom 20 Set · 11:00",
+        "loc": "La Rinascente Monza",
+        "desc": "Un viaggio tra i migliori vini e i segreti della degustazione, guidato da esperti sommelier.",
+        "price": "€10",
+        "seoText": "Sab 19 Set (11:00 / 17:00) e Dom 20 Set (11:00), con la Rinascente Monza: degustazione guidata da esperti sommelier."
       }
-    ],
-    "lockIcon": "🔒",
-    "overlayText": "Presto svelato"
+    ]
   },
   "info": {
     "title": "Tutto quello<br/>che ti serve <em>sapere</em>.",
