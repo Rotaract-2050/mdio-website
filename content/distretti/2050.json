@@ -37,7 +37,7 @@
     "claim": "Francigena, Leonessa, Navigli e Padana:<br/>dalla Lombardia all'Emilia.",
     "stats": [
       {
-        "n": "30",
+        "n": "28",
         "l": "club"
       },
       {
@@ -68,7 +68,7 @@
   "marquee": [
     "DISTRETTO ROTARACT 2050",
     "LOMBARDIA SUD & PIACENZA",
-    "30 CLUB · 403 SOCI",
+    "28 CLUB · 403 SOCI",
     "BRESCIA · CREMONA · LODI · MANTOVA · PAVIA · PIACENZA"
   ],
   "identity": {
@@ -78,7 +78,7 @@
       "È un distretto dall'identità poliedrica: unisce la forza produttiva di importanti poli industriali, la profonda tradizione agricola ed enogastronomica della Pianura Padana e la raffinata bellezza di antiche città universitarie e capitali del Rinascimento.",
       "Visitare il 2050 significa immergersi in una Fellowship genuina e calorosa. Che si tratti di un aperitivo in Piazza della Loggia a Brescia, di una visita ai palazzi ducali di Mantova o di una cena a base di eccellenze culinarie locali a Piacenza o Cremona, l'accoglienza è sempre il nostro marchio di fabbrica."
     ],
-    "founding": "Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2050 riunisce 30 Club Rotaract delle Province di Cremona, Brescia, Lodi, Mantova, Pavia, Piacenza e alcuni Comuni della Città Metropolitana di Milano.",
+    "founding": "Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2050 riunisce 28 Club Rotaract delle Province di Cremona, Brescia, Lodi, Mantova, Pavia, Piacenza e alcuni Comuni della Città Metropolitana di Milano.",
     "pillars": [
       {
         "n": "01",
@@ -104,7 +104,7 @@
   },
   "numbers": [
     {
-      "n": "30",
+      "n": "28",
       "l": "CLUB",
       "s": "Rotaract sul territorio"
     },
@@ -268,11 +268,11 @@
   },
   "seo": {
     "title": "Distretto Rotaract 2050 — Lombardia Sud & Piacenza",
-    "description": "Distretto Rotaract 2050: Brescia, Cremona, Lodi, Mantova, Pavia, Piacenza. 30 club, 403 soci. Il mosaico della pianura.",
+    "description": "Distretto Rotaract 2050: Brescia, Cremona, Lodi, Mantova, Pavia, Piacenza. 28 club, 403 soci. Il mosaico della pianura.",
     "ogTitle": "Distretto Rotaract 2050 — Lombardia Sud & Piacenza",
-    "ogDescription": "30 club, 403 soci tra Brescia, Cremona, Lodi, Mantova, Pavia e Piacenza. Il mosaico della pianura padana.",
+    "ogDescription": "28 club, 403 soci tra Brescia, Cremona, Lodi, Mantova, Pavia e Piacenza. Il mosaico della pianura padana.",
     "twitterTitle": "Distretto Rotaract 2050 — Lombardia Sud & Piacenza",
-    "twitterDescription": "30 club, 403 soci tra Brescia, Cremona, Lodi, Mantova, Pavia e Piacenza. Il mosaico della pianura padana.",
-    "jsonLdDescription": "Il Distretto Rotaract 2050 copre Brescia, Cremona, Lodi, Mantova, Pavia e Piacenza. 30 club, 403 soci. Il mosaico della pianura padana."
+    "twitterDescription": "28 club, 403 soci tra Brescia, Cremona, Lodi, Mantova, Pavia e Piacenza. Il mosaico della pianura padana.",
+    "jsonLdDescription": "Il Distretto Rotaract 2050 copre Brescia, Cremona, Lodi, Mantova, Pavia e Piacenza. 28 club, 403 soci. Il mosaico della pianura padana."
   }
 }

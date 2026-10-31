@@ -37,7 +37,7 @@
     "claim": "Dalle Alpi alla Brianza, una rete tra laghi,<br/>valli e città d'arte.",
     "stats": [
       {
-        "n": "18",
+        "n": "16",
         "l": "club"
       },
       {
@@ -68,7 +68,7 @@
   "marquee": [
     "DISTRETTO ROTARACT 2042",
     "LOMBARDIA CENTRO & NORD",
-    "18 CLUB · 260 SOCI",
+    "16 CLUB · 260 SOCI",
     "BERGAMO · COMO · LECCO · MONZA B. · SONDRIO · VARESE"
   ],
   "identity": {
@@ -77,7 +77,7 @@
     "paragraphs": [
       "Visitare il 2042 significa scoprire una Fellowship autentica, vissuta a stretto contatto con il territorio e la natura. Dai weekend in baita alle gite in barca sul Lago di Como, fino alle degustazioni dei prodotti tipici locali, il senso di appartenenza qui è profondo e indissolubilmente legato alla bellezza dei luoghi."
     ],
-    "founding": "Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2042 riunisce 18 Club Rotaract nelle province di Bergamo, Como, Lecco, Monza e Brianza, Sondrio e Varese.",
+    "founding": "Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2042 riunisce 16 Club Rotaract nelle province di Bergamo, Como, Lecco, Monza e Brianza, Sondrio e Varese.",
     "pillars": [
       {
         "n": "01",
@@ -103,7 +103,7 @@
   },
   "numbers": [
     {
-      "n": "18",
+      "n": "16",
       "l": "CLUB",
       "s": "Rotaract sul territorio"
     },
@@ -261,11 +261,11 @@
   },
   "seo": {
     "title": "Distretto Rotaract 2042 — Lombardia Centro & Nord",
-    "description": "Distretto Rotaract 2042: Bergamo, Como, Lecco, Monza Brianza, Sondrio, Varese. 18 club, 260 soci. Tra laghi, vette e spirito d'impresa.",
+    "description": "Distretto Rotaract 2042: Bergamo, Como, Lecco, Monza Brianza, Sondrio, Varese. 16 club, 260 soci. Tra laghi, vette e spirito d'impresa.",
     "ogTitle": "Distretto Rotaract 2042 — Lombardia Centro & Nord",
-    "ogDescription": "18 club, 260 soci tra Bergamo, Como, Lecco, Monza Brianza, Sondrio e Varese. Dalle Alpi alla Brianza, una rete tra laghi, valli e città d'arte.",
+    "ogDescription": "16 club, 260 soci tra Bergamo, Como, Lecco, Monza Brianza, Sondrio e Varese. Dalle Alpi alla Brianza, una rete tra laghi, valli e città d'arte.",
     "twitterTitle": "Distretto Rotaract 2042 — Lombardia Centro & Nord",
-    "twitterDescription": "18 club, 260 soci tra Bergamo, Como, Lecco, Monza Brianza, Sondrio e Varese. Dalle Alpi alla Brianza, una rete tra laghi, valli e città d'arte.",
-    "jsonLdDescription": "Il Distretto Rotaract 2042 copre Bergamo, Como, Lecco, Monza Brianza, Sondrio e Varese. 18 club, 260 soci tra laghi, valli e città d'arte."
+    "twitterDescription": "16 club, 260 soci tra Bergamo, Como, Lecco, Monza Brianza, Sondrio e Varese. Dalle Alpi alla Brianza, una rete tra laghi, valli e città d'arte.",
+    "jsonLdDescription": "Il Distretto Rotaract 2042 copre Bergamo, Como, Lecco, Monza Brianza, Sondrio e Varese. 16 club, 260 soci tra laghi, valli e città d'arte."
   }
 }

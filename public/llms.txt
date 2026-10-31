@@ -1,7 +1,7 @@
 # MDIO — Multidistretto Rotaract Italia Ovest
 > Sito ufficiale: https://multidistrettolombardo.org
 
-MDIO è il coordinamento alla pari dei tre distretti Rotaract della Lombardia e della Provincia di Piacenza: 2041, 2042 e 2050. Totale: 61 club, 1.013 soci under 30 attivi, 12 province.
+MDIO è il coordinamento alla pari dei tre distretti Rotaract della Lombardia e della Provincia di Piacenza: 2041, 2042 e 2050. Totale: 57 club, 1.013 soci under 30 attivi, 12 province.
 
 ---
 
@@ -111,7 +111,7 @@ Fino ad esaurimento posti. I posti per il sabato a Monza erano limitati a 350. P
 - **Pagina MDIO:** https://multidistrettolombardo.org/distretti/2041.html
 
 ### Distretto Rotaract 2042 — Lombardia Centro & Nord
-- **Club:** 18 · **Soci:** 260
+- **Club:** 16 · **Soci:** 260
 - **Territorio:** Bergamo, Como, Lecco, Monza Brianza, Sondrio, Varese
 - **Zone:** Briantea (Monza/Brianza), Lariana (Como/Lecco/Sondrio), Olona (Varese), Orobica (Bergamo)
 - **Sito:** https://www.distrettorotaract2042.it/
@@ -119,7 +119,7 @@ Fino ad esaurimento posti. I posti per il sabato a Monza erano limitati a 350. P
 - **Pagina MDIO:** https://multidistrettolombardo.org/distretti/2042.html
 
 ### Distretto Rotaract 2050 — Lombardia Sud & Piacenza
-- **Club:** 30 · **Soci:** 403
+- **Club:** 28 · **Soci:** 403
 - **Territorio:** Brescia, Cremona, Lodi, Mantova, Pavia, Piacenza
 - **Zone:** Francigena (Piacenza/Lodi/Cremona Nord), Leonessa (Brescia), Navigli (Pavia), Padana (Cremona/Mantova)
 - **Sito:** https://www.rotaract2050.org/

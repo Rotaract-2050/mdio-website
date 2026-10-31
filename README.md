@@ -410,6 +410,6 @@ Controlla la sintassi del file modificato (`node -e "JSON.parse(require('fs').re
 - Pubblicazione: il token del webhook scade il 1 novembre 2027 e va rinnovato a mano (sezione 8). L'aggiornamento del plugin sul server è manuale.
 - Mu-plugin `mdio-headless` solo sul server (sezione 9).
 - FAQ e pacchetti sono identificati per posizione: l'import dopo un riordino li scambia (sezione 8).
-- Cifre di club e soci duplicate: compaiono in `content/` (WordPress), nei `<meta>` e `noscript` statici degli `.html` e in `scripts/seo-plugin.mjs`. Serie corrente: MDIO 61 club / 1.013 soci; 2041 13/350; 2042 18/260; 2050 30/403. Se cambiano vanno aggiornate in tutti questi punti e in `public/llms*.txt`.
+- Cifre di club e soci duplicate: compaiono in `content/` (WordPress), nei `<meta>` e `noscript` statici degli `.html` e in `scripts/seo-plugin.mjs`. Serie corrente: MDIO 57 club / 1.013 soci; 2041 13/350; 2042 16/260; 2050 28/403. Se cambiano vanno aggiornate in tutti questi punti e in `public/llms*.txt`.
 - Script `convert-webp.js` (`npm run optimize-images`) cerca una cartella `assets/` in root che non esiste più (le immagini sono in `public/assets/`): va corretto prima di usarlo. `check_error.js` richiede `puppeteer`, che non è tra le dipendenze. `signature.js` è importato da `components/Header.jsx` e stampa solo i crediti nella console del browser.
 - Il campo `seo` e il `noscript` non coprono tutte le pagine allo stesso modo (cartoline: solo title e description).

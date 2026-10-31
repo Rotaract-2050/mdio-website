@@ -34,7 +34,7 @@
       "UNA LOMBARDIA"
     ],
     "titleSeparator": "/",
-    "sub": "Distretti <strong>2041</strong> · <strong>2042</strong> · <strong>2050</strong> — completamente alla pari. 61 club, 1.013 soci."
+    "sub": "Distretti <strong>2041</strong> · <strong>2042</strong> · <strong>2050</strong> — completamente alla pari. 57 club, 1.013 soci."
   },
   "districts": [
     {
@@ -82,7 +82,7 @@
         "Sondrio",
         "Varese"
       ],
-      "clubs": 18,
+      "clubs": 16,
       "soci": 260,
       "page": "distretti/2042.html",
       "sito": "https://www.distrettorotaract2042.it/",
@@ -119,7 +119,7 @@
         "Pavia",
         "Piacenza"
       ],
-      "clubs": 30,
+      "clubs": 28,
       "soci": 403,
       "page": "distretti/2050.html",
       "sito": "https://www.rotaract2050.org/",
@@ -165,7 +165,7 @@
   },
   "numbers": [
     {
-      "n": "61",
+      "n": "57",
       "l": "CLUB",
       "s": "Rotaract sul territorio"
     },
@@ -210,11 +210,11 @@
   },
   "seo": {
     "title": "MDIO — Multidistretto Italia Ovest · Lombardia & Piacenza",
-    "description": "Distretti Rotaract 2041, 2042 e 2050 — Lombardia e Provincia di Piacenza. 61 club, 1.013 soci.",
+    "description": "Distretti Rotaract 2041, 2042 e 2050 — Lombardia e Provincia di Piacenza. 57 club, 1.013 soci.",
     "ogTitle": "MDIO — Multidistretto Italia Ovest · Lombardia & Piacenza",
-    "ogDescription": "Distretti Rotaract 2041, 2042 e 2050 — Lombardia e Provincia di Piacenza. 61 club, 1.013 soci.",
+    "ogDescription": "Distretti Rotaract 2041, 2042 e 2050 — Lombardia e Provincia di Piacenza. 57 club, 1.013 soci.",
     "twitterTitle": "MDIO — Multidistretto Italia Ovest · Lombardia & Piacenza",
-    "twitterDescription": "Distretti Rotaract 2041, 2042 e 2050 — Lombardia e Provincia di Piacenza. 61 club, 1.013 soci.",
-    "jsonLdDescription": "Coordinamento alla pari dei distretti Rotaract 2041, 2042 e 2050. 61 club, 1.013 soci in Lombardia e Provincia di Piacenza."
+    "twitterDescription": "Distretti Rotaract 2041, 2042 e 2050 — Lombardia e Provincia di Piacenza. 57 club, 1.013 soci.",
+    "jsonLdDescription": "Coordinamento alla pari dei distretti Rotaract 2041, 2042 e 2050. 57 club, 1.013 soci in Lombardia e Provincia di Piacenza."
   }
 }
