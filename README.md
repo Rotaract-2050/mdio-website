@@ -58,7 +58,7 @@ Dominio di produzione: `https://multidistrettolombardo.org`.
  FTP (FTP-Deploy-Action) -> cartella del dominio su Hostinger (public_html)
 ```
 
-La Action parte a ogni push su `main`, a mano, su `repository_dispatch` (`content-updated`, inviato da WordPress al salvataggio, se il token è configurato: sezione 8) e ogni ora (cron di riserva).
+La Action parte a ogni push su `main`, a mano, su `repository_dispatch` (`content-updated`, inviato da WordPress al salvataggio: sezione 8) e ogni ora (cron di riserva).
 
 Perché i contenuti si scaricano in fase di build e non dal browser:
 
@@ -222,7 +222,7 @@ Il countdown non esiste più: non c'è alcun conto alla rovescia, né data di ri
 
 Premendo "Aggiorna" WordPress avvisa GitHub, che ricostruisce il sito: servono circa un minuto o due di build. In alto nella schermata compare "Pubblicazione avviata". Se invece compare "Pubblicazione automatica non riuscita", il sito si aggiorna comunque al prossimo passaggio orario (cron, al minuto 0), oppure chi ha accesso al repo può andare su GitHub > Actions > "Deploy to FTP" > "Run workflow".
 
-Stato attuale: il webhook è spento finché in `wp-config.php` non c'è il token GitHub (sezione 8, "Pubblicazione automatica"). Fino ad allora vale solo la cron oraria: da zero a circa un'ora, più la build.
+Il webhook è attivo. Se il token manca o scade, resta solo la cron oraria (sezione 8, "Pubblicazione automatica").
 
 Se più persone salvano in pochi minuti, GitHub tiene una sola build in attesa, che legge i contenuti più recenti: nessuna modifica va persa.
 
@@ -284,14 +284,14 @@ read -rs T && wp config set MDIO_GITHUB_TOKEN "$T" --type=constant && unset T
 
 3. Salva una voce di prova e controlla che su GitHub > Actions parta una run "Deploy to FTP".
 
-Stato attuale: non configurato, quindi il webhook è spento. Il token scade: alla scadenza compare l'avviso rosso (401) e va rigenerato e sostituito con lo stesso comando.
+Stato attuale: attivo con il token `mdio-wp-deploy`, scadenza 1 novembre 2027. Il token scade: alla scadenza compare l'avviso rosso (401) e va rigenerato e sostituito con lo stesso comando.
 
 ### Cosa va online e quando
 
 | Cosa cambia | Quando è online |
 |---|---|
 | Codice (push su `main`) | Da solo, la Action parte al push. |
-| Testi modificati in WordPress | Al salvataggio (con il webhook attivo), altrimenti alla cron oraria. |
+| Testi modificati in WordPress | Al salvataggio, in un minuto o due. Se il webhook fallisce, alla cron oraria. |
 | Testi cambiati solo nei `content/*.json` del repo | Non compaiono: alla build WordPress sovrascrive i file. Servono prima `wp mdio import` sul server (sotto) e poi una pubblicazione. |
 | Plugin `wordpress/mdio-content/` | Da copiare a mano sul server (sotto). |
 
@@ -342,7 +342,7 @@ Trigger:
 
 - `push` su `main`.
 - `workflow_dispatch` (manuale: Actions > Run workflow).
-- `repository_dispatch` con tipo `content-updated`: lo invia il plugin al salvataggio dei contenuti (sezione 8), quando il token è configurato. Finché non lo è, nessuno lo invia.
+- `repository_dispatch` con tipo `content-updated`: lo invia il plugin al salvataggio dei contenuti (sezione 8).
 - `schedule`: ogni ora (`0 * * * *`). È solo una riserva: le cron di GitHub possono ritardare o saltare esecuzioni, e vengono disattivate dopo 60 giorni di inattività del repo.
 
 `concurrency` con gruppo `deploy` e `cancel-in-progress: false`: non si interrompe mai un upload FTP a metà. Se arrivano più avvii durante una run, GitHub ne tiene una sola in attesa; quella leggerà i contenuti più recenti.
@@ -407,7 +407,7 @@ Controlla la sintassi del file modificato (`node -e "JSON.parse(require('fs').re
 ## 14. Limiti noti e cose da fare
 
 - Immagini: solo come path (sezione 6); non c'è caricamento da WordPress.
-- Pubblicazione: il webhook da WordPress esiste ma resta spento finché non è configurato `MDIO_GITHUB_TOKEN` (sezione 8). Il token scade e va rinnovato a mano. L'aggiornamento del plugin sul server è manuale.
+- Pubblicazione: il token del webhook scade il 1 novembre 2027 e va rinnovato a mano (sezione 8). L'aggiornamento del plugin sul server è manuale.
 - Mu-plugin `mdio-headless` solo sul server (sezione 9).
 - FAQ e pacchetti sono identificati per posizione: l'import dopo un riordino li scambia (sezione 8).
 - Cifre di club e soci duplicate: compaiono in `content/` (WordPress), nei `<meta>` e `noscript` statici degli `.html` e in `scripts/seo-plugin.mjs`. Serie corrente: MDIO 61 club / 1.013 soci; 2041 13/350; 2042 18/260; 2050 30/403. Se cambiano vanno aggiornate in tutti questi punti e in `public/llms*.txt`.
