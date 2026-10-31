@@ -1,0 +1,271 @@
+{
+  "number": "2042",
+  "header": {
+    "homeLink": "../index.html",
+    "logoPath": "../assets/logo-mdio.jpeg",
+    "ctaText": "Apertura Nazionale 2026 →",
+    "ctaLink": "../apertura-nazionale.html",
+    "nav": [
+      {
+        "label": "← MDIO",
+        "href": "../index.html"
+      },
+      {
+        "label": "Identità",
+        "href": "#identita"
+      },
+      {
+        "label": "Numeri",
+        "href": "#numeri"
+      },
+      {
+        "label": "Aree",
+        "href": "#aree"
+      },
+      {
+        "label": "Storia",
+        "href": "#storia"
+      },
+      {
+        "label": "Service",
+        "href": "#service"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Lombardia<br/>Centro & Nord",
+    "claim": "Dalle Alpi alla Brianza, una rete tra laghi,<br/>valli e città d'arte.",
+    "stats": [
+      {
+        "n": "18",
+        "l": "club"
+      },
+      {
+        "n": "260",
+        "l": "soci"
+      },
+      {
+        "n": "6",
+        "l": "province"
+      },
+      {
+        "n": "4",
+        "l": "aree geografiche"
+      }
+    ],
+    "siteUrl": "https://www.distrettorotaract2042.it/",
+    "instagramUrl": "https://www.instagram.com/rotaract2042/",
+    "imagePool": [
+      "../assets/2042-01-Lecco.jpeg",
+      "../assets/2042-02-Bergamo.jpeg",
+      "../assets/2042-03-Sondrio.jpeg",
+      "../assets/2042-04-Como.jpeg",
+      "../assets/2042-06-Varese.jpeg",
+      "../assets/2042-13-Monza.jpeg"
+    ],
+    "imageAlt": "Distretto Rotaract 2042"
+  },
+  "marquee": [
+    "DISTRETTO ROTARACT 2042",
+    "LOMBARDIA CENTRO & NORD",
+    "18 CLUB · 260 SOCI",
+    "BERGAMO · COMO · LECCO · MONZA B. · SONDRIO · VARESE"
+  ],
+  "identity": {
+    "title": "Tra Laghi,<br/>Vette e Imprese.",
+    "lede": "Il Distretto 2042 abbraccia <strong>l'anima settentrionale della Lombardia</strong>: due anime complementari che si fondono alla perfezione — l'eccellenza industriale delle valli e la Brianza da un lato, il patrimonio naturalistico mozzafiato dei grandi laghi prealpini e della Valtellina dall'altro.",
+    "paragraphs": [
+      "Visitare il 2042 significa scoprire una Fellowship autentica, vissuta a stretto contatto con il territorio e la natura. Dai weekend in baita alle gite in barca sul Lago di Como, fino alle degustazioni dei prodotti tipici locali, il senso di appartenenza qui è profondo e indissolubilmente legato alla bellezza dei luoghi."
+    ],
+    "founding": "Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2042 riunisce 18 Club Rotaract nelle province di Bergamo, Como, Lecco, Monza e Brianza, Sondrio e Varese.",
+    "pillars": [
+      {
+        "n": "01",
+        "t": "Concretezza",
+        "d": "Il fare prima del dire, sempre."
+      },
+      {
+        "n": "02",
+        "t": "Natura",
+        "d": "Il territorio è la nostra identità."
+      },
+      {
+        "n": "03",
+        "t": "Impresa",
+        "d": "La vocazione produttiva della Lombardia."
+      },
+      {
+        "n": "04",
+        "t": "Appartenenza",
+        "d": "Fellowship viscerale e radicata."
+      }
+    ]
+  },
+  "numbers": [
+    {
+      "n": "18",
+      "l": "CLUB",
+      "s": "Rotaract sul territorio"
+    },
+    {
+      "n": "260",
+      "l": "SOCI",
+      "s": "attivi under 30"
+    },
+    {
+      "n": "6",
+      "l": "PROVINCE",
+      "s": "BG · CO · LC · MB · SO · VA"
+    },
+    {
+      "n": "4",
+      "l": "AREE",
+      "s": "Laghi · Valtellina · Brianza · Bergamasca"
+    }
+  ],
+  "zones": {
+    "label": "AREE GEOGRAFICHE",
+    "title": "Quattro anime.<br/>Un distretto.",
+    "items": [
+      {
+        "n": "01",
+        "name": "BRIANTEA",
+        "prov": "Monza e Brianza",
+        "clubs": [
+          "Merate",
+          "Monza",
+          "Monza Brianza",
+          "Vimercate"
+        ],
+        "desc": "Il cuore del Made in Italy manifatturiero: design, PMI e artigianato d'eccellenza come terreno fertile per i service più concreti.",
+        "bg": "#7eb7ff",
+        "fg": "#1a1a1a"
+      },
+      {
+        "n": "02",
+        "name": "LARIANA",
+        "prov": "Como · Lecco · Sondrio",
+        "clubs": [
+          "Cantù",
+          "Como",
+          "Erba-Laghi",
+          "Lecco",
+          "Sondrio"
+        ],
+        "desc": "Dalle Alpi ai laghi: fellowship scenografica, che fa da cornice a service sia storici che innovativi.",
+        "bg": "#1d6b8f",
+        "fg": "#fff"
+      },
+      {
+        "n": "03",
+        "name": "OLONA",
+        "prov": "Varese",
+        "clubs": [
+          "Magenta",
+          "Malpensa",
+          "Saronno",
+          "Varese"
+        ],
+        "desc": "Dalle contrade del palio all'innovazione tecnologica, una zona eterogenea che sa ascoltare i bisogni del territorio.",
+        "bg": "#2a5c3a",
+        "fg": "#fff"
+      },
+      {
+        "n": "04",
+        "name": "OROBICA",
+        "prov": "Bergamo",
+        "clubs": [
+          "Bergamo",
+          "Clusone",
+          "Treviglio"
+        ],
+        "desc": "Zona madre del service più ambizioso del Rotary, l'End Polio Now. Dalle valli alle città continua a produrre service solidi e concreti.",
+        "bg": "#1a3d8f",
+        "fg": "#fff"
+      }
+    ]
+  },
+  "awards": {
+    "label": "STORIA & COLLABORAZIONI",
+    "title": "Una storia<br/><em>di fare e di costruire.</em>",
+    "items": [
+      {
+        "n": "01",
+        "title": "Premi per l'Imprenditoria e l'Artigianato Giovanile",
+        "body": "Attivo tramite bandi condivisi con il Rotary, il distretto premia giovani talenti dell'artigianato, del design e delle PMI, fornendo borse di studio e supporto all'avvio di nuove imprese.",
+        "tag": "Imprenditoria"
+      },
+      {
+        "n": "02",
+        "title": "Riconoscimenti per la Sostenibilità Ambientale",
+        "body": "Data la fragilità e la bellezza dell'ecosistema lacustre e montano, i club del 2042 ricevono regolarmente encomi e certificati a livello nazionale per i progetti di salvaguardia ambientale.",
+        "tag": "Ambiente"
+      },
+      {
+        "n": "03",
+        "title": "RYLA Immersivo",
+        "body": "Il RYLA del 2042 si distingue per l'approccio outdoor. Sfruttando le location montane e lacustri, la formazione sulla leadership viene affiancata a prove di team building all'aria aperta.",
+        "tag": "Leadership"
+      },
+      {
+        "n": "04",
+        "title": "Paul Harris Fellow",
+        "body": "L'impegno nei momenti di crisi — come il supporto agli ospedali bergamaschi e lombardi — è valso a molti club e soci del distretto le massime onorificenze rotariane.",
+        "tag": "Eccellenza"
+      }
+    ]
+  },
+  "services": {
+    "label": "SERVICE & SFIDE",
+    "title": "Rimboccarsi le maniche<br/><em>è nel nostro DNA.</em>",
+    "items": [
+      {
+        "n": "01",
+        "icon": "🌲",
+        "title": "Tutela del Patrimonio Naturale",
+        "body": "Continua collaborazione con comuni e realtà come Plastic Free per concretizzare un sentito interesse per il nostro territorio.",
+        "tags": [
+          "Natura",
+          "Laghi",
+          "Montagna"
+        ]
+      },
+      {
+        "n": "02",
+        "icon": "🚑",
+        "title": "Sanità & Soccorso sul Territorio",
+        "body": "Grande impegno per la sensibilizzazione su tematiche che spaziano dalla salute mentale alla ricerca scientifica, in particolare con il service di punta \"Brainy, coltiviamo la ricerca\". Promozione di corsi BLSD e di progetti tra cui il Teddy Bear.",
+        "tags": [
+          "Ospedali",
+          "Soccorso Alpino",
+          "P.C."
+        ]
+      },
+      {
+        "n": "03",
+        "icon": "⛷️",
+        "title": "Inclusione e Attenzione",
+        "body": "Il 2042 lavora collaborando anche con associazioni del territorio per essere di supporto a persone con fragilità. Il Camp dell'Amicizia e la collaborazione con l'Arca del Seprio sono esempi di service storici del distretto.",
+        "tags": [
+          "Paralimpico",
+          "Vela",
+          "Ippoterapia"
+        ]
+      }
+    ]
+  },
+  "rete": {
+    "quote": "Outdoor, cultura, Made in Italy e un networking di eccellenza lontano dalla frenesia metropolitana.",
+    "sub": "Venire a trovare il Distretto 2042 significa immergersi nella Dolce Vita lacustre e nella solidità della montagna. Siamo il partner ideale per gemellaggi all'insegna dell'outdoor, dell'amicizia più vera e di progetti di grande concretezza.",
+    "email": "mailto:info@distrettorotaract2042.it"
+  },
+  "seo": {
+    "title": "Distretto Rotaract 2042 — Lombardia Centro & Nord",
+    "description": "Distretto Rotaract 2042: Bergamo, Como, Lecco, Monza Brianza, Sondrio, Varese. 24 club, 487 soci. Tra laghi, vette e spirito d'impresa.",
+    "ogTitle": "Distretto Rotaract 2042 — Lombardia Centro & Nord",
+    "ogDescription": "24 club, 487 soci tra Bergamo, Como, Lecco, Monza Brianza, Sondrio e Varese. Dalle Alpi alla Brianza, una rete tra laghi, valli e città d'arte.",
+    "twitterTitle": "Distretto Rotaract 2042 — Lombardia Centro & Nord",
+    "twitterDescription": "24 club, 487 soci tra Bergamo, Como, Lecco, Monza Brianza, Sondrio e Varese. Dalle Alpi alla Brianza, una rete tra laghi, valli e città d'arte.",
+    "jsonLdDescription": "Il Distretto Rotaract 2042 copre Bergamo, Como, Lecco, Monza Brianza, Sondrio e Varese. 24 club, 487 soci tra laghi, valli e città d'arte."
+  }
+}

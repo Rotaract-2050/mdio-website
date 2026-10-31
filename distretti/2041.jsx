@@ -3,108 +3,30 @@ import ReactDOM from 'react-dom/client';
 import '../globals.css';
 import '../home.css';
 import './2041.css';
-import Countdown from '../components/Countdown';
 import CookieBanner from '../components/CookieBanner';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import RichText from '../components/RichText';
+import EventBanner from '../components/EventBanner';
+import content from '../content/distretti/2041.json';
+import site from '../content/site.json';
 
 const Distretto2041 = () => {
   const [zoneHover, setZoneHover] = React.useState(null);
-
-  const focusAreas = [
-    {
-      n: '01',
-      name: 'INNOVAZIONE',
-      prov: 'Startup · Ricerca · Accademia',
-      desc: 'Hub di pitch competition, borse di studio e premi di laurea. Il tessuto accademico e imprenditoriale milanese è il nostro incubatore naturale.',
-      bg: '#c8174a',
-      fg: '#fff',
-    },
-    {
-      n: '02',
-      name: 'SOLIDARIETÀ',
-      prov: 'Terzo settore · Periferie · Inclusione',
-      desc: 'Partnership storiche con Opera San Francesco, Pane Quotidiano, City Angels. Milano non lascia indietro nessuno — e noi siamo in prima linea.',
-      bg: '#0e0e0e',
-      fg: '#fff',
-    },
-    {
-      n: '03',
-      name: 'NETWORK',
-      prov: 'Mentorship · Internazionale · Career',
-      desc: 'Revisioni CV, incontri con CEO e leader di settore, gemellaggi europei. Il vero valore aggiunto del 2041 è la rete che costruisci.',
-      bg: '#ffd54a',
-      fg: '#1a1a1a',
-    },
-  ];
-
-  const awards = [
-    {
-      n: '01',
-      title: 'Premi & Borse di Studio per l\'Innovazione',
-      body: 'Sfruttando il tessuto accademico e imprenditoriale milanese, il distretto collabora a bandi, premi di laurea e pitch competition per finanziare start-up giovanili, progetti di ricerca e tesi brillanti.',
-      tag: 'Innovazione',
-    },
-    {
-      n: '02',
-      title: 'Azione Professionale & Mentorship',
-      body: 'Il vero marchio di fabbrica storico del 2041: incontri one-to-one, revisioni CV e seminari con CEO e leader di settore. Un vantaggio competitivo reale nel mondo del lavoro.',
-      tag: 'Career',
-    },
-    {
-      n: '03',
-      title: 'RYLA Metropolitano',
-      body: 'Le edizioni del RYLA organizzate nell\'area milanese si distinguono per il taglio fortemente manageriale e internazionale, formando generazioni di leader oggi attivi nell\'imprenditoria lombarda e nazionale.',
-      tag: 'Leadership',
-    },
-    {
-      n: '04',
-      title: 'Paul Harris Fellow',
-      body: 'Grazie all\'eccezionale capacità di fundraising e al forte impatto sulla comunità urbana, molti soci e club del 2041 vengono regolarmente insigniti di questa prestigiosa onorificenza da Rotary International.',
-      tag: 'Eccellenza',
-    },
-  ];
-
-  const services = [
-    {
-      n: '01',
-      icon: '🤲',
-      title: 'Inclusione Sociale & Supporto agli Ultimi',
-      body: 'I club collaborano da anni con i giganti della solidarietà milanese — Opera San Francesco, Pane Quotidiano, City Angels e Ronda della Carità — organizzando raccolte alimentari, di coperte e prestando servizio diretto per supportare i senza fissa dimora e le famiglie in difficoltà.',
-      tags: ['Inclusione', 'Terzo Settore', 'Milano'],
-    },
-    {
-      n: '02',
-      icon: '🔬',
-      title: 'Salute & Ricerca Scientifica',
-      body: 'Storico è l\'impegno a fianco di enti come LILT e Fondazione Veronesi. Le campagne di sensibilizzazione e i grandi eventi di raccolta fondi del 2041 hanno finanziato borse di studio per giovani ricercatori e macchinari diagnostici per gli ospedali cittadini.',
-      tags: ['LILT', 'Ricerca', 'Ospedali'],
-    },
-    {
-      n: '03',
-      icon: '🌿',
-      title: 'Sostenibilità Urbana',
-      body: 'Anche in una metropoli dominata dal cemento, il distretto porta avanti service legati al verde urbano — piantumazioni nel Parco Agricolo Sud, campagne di clean-up cittadino — e all\'economia circolare.',
-      tags: ['Green', 'Circolare', 'Parco Sud'],
-    },
-  ];
 
   return (
     <div className="vb-root d-root">
 
       {/* ── HEADER ──────────────────────────────── */}
-      <Header 
-        homeLink="../index.html" 
-        logoPath="../assets/logo-mdio.jpeg"
-        ctaText="Apertura Nazionale 2026 →"
-        ctaLink="../apertura-nazionale.html"
+      <Header
+        homeLink={content.header.homeLink}
+        logoPath={content.header.logoPath}
+        ctaText={content.header.ctaText}
+        ctaLink={content.header.ctaLink}
       >
-        <a href="../index.html">← MDIO</a>
-        <a href="#identita">Identità</a>
-        <a href="#numeri">Numeri</a>
-        <a href="#focus">Focus</a>
-        <a href="#storia">Storia</a>
-        <a href="#service">Service</a>
+        {content.header.nav.map((n, i) => (
+          <a key={i} href={n.href}>{n.label}</a>
+        ))}
       </Header>
 
       {/* ── HERO ────────────────────────────────── */}
@@ -112,26 +34,24 @@ const Distretto2041 = () => {
         <div className="d-hero-inner">
           <div className="d-hero-left">
             <div className="d-hero-eyebrow">Distretto Rotaract</div>
-            <div className="d-hero-num">2041</div>
+            <div className="d-hero-num">{content.number}</div>
             <h1 className="d-hero-title">
-              Area Metropolitana<br />di Milano
+              <RichText text={content.hero.title} />
             </h1>
             <p className="d-hero-claim">
-              Dove l'energia della metropoli incontra il servizio.<br />
-              Connesso, inclusivo, proiettato verso il futuro.
+              <RichText text={content.hero.claim} />
             </p>
             <div className="d-hero-stats">
-              <span><strong>13</strong> club</span>
-              <span>·</span>
-              <span><strong>350</strong> soci</span>
-              <span>·</span>
-              <span><strong>1</strong> metropoli</span>
-              <span>·</span>
-              <span><strong>3</strong> aree di focus</span>
+              {content.hero.stats.map((s, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && <span>·</span>}
+                  <span><strong>{s.n}</strong> {s.l}</span>
+                </React.Fragment>
+              ))}
             </div>
             <div className="d-hero-actions">
               <a
-                href="https://www.rotaract2041.com/"
+                href={content.hero.siteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="d-btn-primary"
@@ -139,7 +59,7 @@ const Distretto2041 = () => {
                 Sito Ufficiale ↗
               </a>
               <a
-                href="https://www.instagram.com/distrettorotaract2041/"
+                href={content.hero.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="d-btn-ghost"
@@ -149,7 +69,7 @@ const Distretto2041 = () => {
             </div>
           </div>
           <div className="d-hero-img">
-            <img src="../assets/2041-05-Milano.jpeg" alt="Distretto Rotaract 2041 — Milano" />
+            <img src={content.hero.image} alt={content.hero.imageAlt} />
           </div>
         </div>
       </section>
@@ -159,14 +79,12 @@ const Distretto2041 = () => {
         <div className="d-marquee-track">
           {[0, 1].map((i) => (
             <React.Fragment key={i}>
-              <span>DISTRETTO ROTARACT 2041</span>
-              <span className="d-star"> ✦ </span>
-              <span>AREA METROPOLITANA DI MILANO</span>
-              <span className="d-star"> ✦ </span>
-              <span>28 CLUB · 612 SOCI</span>
-              <span className="d-star"> ✦ </span>
-              <span>INNOVAZIONE · SOLIDARIETÀ · NETWORK</span>
-              <span className="d-star"> ✦ </span>
+              {content.marquee.map((t, k) => (
+                <React.Fragment key={k}>
+                  <span>{t}</span>
+                  <span className="d-star"> ✦ </span>
+                </React.Fragment>
+              ))}
             </React.Fragment>
           ))}
         </div>
@@ -180,32 +98,23 @@ const Distretto2041 = () => {
         </div>
         <div className="vb-manifesto-main">
           <h2 className="vb-manifesto-title">
-            Il Cuore<br />Metropolitano.
+            <RichText text={content.identity.title} />
           </h2>
           <div className="vb-manifesto-body">
             <p className="vb-manifesto-lede">
-              Il Distretto Rotaract 2041 coincide con <strong>l'area metropolitana di Milano</strong>, capitale economica, del design e dell'innovazione in Italia. È l'unico distretto interamente metropolitano del Paese, caratterizzato da un contesto dinamico, internazionale e in continua evoluzione.
+              <RichText text={content.identity.lede} />
             </p>
-            <p>
-              In questo ambiente altamente connesso, i Rotaract Club del 2041 rappresentano veri e propri centri di progettazione e sviluppo: studenti provenienti da università di eccellenza e giovani professionisti di diversi settori collaborano per ideare e realizzare service ad alto impatto sul territorio e oltre.
-            </p>
-            <p>
-              La forte vocazione europea e internazionale del distretto si riflette anche nella sua Fellowship, fatta di momenti di networking, eventi di rilievo e occasioni di confronto che favoriscono la crescita personale e professionale dei soci.
-            </p>
-            <p>
-              Milano è una città che non si ferma mai: il Distretto Rotaract 2041 ne incarna pienamente lo spirito, unendo energia, innovazione e impegno concreto al servizio della comunità.
-            </p>
+            {content.identity.paragraphs.map((p, i) => (
+              <p key={i}>
+                <RichText text={p} />
+              </p>
+            ))}
             <p className="d-founding">
-              Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2041 riunisce 18 Club Rotaract nell'Area Metropolitana di Milano.
+              <RichText text={content.identity.founding} />
             </p>
           </div>
           <div className="vb-pillars">
-            {[
-              { n: '01', t: 'Dinamismo', d: 'I ritmi della metropoli nel servizio.' },
-              { n: '02', t: 'Visione', d: 'Sempre proiettati verso il futuro.' },
-              { n: '03', t: 'Connessione', d: 'Hub professionale e internazionale.' },
-              { n: '04', t: 'Inclusione', d: 'Nessuno escluso, nessuno lasciato indietro.' },
-            ].map((p) => (
+            {content.identity.pillars.map((p) => (
               <div key={p.n} className="vb-pillar">
                 <div className="vb-pillar-n">{p.n}</div>
                 <div className="vb-pillar-t">{p.t}</div>
@@ -223,12 +132,7 @@ const Distretto2041 = () => {
           <div className="vb-section-name vb-light">IL DISTRETTO IN CIFRE</div>
         </div>
         <div className="vb-numbers-grid">
-          {[
-            { n: '28', l: 'CLUB', s: 'Rotaract sul territorio' },
-            { n: '612', l: 'SOCI', s: 'attivi under 30' },
-            { n: '1', l: 'METROPOLI', s: 'Milano, capitale d\'Italia' },
-            { n: '3', l: 'AREE DI FOCUS', s: 'Innovazione · Solidarietà · Network' },
-          ].map((x, i) => (
+          {content.numbers.map((x, i) => (
             <div key={i} className="vb-num-cell">
               <div className="vb-num-n">{x.n}</div>
               <div className="vb-num-l">{x.l}</div>
@@ -238,17 +142,17 @@ const Distretto2041 = () => {
         </div>
       </section>
 
-      {/* ── AREE DI FOCUS ───────────────────────── */}
+      {/* ── ZONE / AREE ─────────────────────────── */}
       <section id="focus" className="d-zones">
         <div className="d-zones-head">
           <div className="vb-section-no vb-light">[ 03 ]</div>
-          <div className="vb-section-name vb-light">AREE DI FOCUS</div>
+          <div className="vb-section-name vb-light">{content.zones.label}</div>
           <h2 className="d-zones-title">
-            Tre pilastri.<br />Una metropoli.
+            <RichText text={content.zones.title} />
           </h2>
         </div>
         <div className="d-zone-blocks">
-          {focusAreas.map((z, i) => (
+          {content.zones.items.map((z, i) => (
             <div
               key={z.name}
               className={`d-zone-block${zoneHover === i ? ' is-hover' : ''}${zoneHover !== null && zoneHover !== i ? ' is-dim' : ''}`}
@@ -271,13 +175,13 @@ const Distretto2041 = () => {
       <section id="storia" className="d-awards">
         <div className="d-awards-head">
           <div className="vb-section-no">[ 04 ]</div>
-          <div className="vb-section-name">STORIA &amp; RICONOSCIMENTI</div>
+          <div className="vb-section-name">{content.awards.label}</div>
           <h2 className="d-awards-title">
-            Un laboratorio<br /><em>di leadership e eccellenza.</em>
+            <RichText text={content.awards.title} />
           </h2>
         </div>
         <div className="d-awards-grid">
-          {awards.map((a) => (
+          {content.awards.items.map((a) => (
             <div key={a.n} className="d-award-card">
               <div className="d-award-n">{a.n}</div>
               <div className="d-award-title">{a.title}</div>
@@ -292,13 +196,13 @@ const Distretto2041 = () => {
       <section id="service" className="d-services">
         <div className="d-services-head">
           <div className="vb-section-no vb-light">[ 05 ]</div>
-          <div className="vb-section-name vb-light">SERVICE &amp; SFIDE</div>
+          <div className="vb-section-name vb-light">{content.services.label}</div>
           <h2 className="d-services-title">
-            La metropoli<br /><em>ci chiama, noi rispondiamo.</em>
+            <RichText text={content.services.title} />
           </h2>
         </div>
         <div className="d-services-grid">
-          {services.map((s) => (
+          {content.services.items.map((s) => (
             <div key={s.n} className="d-service-card">
               <div className="d-service-icon">{s.icon}</div>
               <div className="d-service-num">{s.n}</div>
@@ -319,17 +223,17 @@ const Distretto2041 = () => {
         <div className="d-rete-inner">
           <div className="d-rete-label">[ 06 ] — Perché fare rete con noi</div>
           <div className="d-rete-quote">
-            L'hub ideale per chi cerca la dimensione metropolitana, i gemellaggi europei e un networking professionale di altissimo livello.
+            {content.rete.quote}
           </div>
           <p className="d-rete-sub">
-            Fare rete con il Distretto 2041 significa avere accesso a un vero "hub" internazionale: il ponte perfetto per club di tutta Italia e d'Europa che vogliono confrontarsi con Milano.
+            {content.rete.sub}
           </p>
           <div className="d-rete-actions">
-            <a href="mailto:info@rotaract2041.com" className="d-btn-primary">
+            <a href={content.rete.email} className="d-btn-primary">
               Contattaci →
             </a>
             <a
-              href="https://www.rotaract2041.com/"
+              href={content.hero.siteUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="d-btn-ghost"
@@ -341,38 +245,7 @@ const Distretto2041 = () => {
       </section>
 
       {/* ── CTA APERTURA ────────────────────────── */}
-      <section className="vb-event">
-        <div className="vb-event-marquee">
-          <div className="vb-event-track">
-            {[0, 1].map((i) => (
-              <React.Fragment key={i}>
-                <span>APERTURA NAZIONALE 2026</span>
-                <span className="vb-event-star"> ✦ </span>
-                <span>18 · 19 · 20 SETTEMBRE</span>
-                <span className="vb-event-star"> ✦ </span>
-                <span>MILANO · MONZA · ISEO</span>
-                <span className="vb-event-star"> ✦ </span>
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-        <div className="vb-event-body">
-          <div className="vb-event-left">
-            <div className="vb-event-eyebrow">— L'EVENTO DELL'ANNO</div>
-            <h2 className="vb-event-title">
-              Tre giorni.<br />
-              Tre città.<br />
-              <span className="vb-event-emph">Un solo MDIO.</span>
-            </h2>
-            <a href="../apertura-nazionale.html" className="vb-btn-block">
-              SCOPRI L'APERTURA NAZIONALE →
-            </a>
-          </div>
-          <div className="vb-event-right">
-            <Countdown />
-          </div>
-        </div>
-      </section>
+      <EventBanner starText=" ✦ " button={site.event.buttons.district} />
 
       {/* ── FOOTER ──────────────────────────────── */}
       <Footer />

@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './globals.css';
 import './home.css';
-import Countdown from './components/Countdown';
 import CookieBanner from './components/CookieBanner';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import RichText from './components/RichText';
+import EventBanner from './components/EventBanner';
+import content from './content/home.json';
+import site from './content/site.json';
 
 const Home = () => {
   const [hover, setHover] = React.useState(null);
@@ -19,106 +22,40 @@ const Home = () => {
   }, []);
 
   const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
-  const [districtImgs] = React.useState(() => ({
-    img2042: pick([
-      'assets/2042-01-Lecco.jpeg', 'assets/2042-02-Bergamo.jpeg',
-      'assets/2042-03-Sondrio.jpeg', 'assets/2042-04-Como.jpeg',
-      'assets/2042-06-Varese.jpeg', 'assets/2042-13-Monza.jpeg',
-    ]),
-    img2050: pick([
-      'assets/2050-07-Piacenza.jpeg', 'assets/2050-08-Pavia.jpeg',
-      'assets/2050-09-Lodi.jpeg', 'assets/2050-10-Brescia.jpeg',
-      'assets/2050-11-Cremona.jpeg', 'assets/2050-12-Mantova.jpeg',
-    ]),
-  }));
-
-  const districts = [
-    {
-      n: '2041',
-      city: 'Area Metropolitana di Milano',
-      sub: 'Il cuore metropolitano',
-      img: 'assets/2041-05-Milano.jpeg',
-      bg: '#c8174a',
-      fg: '#ffffff',
-      accent: '#ffd54a',
-      claim: 'Dove l\'energia della metropoli incontra il servizio.',
-      zone: 'Comprende esclusivamente l\'Area Metropolitana di Milano.',
-      zones: ['CITTÀ DI MILANO'],
-      cities: ['Milano'],
-      clubs: 13,
-      soci: 350,
-      page: 'distretti/2041.html',
-      sito: 'https://www.rotaract2041.com/',
-      ig: 'https://www.instagram.com/distrettorotaract2041/',
-    },
-    {
-      n: '2042',
-      city: 'Lombardia Centro & Nord',
-      sub: 'Tra laghi, valli e città d\'arte',
-      img: districtImgs.img2042,
-      bg: '#1a3d8f',
-      fg: '#ffffff',
-      accent: '#7eb7ff',
-      claim: 'Dalle Alpi alla Brianza, una rete tra laghi, valli e città d\'arte.',
-      zone: 'Bergamo · Como · Lecco · Monza Brianza · Sondrio · Varese + provincia MI (escl. 2041).',
-      zones: ['BRIANTEA', 'LARIANA', 'OLONA', 'OROBICA'],
-      cities: ['Bergamo', 'Como', 'Lecco', 'Monza B.', 'Sondrio', 'Varese'],
-      clubs: 18,
-      soci: 260,
-      page: 'distretti/2042.html',
-      sito: 'https://www.distrettorotaract2042.it/',
-      ig: 'https://www.instagram.com/rotaract2042/',
-    },
-    {
-      n: '2050',
-      city: 'Lombardia Sud & Piacenza',
-      sub: 'Quattro macro-zone, una pianura',
-      img: districtImgs.img2050,
-      bg: '#e8a93a',
-      fg: '#1a1a1a',
-      accent: '#a4174c',
-      claim: 'Francigena, Leonessa, Navigli e Padana: dalla Lombardia all\'Emilia.',
-      zone: 'Brescia · Cremona · Lodi · Mantova · Pavia · Piacenza + alcuni comuni Città M. di MI.',
-      zones: ['FRANCIGENA', 'LEONESSA', 'NAVIGLI', 'PADANA'],
-      cities: ['Brescia', 'Cremona', 'Lodi', 'Mantova', 'Pavia', 'Piacenza'],
-      clubs: 30,
-      soci: 403,
-      page: 'distretti/2050.html',
-      sito: 'https://www.rotaract2050.org/',
-      ig: 'https://www.instagram.com/rotaract2050/',
-    },
-  ];
+  const [heroImgs] = React.useState(() =>
+    content.districts.map((d) => (d.imgPool && d.imgPool.length ? pick(d.imgPool) : d.img))
+  );
+  const districts = content.districts.map((d, i) => ({ ...d, img: heroImgs[i] }));
 
   return (
     <div className="vb-root">
       {/* HEADER */}
-      <Header 
-        homeLink="./index.html" 
-        logoPath="assets/logo-mdio.jpeg"
-        ctaText="Apertura Nazionale 2026 →"
-        ctaLink="./apertura-nazionale.html"
+      <Header
+        homeLink={content.header.homeLink}
+        logoPath={content.header.logoPath}
+        ctaText={content.header.ctaText}
+        ctaLink={content.header.ctaLink}
       >
-        <a href="#manifesto">Chi siamo</a>
-        <a href="#distretti">Distretti</a>
-        <a href="#numeri">Numeri</a>
-        <a href="#mappa">Territorio</a>
-        <span style={{ opacity: 0.45, cursor: 'default' }}>News ▾</span>
+        {content.header.nav.map((n, i) =>
+          n.disabled
+            ? <span key={i} style={{ opacity: 0.45, cursor: 'default' }}>{n.label}</span>
+            : <a key={i} href={n.href}>{n.label}</a>
+        )}
       </Header>
 
       {/* HERO — TRE BLOCCHI */}
       <section className="vb-hero">
         <div className="vb-hero-top">
           <div className="vb-hero-eyebrow">
-            <span>◆</span> Multidistretto Italia Ovest
+            <span>◆</span> {content.hero.eyebrow}
           </div>
           <h1 className="vb-hero-title">
-            <span className="vb-h-line">TRE DISTRETTI</span>
-            <span className="vb-h-line vb-h-amp">/</span>
-            <span className="vb-h-line">UNA LOMBARDIA</span>
+            <span className="vb-h-line">{content.hero.titleLines[0]}</span>
+            <span className="vb-h-line vb-h-amp">{content.hero.titleSeparator}</span>
+            <span className="vb-h-line">{content.hero.titleLines[1]}</span>
           </h1>
           <p className="vb-hero-sub">
-            Distretti <strong>2041</strong> · <strong>2042</strong> · <strong>2050</strong>{' '}
-            — completamente alla pari. 61 club, 1.013 soci.
+            <RichText text={content.hero.sub} />
           </p>
         </div>
 
@@ -151,36 +88,7 @@ const Home = () => {
       </section>
 
       {/* CTA APERTURA NAZIONALE — TICKER */}
-      <section className="vb-event">
-        <div className="vb-event-marquee">
-          <div className="vb-event-track">
-            {Array(2).fill(0).map((_, i) => (
-              <React.Fragment key={i}>
-                <span>APERTURA NAZIONALE 2026</span>
-                <span className="vb-event-star">✦</span>
-                <span>18 · 19 · 20 SETTEMBRE</span>
-                <span className="vb-event-star">✦</span>
-                <span>MILANO · MONZA · ISEO</span>
-                <span className="vb-event-star">✦</span>
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-        <div className="vb-event-body">
-          <div className="vb-event-left">
-            <div className="vb-event-eyebrow">— L'EVENTO DELL'ANNO</div>
-            <h2 className="vb-event-title">
-              Tre giorni.<br />
-              Tre città.<br />
-              <span className="vb-event-emph">Un solo MDIO.</span>
-            </h2>
-            <a href="./apertura-nazionale.html" className="vb-btn-block">SCOPRI L'EVENTO →</a>
-          </div>
-          <div className="vb-event-right">
-            <Countdown />
-          </div>
-        </div>
-      </section>
+      <EventBanner starText="✦" button={site.event.buttons.home} />
 
       {/* MANIFESTO */}
       <section id="manifesto" className="vb-manifesto">
@@ -190,27 +98,21 @@ const Home = () => {
         </div>
         <div className="vb-manifesto-main">
           <h2 className="vb-manifesto-title">
-            Cos'è il nostro<br />Multidistretto?
+            <RichText text={content.manifesto.title} />
           </h2>
           <div className="vb-manifesto-body">
             <p className="vb-manifesto-lede">
-              Il MDIO unisce <strong>2041</strong>, <strong>2042</strong> e <strong>2050</strong>{' '}
-              — tre distretti rotaractiani che coprono Lombardia e Provincia di Piacenza —
-              <strong> in un coordinamento alla pari</strong>. Nessuno guida, tutti contribuiscono.
+              <RichText text={content.manifesto.lede} />
             </p>
-            <p>
-              Una rete giovane, capillare, profondamente diversa: dalla metropoli milanese alle
-              valli alpine, dai laghi alla pianura del Po. Tre identità, una sola comunità.
-            </p>
+            {content.manifesto.paragraphs.map((p, i) => (
+              <p key={i}>
+                <RichText text={p} />
+              </p>
+            ))}
           </div>
 
           <div className="vb-pillars">
-            {[
-              { n: '01', t: 'Parità', d: 'Tre distretti, peso uguale.' },
-              { n: '02', t: 'Servizio', d: 'Progetti che durano oltre l\'evento.' },
-              { n: '03', t: 'Territorio', d: 'Capillarità dalla città alla valle.' },
-              { n: '04', t: 'Amicizia', d: 'La rete viene prima di tutto.' },
-            ].map((p) => (
+            {content.manifesto.pillars.map((p) => (
               <div key={p.n} className="vb-pillar">
                 <div className="vb-pillar-n">{p.n}</div>
                 <div className="vb-pillar-t">{p.t}</div>
@@ -228,12 +130,7 @@ const Home = () => {
           <div className="vb-section-name vb-light">IL MDIO IN CIFRE</div>
         </div>
         <div className="vb-numbers-grid">
-          {[
-            { n: '61', l: 'CLUB', s: 'Rotaract sul territorio' },
-            { n: '1.013', l: 'SOCI', s: 'attivi under 30' },
-            { n: '12', l: 'PROVINCE', s: 'Lombardia + Piacenza' },
-            { n: '180+', l: 'SERVICE', s: 'all\'anno rotaractiano' },
-          ].map((x, i) => (
+          {content.numbers.map((x, i) => (
             <div key={i} className="vb-num-cell">
               <div className="vb-num-n">{x.n}</div>
               <div className="vb-num-l">{x.l}</div>
@@ -251,8 +148,8 @@ const Home = () => {
             <div className="vb-section-name">I DISTRETTI</div>
           </div>
           <h2 className="vb-distretti-title">
-            Tre identità.<br />
-            <span className="vb-amp">Un'unica visione.</span>
+            {content.districtsSection.title}<br />
+            <span className="vb-amp">{content.districtsSection.emph}</span>
           </h2>
         </div>
 
@@ -313,14 +210,14 @@ const Home = () => {
         <div className="vb-mappa-head">
           <div className="vb-section-no vb-light">[ 04 ]</div>
           <div className="vb-section-name vb-light">TERRITORIO</div>
-          <h2 className="vb-mappa-title">UNA REGIONE.<br/>TRE DISTRETTI.</h2>
+          <h2 className="vb-mappa-title"><RichText text={content.mappa.title} /></h2>
         </div>
         <div className="vb-mappa-wrap">
-          <img src="assets/Lombardia%20MDIO.svg" alt="Mappa Lombardia MDIO" className="vb-mappa-svg" loading="lazy" />
+          <img src={content.mappa.image} alt={content.mappa.imageAlt} className="vb-mappa-svg" loading="lazy" />
           <div className="vb-mappa-legend">
-            <div className="vb-leg-item"><span style={{background:'#c8174a'}} />2041 — Milano M.</div>
-            <div className="vb-leg-item"><span style={{background:'#1a3d8f'}} />2042 — Centro/Nord</div>
-            <div className="vb-leg-item"><span style={{background:'#e8a93a'}} />2050 — Sud + PC</div>
+            {content.mappa.legend.map((l) => (
+              <div key={l.label} className="vb-leg-item"><span style={{ background: l.color }} />{l.label}</div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,0 +1,278 @@
+{
+  "number": "2050",
+  "header": {
+    "homeLink": "../index.html",
+    "logoPath": "../assets/logo-mdio.jpeg",
+    "ctaText": "Apertura Nazionale 2026 →",
+    "ctaLink": "../apertura-nazionale.html",
+    "nav": [
+      {
+        "label": "← MDIO",
+        "href": "../index.html"
+      },
+      {
+        "label": "Identità",
+        "href": "#identita"
+      },
+      {
+        "label": "Numeri",
+        "href": "#numeri"
+      },
+      {
+        "label": "Zone",
+        "href": "#zone"
+      },
+      {
+        "label": "Storia",
+        "href": "#storia"
+      },
+      {
+        "label": "Service",
+        "href": "#service"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Lombardia Sud<br/>& Piacenza",
+    "claim": "Francigena, Leonessa, Navigli e Padana:<br/>dalla Lombardia all'Emilia.",
+    "stats": [
+      {
+        "n": "30",
+        "l": "club"
+      },
+      {
+        "n": "403",
+        "l": "soci"
+      },
+      {
+        "n": "6",
+        "l": "province"
+      },
+      {
+        "n": "4",
+        "l": "macro-zone"
+      }
+    ],
+    "siteUrl": "https://www.rotaract2050.org/",
+    "instagramUrl": "https://www.instagram.com/rotaract2050/",
+    "imagePool": [
+      "../assets/2050-07-Piacenza.jpeg",
+      "../assets/2050-08-Pavia.jpeg",
+      "../assets/2050-09-Lodi.jpeg",
+      "../assets/2050-10-Brescia.jpeg",
+      "../assets/2050-11-Cremona.jpeg",
+      "../assets/2050-12-Mantova.jpeg"
+    ],
+    "imageAlt": "Distretto Rotaract 2050"
+  },
+  "marquee": [
+    "DISTRETTO ROTARACT 2050",
+    "LOMBARDIA SUD & PIACENZA",
+    "21 CLUB · 398 SOCI",
+    "BRESCIA · CREMONA · LODI · MANTOVA · PAVIA · PIACENZA"
+  ],
+  "identity": {
+    "title": "Il Mosaico<br/>della Pianura.",
+    "lede": "Il Distretto 2050 è un <strong>affascinante mosaico territoriale</strong> che fa da ponte tra la Lombardia e l'Emilia-Romagna, abbracciando le province di Brescia, Cremona, Lodi, Mantova, Pavia, Piacenza e alcune aree limitrofe.",
+    "paragraphs": [
+      "È un distretto dall'identità poliedrica: unisce la forza produttiva di importanti poli industriali, la profonda tradizione agricola ed enogastronomica della Pianura Padana e la raffinata bellezza di antiche città universitarie e capitali del Rinascimento.",
+      "Visitare il 2050 significa immergersi in una Fellowship genuina e calorosa. Che si tratti di un aperitivo in Piazza della Loggia a Brescia, di una visita ai palazzi ducali di Mantova o di una cena a base di eccellenze culinarie locali a Piacenza o Cremona, l'accoglienza è sempre il nostro marchio di fabbrica."
+    ],
+    "founding": "Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2050 riunisce 21 Club Rotaract delle Province di Cremona, Brescia, Lodi, Mantova, Pavia, Piacenza e alcuni Comuni della Città Metropolitana di Milano.",
+    "pillars": [
+      {
+        "n": "01",
+        "t": "Tradizione",
+        "d": "Enogastronomia e cultura padana."
+      },
+      {
+        "n": "02",
+        "t": "Convivialità",
+        "d": "L'accoglienza è il nostro marchio."
+      },
+      {
+        "n": "03",
+        "t": "Territorio",
+        "d": "Dalla città alla pianura."
+      },
+      {
+        "n": "04",
+        "t": "Sinergia",
+        "d": "Rete intergenerazionale con il Rotary."
+      }
+    ]
+  },
+  "numbers": [
+    {
+      "n": "21",
+      "l": "CLUB",
+      "s": "Rotaract sul territorio"
+    },
+    {
+      "n": "398",
+      "l": "SOCI",
+      "s": "attivi under 30"
+    },
+    {
+      "n": "6+",
+      "l": "PROVINCE",
+      "s": "Lombardia Sud + Piacenza"
+    },
+    {
+      "n": "4",
+      "l": "MACRO-ZONE",
+      "s": "Francigena · Leonessa · Navigli · Padana"
+    }
+  ],
+  "zones": {
+    "label": "MACRO-ZONE",
+    "title": "Quattro zone.<br/>Una pianura.",
+    "items": [
+      {
+        "n": "01",
+        "name": "FRANCIGENA",
+        "prov": "Piacenza · Lodi · Cremona Nord",
+        "clubs": [
+          "Codogno",
+          "Fiorenzuola d'Arda",
+          "Lodi-Adda",
+          "Piacenza",
+          "Terre Cremasche"
+        ],
+        "desc": "Tra Lombardia ed Emilia, lungo la più antica via di pellegrinaggio.",
+        "bg": "#a4174c",
+        "fg": "#fff"
+      },
+      {
+        "n": "02",
+        "name": "LEONESSA",
+        "prov": "Brescia",
+        "clubs": [
+          "Brescia",
+          "Brescia Franciacorta",
+          "Brescia Ovest Castello",
+          "Brescia Sud-Est Montichiari",
+          "Brescia Veronica Gambara",
+          "Brescia Vittoria Alata",
+          "Garda Valle Sabbia",
+          "Valtrompia"
+        ],
+        "desc": "Sotto il manto della Leonessa d'Italia.",
+        "bg": "#1a3d8f",
+        "fg": "#fff"
+      },
+      {
+        "n": "03",
+        "name": "NAVIGLI",
+        "prov": "Pavia · Milano Sud",
+        "clubs": [
+          "Abbiategrasso",
+          "Morimondo Abbazia",
+          "Pavia",
+          "Pavia Nord",
+          "Pavia Terre Viscontee",
+          "Vigevano Castello",
+          "Vigevano Lomellina",
+          "Voghera"
+        ],
+        "desc": "Nel cuore della Langombardia Maior.",
+        "bg": "#2a6b4a",
+        "fg": "#fff"
+      },
+      {
+        "n": "04",
+        "name": "PADANA",
+        "prov": "Cremona · Mantova",
+        "clubs": [
+          "Andes Di Virgilio-Curtatone",
+          "Casalmaggiore-Viadana-Sabbioneta",
+          "Castiglione delle Stiviere e Alto Mantovano",
+          "Cremona",
+          "Gonzaga-Suzzara",
+          "Mantova",
+          "Piadena-Casalmaggiore-Asola"
+        ],
+        "desc": "In riva al Po, fra arte, storia e natura.",
+        "bg": "#e8a93a",
+        "fg": "#1a1a1a"
+      }
+    ]
+  },
+  "awards": {
+    "label": "STORIA & RICONOSCIMENTI",
+    "title": "Un'eredità<br/><em>di grande spessore.</em>",
+    "items": [
+      {
+        "n": "01",
+        "title": "Premio Maturità & Premio Università",
+        "body": "Storici riconoscimenti alle eccellenze scolastiche e accademiche del territorio, portati avanti spesso in sinergia con i distretti vicini 2041 e 2042. Un investimento concreto sul futuro dei giovani più meritevoli.",
+        "tag": "Formazione & Talento"
+      },
+      {
+        "n": "02",
+        "title": "RYLA — Rotary Youth Leadership Awards",
+        "body": "La storica collaborazione con il Rotary 2050 ci vede in prima linea nell'organizzazione di questo prestigioso programma di formazione e leadership. Per molti soci, il RYLA è un momento fondamentale di crescita personale.",
+        "tag": "Leadership"
+      },
+      {
+        "n": "03",
+        "title": "Attestati Presidenziali & Riconoscimenti Service",
+        "body": "Nel corso della sua storia, i club del distretto hanno più volte ottenuto Certificati di Apprezzamento e Attestati Presidenziali dal Rotary International per la continuità e l'impatto dei progetti sul territorio.",
+        "tag": "Eccellenza"
+      }
+    ]
+  },
+  "services": {
+    "label": "SERVICE & SFIDE",
+    "title": "Non abbiamo paura<br/><em>di sporcarci le mani.</em>",
+    "items": [
+      {
+        "n": "01",
+        "icon": "🏥",
+        "title": "Azione Pubblica e Sanitaria",
+        "body": "Imponenti raccolte fondi per macchinari medici negli ospedali locali, donazioni di defibrillatori per i piccoli comuni e riqualificazione di spazi di degenza pediatrica. L'impegno sanitario è storicamente il cuore del distretto.",
+        "tags": [
+          "Salute",
+          "APD",
+          "Comunità"
+        ]
+      },
+      {
+        "n": "02",
+        "icon": "🏛",
+        "title": "Patrimonio Culturale",
+        "body": "Operando in territori ricchi di siti UNESCO e antichi atenei — come l'Università di Pavia — il distretto investe costantemente in Service volti a tutelare e promuovere la cultura, i teatri storici e l'arte locale.",
+        "tags": [
+          "UNESCO",
+          "Arte",
+          "Università"
+        ]
+      },
+      {
+        "n": "03",
+        "icon": "🤝",
+        "title": "Sensibilizzazione & Intervento Diretto",
+        "body": "Dalle campagne di sensibilizzazione sanitaria — con forte impegno nel periodo post-pandemico — alla riqualificazione degli spazi urbani: l'azione è sempre tangibile e radicata nel territorio.",
+        "tags": [
+          "Territorio",
+          "Impatto",
+          "Diretto"
+        ]
+      }
+    ]
+  },
+  "rete": {
+    "quote": "Partner ideale per scambi culturali, esperienze enogastronomiche e grandi service.",
+    "sub": "Fare rete con il Distretto 2050 significa scoprire un'Italia autentica, operosa e ricca di tesori nascosti. Siamo pronti a trasformare rapidamente le idee in grandi progetti di servizio.",
+    "email": "mailto:segreteria@rotaract2050.org"
+  },
+  "seo": {
+    "title": "Distretto Rotaract 2050 — Lombardia Sud & Piacenza",
+    "description": "Distretto Rotaract 2050: Brescia, Cremona, Lodi, Mantova, Pavia, Piacenza. 21 club, 398 soci. Il mosaico della pianura.",
+    "ogTitle": "Distretto Rotaract 2050 — Lombardia Sud & Piacenza",
+    "ogDescription": "21 club, 398 soci tra Brescia, Cremona, Lodi, Mantova, Pavia e Piacenza. Il mosaico della pianura padana.",
+    "twitterTitle": "Distretto Rotaract 2050 — Lombardia Sud & Piacenza",
+    "twitterDescription": "21 club, 398 soci tra Brescia, Cremona, Lodi, Mantova, Pavia e Piacenza. Il mosaico della pianura padana.",
+    "jsonLdDescription": "Il Distretto Rotaract 2050 copre Brescia, Cremona, Lodi, Mantova, Pavia e Piacenza. 21 club, 398 soci. Il mosaico della pianura padana."
+  }
+}

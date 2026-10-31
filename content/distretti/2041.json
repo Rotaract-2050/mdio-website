@@ -1,0 +1,234 @@
+{
+  "number": "2041",
+  "header": {
+    "homeLink": "../index.html",
+    "logoPath": "../assets/logo-mdio.jpeg",
+    "ctaText": "Apertura Nazionale 2026 →",
+    "ctaLink": "../apertura-nazionale.html",
+    "nav": [
+      {
+        "label": "← MDIO",
+        "href": "../index.html"
+      },
+      {
+        "label": "Identità",
+        "href": "#identita"
+      },
+      {
+        "label": "Numeri",
+        "href": "#numeri"
+      },
+      {
+        "label": "Focus",
+        "href": "#focus"
+      },
+      {
+        "label": "Storia",
+        "href": "#storia"
+      },
+      {
+        "label": "Service",
+        "href": "#service"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Area Metropolitana<br/>di Milano",
+    "claim": "Dove l'energia della metropoli incontra il servizio.<br/>Connesso, inclusivo, proiettato verso il futuro.",
+    "stats": [
+      {
+        "n": "13",
+        "l": "club"
+      },
+      {
+        "n": "350",
+        "l": "soci"
+      },
+      {
+        "n": "1",
+        "l": "metropoli"
+      },
+      {
+        "n": "3",
+        "l": "aree di focus"
+      }
+    ],
+    "siteUrl": "https://www.rotaract2041.com/",
+    "instagramUrl": "https://www.instagram.com/distrettorotaract2041/",
+    "image": "../assets/2041-05-Milano.jpeg",
+    "imageAlt": "Distretto Rotaract 2041 — Milano"
+  },
+  "marquee": [
+    "DISTRETTO ROTARACT 2041",
+    "AREA METROPOLITANA DI MILANO",
+    "28 CLUB · 612 SOCI",
+    "INNOVAZIONE · SOLIDARIETÀ · NETWORK"
+  ],
+  "identity": {
+    "title": "Il Cuore<br/>Metropolitano.",
+    "lede": "Il Distretto Rotaract 2041 coincide con <strong>l'area metropolitana di Milano</strong>, capitale economica, del design e dell'innovazione in Italia. È l'unico distretto interamente metropolitano del Paese, caratterizzato da un contesto dinamico, internazionale e in continua evoluzione.",
+    "paragraphs": [
+      "In questo ambiente altamente connesso, i Rotaract Club del 2041 rappresentano veri e propri centri di progettazione e sviluppo: studenti provenienti da università di eccellenza e giovani professionisti di diversi settori collaborano per ideare e realizzare service ad alto impatto sul territorio e oltre.",
+      "La forte vocazione europea e internazionale del distretto si riflette anche nella sua Fellowship, fatta di momenti di networking, eventi di rilievo e occasioni di confronto che favoriscono la crescita personale e professionale dei soci.",
+      "Milano è una città che non si ferma mai: il Distretto Rotaract 2041 ne incarna pienamente lo spirito, unendo energia, innovazione e impegno concreto al servizio della comunità."
+    ],
+    "founding": "Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2041 riunisce 18 Club Rotaract nell'Area Metropolitana di Milano.",
+    "pillars": [
+      {
+        "n": "01",
+        "t": "Dinamismo",
+        "d": "I ritmi della metropoli nel servizio."
+      },
+      {
+        "n": "02",
+        "t": "Visione",
+        "d": "Sempre proiettati verso il futuro."
+      },
+      {
+        "n": "03",
+        "t": "Connessione",
+        "d": "Hub professionale e internazionale."
+      },
+      {
+        "n": "04",
+        "t": "Inclusione",
+        "d": "Nessuno escluso, nessuno lasciato indietro."
+      }
+    ]
+  },
+  "numbers": [
+    {
+      "n": "28",
+      "l": "CLUB",
+      "s": "Rotaract sul territorio"
+    },
+    {
+      "n": "612",
+      "l": "SOCI",
+      "s": "attivi under 30"
+    },
+    {
+      "n": "1",
+      "l": "METROPOLI",
+      "s": "Milano, capitale d'Italia"
+    },
+    {
+      "n": "3",
+      "l": "AREE DI FOCUS",
+      "s": "Innovazione · Solidarietà · Network"
+    }
+  ],
+  "zones": {
+    "label": "AREE DI FOCUS",
+    "title": "Tre pilastri.<br/>Una metropoli.",
+    "items": [
+      {
+        "n": "01",
+        "name": "INNOVAZIONE",
+        "prov": "Startup · Ricerca · Accademia",
+        "desc": "Hub di pitch competition, borse di studio e premi di laurea. Il tessuto accademico e imprenditoriale milanese è il nostro incubatore naturale.",
+        "bg": "#c8174a",
+        "fg": "#fff"
+      },
+      {
+        "n": "02",
+        "name": "SOLIDARIETÀ",
+        "prov": "Terzo settore · Periferie · Inclusione",
+        "desc": "Partnership storiche con Opera San Francesco, Pane Quotidiano, City Angels. Milano non lascia indietro nessuno — e noi siamo in prima linea.",
+        "bg": "#0e0e0e",
+        "fg": "#fff"
+      },
+      {
+        "n": "03",
+        "name": "NETWORK",
+        "prov": "Mentorship · Internazionale · Career",
+        "desc": "Revisioni CV, incontri con CEO e leader di settore, gemellaggi europei. Il vero valore aggiunto del 2041 è la rete che costruisci.",
+        "bg": "#ffd54a",
+        "fg": "#1a1a1a"
+      }
+    ]
+  },
+  "awards": {
+    "label": "STORIA & RICONOSCIMENTI",
+    "title": "Un laboratorio<br/><em>di leadership e eccellenza.</em>",
+    "items": [
+      {
+        "n": "01",
+        "title": "Premi & Borse di Studio per l'Innovazione",
+        "body": "Sfruttando il tessuto accademico e imprenditoriale milanese, il distretto collabora a bandi, premi di laurea e pitch competition per finanziare start-up giovanili, progetti di ricerca e tesi brillanti.",
+        "tag": "Innovazione"
+      },
+      {
+        "n": "02",
+        "title": "Azione Professionale & Mentorship",
+        "body": "Il vero marchio di fabbrica storico del 2041: incontri one-to-one, revisioni CV e seminari con CEO e leader di settore. Un vantaggio competitivo reale nel mondo del lavoro.",
+        "tag": "Career"
+      },
+      {
+        "n": "03",
+        "title": "RYLA Metropolitano",
+        "body": "Le edizioni del RYLA organizzate nell'area milanese si distinguono per il taglio fortemente manageriale e internazionale, formando generazioni di leader oggi attivi nell'imprenditoria lombarda e nazionale.",
+        "tag": "Leadership"
+      },
+      {
+        "n": "04",
+        "title": "Paul Harris Fellow",
+        "body": "Grazie all'eccezionale capacità di fundraising e al forte impatto sulla comunità urbana, molti soci e club del 2041 vengono regolarmente insigniti di questa prestigiosa onorificenza da Rotary International.",
+        "tag": "Eccellenza"
+      }
+    ]
+  },
+  "services": {
+    "label": "SERVICE & SFIDE",
+    "title": "La metropoli<br/><em>ci chiama, noi rispondiamo.</em>",
+    "items": [
+      {
+        "n": "01",
+        "icon": "🤲",
+        "title": "Inclusione Sociale & Supporto agli Ultimi",
+        "body": "I club collaborano da anni con i giganti della solidarietà milanese — Opera San Francesco, Pane Quotidiano, City Angels e Ronda della Carità — organizzando raccolte alimentari, di coperte e prestando servizio diretto per supportare i senza fissa dimora e le famiglie in difficoltà.",
+        "tags": [
+          "Inclusione",
+          "Terzo Settore",
+          "Milano"
+        ]
+      },
+      {
+        "n": "02",
+        "icon": "🔬",
+        "title": "Salute & Ricerca Scientifica",
+        "body": "Storico è l'impegno a fianco di enti come LILT e Fondazione Veronesi. Le campagne di sensibilizzazione e i grandi eventi di raccolta fondi del 2041 hanno finanziato borse di studio per giovani ricercatori e macchinari diagnostici per gli ospedali cittadini.",
+        "tags": [
+          "LILT",
+          "Ricerca",
+          "Ospedali"
+        ]
+      },
+      {
+        "n": "03",
+        "icon": "🌿",
+        "title": "Sostenibilità Urbana",
+        "body": "Anche in una metropoli dominata dal cemento, il distretto porta avanti service legati al verde urbano — piantumazioni nel Parco Agricolo Sud, campagne di clean-up cittadino — e all'economia circolare.",
+        "tags": [
+          "Green",
+          "Circolare",
+          "Parco Sud"
+        ]
+      }
+    ]
+  },
+  "rete": {
+    "quote": "L'hub ideale per chi cerca la dimensione metropolitana, i gemellaggi europei e un networking professionale di altissimo livello.",
+    "sub": "Fare rete con il Distretto 2041 significa avere accesso a un vero \"hub\" internazionale: il ponte perfetto per club di tutta Italia e d'Europa che vogliono confrontarsi con Milano.",
+    "email": "mailto:info@rotaract2041.com"
+  },
+  "seo": {
+    "title": "Distretto Rotaract 2041 — Area Metropolitana di Milano",
+    "description": "Distretto Rotaract 2041: Area Metropolitana di Milano. 28 club, 612 soci. Innovazione, solidarietà, network professionale.",
+    "ogTitle": "Distretto Rotaract 2041 — Area Metropolitana di Milano",
+    "ogDescription": "28 club, 612 soci nell'Area Metropolitana di Milano. Innovazione, solidarietà e network professionale nel cuore della metropoli.",
+    "twitterTitle": "Distretto Rotaract 2041 — Area Metropolitana di Milano",
+    "twitterDescription": "28 club, 612 soci nell'Area Metropolitana di Milano. Innovazione, solidarietà e network professionale nel cuore della metropoli.",
+    "jsonLdDescription": "Il Distretto Rotaract 2041 riunisce 28 club nell'Area Metropolitana di Milano. Innovazione, solidarietà, network professionale."
+  }
+}

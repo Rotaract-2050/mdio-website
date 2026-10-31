@@ -5,15 +5,9 @@ import './gratta-vinci.css';
 import CookieBanner from './components/CookieBanner';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import content from './content/gratta-vinci.json';
 
-const premi = [
-  { qty: '× 2', name: 'Gioielli', donor: 'offerti da Lunati Gioielli' },
-  { qty: '× 10', name: 'Bottiglie di vino', donor: 'offerte dai Distretti 2041, 2042 e 2050' },
-  { qty: '× 4', name: 'Drink — serata venerdì', donor: 'offerti dal Distretto Rotaract 2041' },
-  { qty: '× 4', name: 'Drink — serata sabato', donor: 'offerti dal Distretto Rotaract 2042' },
-  { qty: '× 1', name: 'Cena del venerdì', donor: 'offerta dal Distretto Rotaract 2041' },
-  { qty: '× 1', name: 'Pranzo della domenica', donor: 'offerto dal Distretto Rotaract 2050' },
-];
+const premi = content.prizes;
 
 const termini = `L'iniziativa denominata "Apertura Nazionale Rotaract 2026" è organizzata congiuntamente dal Multidistretto Lombardia e Provincia di Piacenza, costituito dai Distretti Rotaract 2041, 2042 e 2050, nell'ambito delle attività istituzionali, associative e promozionali connesse all'evento nazionale previsto nei giorni 18, 19 e 20 settembre 2026.
 
@@ -87,20 +81,10 @@ const GrattaVinci = () => (
 
     {/* INFO */}
     <section className="gv-info">
-      <h2 className="gv-info-title">Come funziona</h2>
-      <p>
-        Le cartoline vengono distribuite gratuitamente durante l'Apertura Nazionale Rotaract 2026
-        — 18, 19 e 20 settembre 2026 — tra Milano, Monza e il Lago d'Iseo.
-      </p>
-      <p>
-        Alcune cartoline riportano l'assegnazione di specifiche utilità promozionali rese disponibili
-        grazie a liberalità, sponsorizzazioni e contributi volontari dei partner aderenti all'iniziativa.
-        La distribuzione avviene senza corresponsione di denaro e senza alcuna finalità commerciale.
-      </p>
-      <p>
-        L'accettazione della cartolina costituisce integrale accettazione del regolamento riportato
-        in fondo a questa pagina.
-      </p>
+      <h2 className="gv-info-title">{content.howItWorks.title}</h2>
+      {content.howItWorks.paragraphs.map((p, i) => (
+        <p key={i}>{p}</p>
+      ))}
     </section>
 
     {/* PREMI */}

@@ -2,81 +2,359 @@
 
 <div align="center">
   <img src="public/assets/logo-mdio.jpeg" alt="Logo MDIO" width="120" style="border-radius: 50%;" />
-  <h3>Lombardia & Provincia di Piacenza</h3>
+  <h3>Lombardia &amp; Provincia di Piacenza</h3>
   <p><strong>Distretti 2041 · 2042 · 2050</strong></p>
 </div>
 
 ---
 
-Repository ufficiale del sito web del **Multidistretto Italia Ovest (MDIO)**. 
-Il portale raggruppa le informazioni, la storia, i numeri e le aree geografiche dei tre distretti Rotaract lombardi, promuovendo il networking, i service condivisi e i grandi eventi interdistrettuali come l'**Apertura Nazionale 2026**.
+Sito web ufficiale del Multidistretto Italia Ovest (MDIO) del Rotaract: presenta i tre distretti, l'Apertura Nazionale 2026 (18-20 settembre 2026), lo shop biglietti e l'iniziativa delle cartoline (gratta-vinci).
 
-## 🛠 Stack Tecnologico
+Questo README è la documentazione completa del progetto. Chi lo legge dovrebbe riuscire ad avviare il sito, modificare i contenuti, capire il flusso, aggiungere una pagina o un campo, fare deploy e risolvere i guasti comuni.
 
-Il progetto è una **Multi-Page Application (MPA)** moderna, veloce e scalabile, sviluppata con:
+## Indice
 
-- **[React 18](https://react.dev/)**: Libreria core per la creazione di componenti UI dinamici.
-- **[Vite](https://vitejs.dev/)**: Build tool di nuova generazione per un ambiente di sviluppo rapido (HMR) e build di produzione ultra-ottimizzate.
-- **Vanilla CSS**: Stili customizzati focalizzati su performance, design geometrico e tipografia moderna (Google Fonts: *Archivo*, *Fraunces*, *Inter*).
+1. [Panoramica e stack](#1-panoramica-e-stack)
+2. [Architettura](#2-architettura)
+3. [Struttura del repo](#3-struttura-del-repo)
+4. [Sviluppo locale](#4-sviluppo-locale)
+5. [Pagine](#5-pagine)
+6. [Contenuti](#6-contenuti)
+7. [Guida per chi modifica i contenuti (WordPress)](#7-guida-per-chi-modifica-i-contenuti-wordpress)
+8. [Plugin mdio-content](#8-plugin-mdio-content)
+9. [Mu-plugin mdio-headless](#9-mu-plugin-mdio-headless)
+10. [SEO](#10-seo)
+11. [Build e deploy](#11-build-e-deploy)
+12. [Risoluzione problemi](#12-risoluzione-problemi)
+13. [Privacy e sicurezza](#13-privacy-e-sicurezza)
+14. [Limiti noti e cose da fare](#14-limiti-noti-e-cose-da-fare)
 
-## 📂 Struttura del Progetto
+## 1. Panoramica e stack
 
-Il sito è diviso in diversi **Entry Points (Pagine HTML indipendenti)**, ciascuno abbinato al proprio file `.jsx`:
+Il sito è una Multi-Page Application statica: ogni pagina ha il suo file HTML e il suo punto di ingresso React. Non c'è un server applicativo: in produzione si pubblicano file statici.
 
-```text
-📦 MDIO-website
- ┣ 📜 README.md                   # Documentazione (questo file)
- ┣ 📜 index.html                  # Homepage Multidistrettuale
- ┣ 📜 home.jsx                    # Core logic Homepage
- ┣ 📜 apertura-nazionale.html     # Landing page Apertura Nazionale 2026
- ┣ 📜 apertura-nazionale.jsx      # Core logic Apertura Nazionale
- ┣ 📂 distretti                   # Pagine specifiche dei Distretti
- ┃  ┣ 📜 2041.html / 2041.jsx     # Area Metropolitana di Milano
- ┃  ┣ 📜 2042.html / 2042.jsx     # Lombardia Centro & Nord
- ┃  ┗ 📜 2050.html / 2050.jsx     # Lombardia Sud & Piacenza
- ┣ 📂 assets                      # Immagini, loghi e risorse statiche
- ┣ 📜 vite.config.js              # Configurazione bundle Multi-Page
- ┗ 📂 .github/workflows/          # Script CI/CD per il deploy automatico
+- React 18 (`react`, `react-dom`) per i componenti.
+- Vite 5 (`@vitejs/plugin-react`) per sviluppo e build, con un plugin locale per la SEO (`scripts/seo-plugin.mjs`).
+- CSS semplice, un file per pagina più `globals.css`. Font da Google Fonts.
+- Contenuti in `content/*.json`, modificabili da un WordPress "headless" installato su `/cms` dello stesso dominio.
+- Build e deploy con GitHub Actions; pubblicazione via FTP su Hostinger.
+- `sharp` è una devDependency usata solo dallo script `convert-webp.js` (vedi [Limiti noti](#14-limiti-noti-e-cose-da-fare)).
+
+Dominio di produzione: `https://multidistrettolombardo.org`.
+
+## 2. Architettura
+
+```
+ Editor
+   |  modifica i campi in WordPress (/cms/wp-admin/)
+   v
+ WordPress + plugin mdio-content
+   |  endpoint pubblico  GET /cms/wp-json/mdio/v1/content
+   v
+ GitHub Action "Deploy to FTP"
+   |  1. node scripts/fetch-content.mjs   -> riscrive content/*.json
+   |  2. npm run build  (Vite + seo-plugin) -> dist/
+   v
+ FTP (FTP-Deploy-Action) -> cartella del dominio su Hostinger (public_html)
 ```
 
-## 🚀 Sviluppo Locale
+La Action parte a ogni push su `main`, a mano, su `repository_dispatch` (`content-updated`) e ogni ora.
 
-Per eseguire il progetto sul proprio computer ed effettuare modifiche in tempo reale:
+Perché i contenuti si scaricano in fase di build e non dal browser:
 
-1. **Clona il repository**:
-   ```bash
-   git clone https://github.com/gorlix/MDIO-website.git
-   cd MDIO-website
-   ```
+- Il sito resta statico e veloce: nessuna chiamata a WordPress per ogni visitatore.
+- Se WordPress è giù o rotto, il sito pubblico non se ne accorge: continua a servire l'ultima build.
+- Nessun problema di CORS, perché il browser non contatta mai `/cms`.
+- Titoli, meta tag, dati strutturati e testo `noscript` sono presenti già nell'HTML (utile ai motori di ricerca), cosa impossibile con un fetch lato client.
+- `content/*.json` nel repo è uno snapshot: se il download fallisce la build usa quello.
 
-2. **Installa le dipendenze** (richiede Node.js v18+):
-   ```bash
-   npm install
-   ```
+## 3. Struttura del repo
 
-3. **Avvia il server di sviluppo**:
-   ```bash
-   npm run dev
-   ```
-   Il server si avvierà su `http://localhost:5173`. Tutte le modifiche ai file `.jsx` o `.css` si rifletteranno istantaneamente nel browser grazie al supporto *Hot Module Replacement (HMR)*.
+```
+.
+├── index.html, apertura-nazionale.html, shop.html   entry HTML (root)
+├── distretti/{2041,2042,2050}.{html,jsx,css}        pagine dei distretti
+├── gratta-vinci/index.html                          entry HTML delle cartoline
+├── home.jsx, apertura-nazionale.jsx, shop.jsx,
+│   gratta-vinci.jsx                                 entry React (uno per pagina)
+├── *.css, globals.css                               stili
+├── components/                                      Header, Footer, Countdown,
+│                                                    EventBanner, RichText, CookieBanner
+├── content/                                         snapshot dei contenuti (JSON)
+│   ├── site.json, home.json, apertura.json,
+│   │   shop.json, gratta-vinci.json
+│   └── distretti/{2041,2042,2050}.json
+├── public/                                          copiato com'è in dist/ da Vite
+│   ├── assets/                                      immagini, logo, og-cover, mappa
+│   └── robots.txt, sitemap.xml, llms.txt, llms-full.txt
+├── scripts/
+│   ├── fetch-content.mjs                            scarica i contenuti da WordPress
+│   └── seo-plugin.mjs                               plugin Vite per la SEO
+├── wordpress/mdio-content/                          plugin WordPress (vedi sezione 8)
+├── .github/workflows/deploy.yml                     build e deploy
+├── robots.txt, sitemap.xml, llms.txt                copie in root (Vite NON le pubblica)
+├── vite.config.js, package.json
+└── convert-webp.js, check_error.js, signature.js    utilità (vedi sezione 14)
+```
 
-## 🏗 Build e Deploy (CI/CD)
+Le immagini stanno in `public/assets/`, non in una cartella `assets/` in root. Nei contenuti vanno scritte come `assets/nome-file.jpeg`.
 
-Il progetto sfrutta le **GitHub Actions** per il deploy automatizzato via FTP.
+`dist/` e `node_modules/` sono ignorati da git, come `.env`.
 
-- **Fase di Build**: Per generare manualmente i file statici ottimizzati pronti per la produzione, eseguire:
-  ```bash
-  npm run build
-  ```
-  Vite formatterà, minimizzerà e inserirà tutto il codice compilato all'interno della cartella `dist/`.
+## 4. Sviluppo locale
 
-- **Deploy Automatico**: 
-  Ogni volta che viene effettuato un `git push` sul branch `main`, il workflow `.github/workflows/deploy.yml` si attiva automaticamente. 
-  1. Compila il sito tramite Vite in un ambiente cloud protetto.
-  2. Si collega al server tramite le credenziali impostate nei **GitHub Secrets** (`FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`).
-  3. Carica il contenuto della cartella `dist/` nella directory pubblica dell'hosting.
+Requisiti: Node.js 20 (stessa versione della Action) e npm.
 
----
-<div align="center">
-  <small>© 2026 MDIO Rotaract · A.R. 2026—2027</small>
-</div>
+```bash
+npm ci            # installa le dipendenze (oppure npm install)
+npm run dev       # server di sviluppo Vite
+npm run build     # build di produzione in dist/
+npm run preview   # serve dist/ in locale per provarla
+```
+
+Per scaricare i contenuti da WordPress prima di sviluppare o costruire:
+
+```bash
+WP_CONTENT_URL=https://multidistrettolombardo.org/cms/wp-json/mdio/v1/content node scripts/fetch-content.mjs
+```
+
+Script npm: `dev`, `build`, `preview`, `optimize-images` (esegue `convert-webp.js`, vedi sezione 14).
+
+Senza `WP_CONTENT_URL` lo script non fa nulla ed esce con codice 0: si lavora sui JSON già presenti in `content/`. Anche se la rete o la validazione falliscono, `fetch-content.mjs` stampa un avviso `[contenuti] ATTENZIONE: ...`, lascia `content/` intatto ed esce con 0.
+
+Attenzione: dopo un fetch riuscito `content/*.json` risulta modificato in git. Non committare per sbaglio uno snapshot che non vuoi (per esempio con dati di prova).
+
+## 5. Pagine
+
+Ogni pagina ha un HTML (con `<script type="module">` verso il suo `.jsx`), un entry React e un JSON di contenuti. L'elenco completo dei punti di ingresso è in `vite.config.js` (`build.rollupOptions.input`).
+
+| Pagina | URL | Entry HTML | Entry React | Contenuti |
+|---|---|---|---|---|
+| Home | `/` | `index.html` | `home.jsx` | `content/home.json` + `site.json` |
+| Apertura Nazionale | `/apertura-nazionale.html` | `apertura-nazionale.html` | `apertura-nazionale.jsx` | `content/apertura.json` |
+| Shop biglietti | `/shop.html` | `shop.html` | `shop.jsx` | `content/shop.json` + `site.json` |
+| Cartoline (gratta-vinci) | `/gratta-vinci/` | `gratta-vinci/index.html` | `gratta-vinci.jsx` | `content/gratta-vinci.json` |
+| Distretto 2041 | `/distretti/2041.html` | `distretti/2041.html` | `distretti/2041.jsx` | `content/distretti/2041.json` + `site.json` |
+| Distretto 2042 | `/distretti/2042.html` | `distretti/2042.html` | `distretti/2042.jsx` | `content/distretti/2042.json` + `site.json` |
+| Distretto 2050 | `/distretti/2050.html` | `distretti/2050.html` | `distretti/2050.jsx` | `content/distretti/2050.json` + `site.json` |
+
+`site.json` alimenta anche i componenti condivisi: `Countdown` (data), `EventBanner` (banner evento in home e nei distretti), `Footer`, e lo shop (`salesOpen`, `wavePaused`, link Ticket Tailor).
+
+### Aggiungere una pagina
+
+1. Crea `nuova.html` (copia una pagina simile: meta, `<div id="root">`, `<script type="module" src="/nuova.jsx">`) e `nuova.jsx`, che importa `./content/nuova.json`.
+2. Aggiungi la voce in `build.rollupOptions.input` di `vite.config.js`. Senza questo la pagina esiste in dev ma non finisce in `dist/`.
+3. Crea `content/nuova.json`.
+4. Se vuoi che sia modificabile da WordPress: aggiungi un documento allo schema (sezione 8) e la chiave `nuova` all'elenco `KEYS` di `scripts/fetch-content.mjs`.
+5. Per la SEO automatica aggiungila a `PAGES` in `scripts/seo-plugin.mjs` e dai al JSON un gruppo `seo`.
+6. Aggiungi l'URL a `sitemap.xml` (e `public/sitemap.xml`, vedi sezione 10).
+
+### Aggiungere un campo a una pagina esistente
+
+1. Aggiungilo nello schema del plugin (sezione 8) e nel JSON in `content/`, con lo stesso nome.
+2. Usalo nel `.jsx`.
+3. Aggiorna il plugin su WordPress e rilancia l'import o compila il campo a mano (sezione 8).
+
+Attenzione: `fetch-content.mjs` scarta tutta la risposta se a una chiave di primo livello dello snapshot manca una chiave presente in `content/`. Aggiungere un campo al JSON prima che il plugin lo esporti fa quindi fallire il fetch (ripiego sullo snapshot) finché il plugin non è aggiornato.
+
+## 6. Contenuti
+
+`content/` è la fonte letta da React e dal plugin SEO. I file sono:
+
+- `site.json`: controlli generali (data countdown, link Ticket Tailor, `salesOpen`, `wavePaused`), footer, banner evento.
+- `home.json`, `apertura.json`, `shop.json`, `gratta-vinci.json`.
+- `distretti/2041.json`, `2042.json`, `2050.json`.
+
+Di norma questi file sono riscritti da `fetch-content.mjs` ogni volta che la Action gira. Se li modifichi a mano e fai push, alla build successiva WordPress li sovrascrive (se raggiungibile e valido). Per cambiare un contenuto in modo duraturo si modifica WordPress, oppure si modifica il JSON e si reimporta con `wp mdio import` (sezione 8).
+
+### Sintassi ammessa nel testo
+
+I campi di testo "ricco" possono contenere solo:
+
+- `<em>corsivo</em>`
+- `<strong>grassetto</strong>`
+- `<br/>` per andare a capo
+
+Il componente `components/RichText.jsx` interpreta solo questi tre tag e tratta tutto il resto come testo semplice. Non viene usato `dangerouslySetInnerHTML`, quindi altri tag compariranno come testo letterale. Per i testi SEO e il `noscript`, il plugin rimuove ogni tag.
+
+### Segnaposto nei testi SEO
+
+Nei testi `seo` di `apertura.json` e `shop.json` si possono usare `{{prezzoMin}}` e `{{prezzoMax}}`: la build li sostituisce con il prezzo più basso e più alto tra i pacchetti (campo `price` dei pacchetti). Segnaposto sconosciuti restano com'è.
+
+### Immagini
+
+Nei JSON le immagini sono path relativi a `public/assets/` (esempio `assets/2042-01-Lecco.jpeg`). Non si usa la media library di WordPress perché le immagini fanno parte della build statica: dovrebbero stare in `public/assets/` nel repo. Per cambiare un'immagine si aggiunge il file a `public/assets/` (commit e push) e poi si scrive il suo path nel campo in WordPress.
+
+## 7. Guida per chi modifica i contenuti (WordPress)
+
+Questa sezione è per chi non è tecnico.
+
+Il pannello è su `https://multidistrettolombardo.org/cms/wp-admin/`. Le credenziali non sono nel repo: chiedile ai maintainer.
+
+Qui non c'è un editor visuale: non si trascina nulla e non si vede un'anteprima del sito. Si compilano campi di testo, si preme "Aggiorna" e il sito cambia dopo la prossima pubblicazione automatica (vedi sotto). Le voci "Pagine" e "Articoli" di WordPress non alimentano il sito: modificarle non cambia nulla. Si usa solo il menu "Contenuti MDIO".
+
+### Il menu "Contenuti MDIO"
+
+| Voce | Cosa contiene |
+|---|---|
+| Sito | Controlli principali (countdown, link Ticket Tailor, vendite aperte, wave in pausa), piè di pagina, banner evento. |
+| Home | Intestazione, hero, schede dei tre distretti, "Chi siamo", numeri, mappa, SEO. |
+| Apertura Nazionale | Pagina dell'evento: hero, programma, pacchetti (testi di sezione), logistica, attività, info utili, FAQ (titolo), invito finale, SEO. |
+| Shop | Testi della pagina biglietti e messaggi "prossima wave". |
+| Cartoline | Premi e testo "Come funziona" della pagina gratta-vinci. |
+| Distretti | Un contenuto per distretto (2041, 2042, 2050): hero, identità, zone, riconoscimenti, service, SEO. |
+| Giornate evento | Le tre giornate dell'Apertura Nazionale (programma orario, informazioni). |
+| Pacchetti | I pacchetti in vendita (nome, prezzo, cosa include). L'ordine è quello della colonna "Ordine". |
+| FAQ | Le domande frequenti dell'Apertura Nazionale. L'ordine è quello della colonna "Ordine". |
+
+Sotto ogni campo ci sono i suggerimenti sul formato. Nei campi di testo si possono usare solo `<em>`, `<strong>` e `<br/>` (sezione 6).
+
+### Aprire e chiudere le vendite
+
+In Contenuti MDIO > Sito, scheda "Controlli principali":
+
+- Vendite aperte (`salesOpen`): attivo mostra il widget di acquisto, spento mostra il messaggio "le vendite apriranno a breve".
+- Wave in pausa (`wavePaused`): attivo nasconde il widget e mostra "Rimani sintonizzato".
+- Link di acquisto Ticket Tailor (`ticketTailorUrl`): indirizzo del checkout.
+
+### Countdown
+
+Sempre in Sito > "Controlli principali", il campo "Data e ora del countdown" (`countdownTarget`) nel formato `AAAA-MM-GGTHH:MM:SS`, per esempio `2026-09-18T18:00:00`.
+
+### Quando compaiono le modifiche
+
+Il sito non cambia appena si preme "Aggiorna". Una Action su GitHub ricostruisce il sito ogni ora (cron oraria, al minuto 0): serve da zero a circa un'ora, più qualche minuto di build. Per pubblicare subito, chi ha accesso al repo può andare su GitHub > Actions > "Deploy to FTP" > "Run workflow". Non c'è ancora un webhook che avvii la pubblicazione al salvataggio.
+
+### Attenzione a FAQ e Pacchetti
+
+Se riordini FAQ o Pacchetti dal campo "Ordine" va tutto bene. Ma se qualcuno rilancia l'import dai file (sezione 8) dopo un riordino, i contenuti si scambiano di posto. Se non sei sicuro, chiedi ai maintainer.
+
+## 8. Plugin mdio-content
+
+Sta in `wordpress/mdio-content/`. Richiede il plugin Secure Custom Fields (SCF, compatibile ACF). Fa quattro cose:
+
+| File | Funzione |
+|---|---|
+| `mdio-content.php` | Intestazione del plugin, carica gli altri file (e `cli.php` solo in WP-CLI). |
+| `includes/schema.php` | Schema unico dei contenuti: elenco di documenti (`mdio_docs()`: site, home, apertura, shop, gratta-vinci) e di tipi di contenuto (`mdio_cpts()`: distretto, giornata, pacchetto, faq), con i loro campi. |
+| `includes/fields.php` | Crea dallo schema i tipi di contenuto, il menu "Contenuti MDIO", le pagine opzioni e i gruppi di campi SCF. |
+| `includes/export.php` | Converte i valori dei campi nella stessa struttura JSON dei file di `content/`. |
+| `includes/rest.php` | Registra `GET /wp-json/mdio/v1/content`. |
+| `includes/cli.php` | Comando `wp mdio import <cartella>`. |
+
+### Endpoint
+
+`GET https://multidistrettolombardo.org/cms/wp-json/mdio/v1/content` è pubblico e senza cache. Risponde con un oggetto che ha una chiave per file: `site`, `home`, `apertura`, `shop`, `gratta-vinci`, `distretti/2041`, `distretti/2042`, `distretti/2050`. Essendo pubblico, non deve contenere nulla di riservato.
+
+### Aggiungere un campo (schema unico)
+
+Lo schema in `schema.php` è l'unica fonte per campi, export e import. Per aggiungere un campo:
+
+1. Aggiungilo nell'array `fields` del documento o del tipo giusto con gli helper: `mdio_T` (testo), `mdio_RT` (testo con `<em>`, `<strong>`, `<br/>`), `mdio_A` (area di testo), `mdio_B` (sì/no), `mdio_N` (numero), `mdio_L` (elenco di stringhe), `mdio_R` (ripetitore), `mdio_G` (gruppo), `mdio_X` (rimando a un tipo di contenuto).
+2. L'ordine nello schema è l'ordine delle chiavi nel JSON. Con `'opt' => 1` la chiave viene omessa se vuota. Il gruppo `seo` va in fondo.
+3. Carica il plugin aggiornato sul server.
+4. Se il campo è nuovo in un JSON esistente, aggiornalo anche in `content/` e `.jsx` (sezione 5).
+
+I nomi (`n`) devono coincidere con le chiavi JSON; le chiavi SCF interne si ricavano da soli (`field_mdio_<doc>_<campo>`).
+
+### Installare e aggiornare
+
+Si copia la cartella `wordpress/mdio-content/` in `wp-content/plugins/` del WordPress su `/cms` (dal file manager di hPanel o via SSH/SFTP; credenziali in hPanel/1Password dei maintainer) e si attiva da Plugin. Per aggiornare si sostituisce la cartella con la versione del repo. Serve SCF attivo.
+
+### `wp mdio import`
+
+```bash
+wp mdio import /percorso/della/cartella/content
+```
+
+Carica nei campi di WordPress i JSON di `content/` (site, home, apertura, shop, gratta-vinci, distretti, giornate, pacchetti, FAQ). Serve per la prima popolazione o per riportare in WordPress ciò che è nel repo. È idempotente, ma con questi limiti:
+
+- Sovrascrive tutto ciò che è stato modificato in WordPress sui campi coinvolti.
+- Rimuove da WordPress i contenuti importati in passato che non sono più nei file.
+- Le chiavi di corrispondenza sono: `distretto-<numero>`, `giorno-<id>` per le giornate, e la posizione per FAQ (`faq-N`) e pacchetti (`pacchetto-N`). Poiché FAQ e pacchetti dipendono dalla posizione, se in WordPress sono stati riordinati e poi si reimporta, i contenuti si scambiano di posto.
+
+## 9. Mu-plugin mdio-headless
+
+Esiste un mu-plugin `mdio-headless` che sta solo sul server, in `cms/wp-content/mu-plugins/`, e oggi non è nel repo. Questo è un limite: se il server va ricreato o migrato, quel pezzo va riscritto o recuperato dal server. Va aggiunto al repo (per esempio in `wordpress/`). Non è documentato cosa faccia, perché non è verificabile da qui.
+
+## 10. SEO
+
+`scripts/seo-plugin.mjs` è un plugin Vite. In build, per ogni pagina in `PAGES`, legge il JSON corrispondente e riscrive nell'HTML:
+
+- `<title>` e meta description, Open Graph e Twitter, dal gruppo `seo` del JSON (con i segnaposto di prezzo).
+- JSON-LD: `Event` (con `subEvent` per le giornate e `offers` per i pacchetti) e `FAQPage` per l'Apertura; `ItemList` per lo shop; `description` dell'Organization per home e distretti.
+- Il blocco `<noscript>` di Apertura e Shop, generato da pacchetti, giornate e FAQ.
+- `FAQPage` contiene solo le FAQ presenti e visibili nel JSON.
+
+Genera inoltre `/apertura-nazionale.json` (file di riepilogo dell'evento per consumo esterno) a ogni build, dai dati correnti. Non va più tenuto in `public/` (il vecchio file è stato rimosso).
+
+Resta fisso nel codice dello script: organizzatore, immagine di condivisione, luoghi, orari delle sotto-giornate (`DAY_CONST`), data di validità delle offerte, URL del sito, numero di distretti partecipanti e hotel ufficiale nel JSON generato, e parte del testo del `noscript` di Apertura. Cambiare questi dati significa modificare lo script.
+
+### File root e public/
+
+Vite pubblica solo il contenuto di `public/`, più le pagine HTML elencate in `vite.config.js`. In `dist/` finiscono quindi `public/robots.txt`, `public/sitemap.xml`, `public/llms.txt` e `public/llms-full.txt`. I file `robots.txt`, `sitemap.xml`, `llms.txt` nella root del repo non vengono pubblicati e sono più recenti: vanno allineati (vedi sezione 14).
+
+## 11. Build e deploy
+
+Workflow: `.github/workflows/deploy.yml`, "Deploy to FTP". Passi: checkout, Node 20, `npm ci`, `node scripts/fetch-content.mjs` (con `WP_CONTENT_URL` impostata all'endpoint pubblico), `npm run build`, upload di `dist/` via FTP nella cartella del dominio (`public_html`).
+
+Trigger:
+
+- `push` su `main`.
+- `workflow_dispatch` (manuale: Actions > Run workflow).
+- `repository_dispatch` con tipo `content-updated` (previsto per un futuro webhook, oggi non c'è chi lo invia).
+- `schedule`: ogni ora (`0 * * * *`).
+
+Secret GitHub richiesti: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD` (Settings > Secrets and variables > Actions). I valori non sono nel repo.
+
+Comportamento del fallback: se WordPress non risponde, risponde con errore o con dati incompleti, lo script avvisa nel log, lascia `content/` com'è e la build prosegue con lo snapshot committato. Il deploy non fallisce per questo motivo: guarda il log del passo "Aggiornamento contenuti da WordPress" se sospetti che non si aggiorni.
+
+Regola: ogni push su `main` fa partire un deploy in produzione. Lavora su un branch e fai merge su `main` solo quando il contenuto è pronto. Su un branch diverso da `main` la Action non parte per il push (parte però il cron sulla branch di default).
+
+## 12. Risoluzione problemi
+
+**Il contenuto modificato in WordPress non compare.**
+Controlla di aver premuto "Aggiorna". Poi aspetta il cron orario o lancia a mano "Deploy to FTP". Apri il log: se il passo di aggiornamento contenuti mostra `[contenuti] ATTENZIONE`, il sito è stato costruito con lo snapshot. Verifica anche che l'endpoint risponda (apri l'URL del `WP_CONTENT_URL` nel browser). Se il sito sembra ancora vecchio, forza il ricaricamento (cache del browser).
+
+**WordPress è giù.**
+Il sito pubblico non è toccato. La Action ripiega sullo snapshot. Quando WordPress torna, la prima esecuzione utile riallinea i contenuti.
+
+**Il fetch fallisce con un warning.**
+I messaggi dicono perché: download non riuscito (rete, HTTP), risposta non valida, chiave mancante nella risposta, oppure una chiave dello snapshot assente nella risposta (di solito il plugin sul server è più vecchio dei JSON del repo: aggiorna il plugin, sezione 8).
+
+**Il CMS mostra un errore dopo un cambio della password del database.**
+WordPress deve usare le credenziali nuove: aggiorna la configurazione del database di WordPress sul server (file di configurazione del CMS in `public_html/cms`) e verifica in hPanel che utente e password del database coincidano. I dettagli sono in hPanel/1Password dei maintainer.
+
+**SSH: "Too many authentication failures".**
+Hai molte chiavi nell'agent e il server scarta la connessione prima di provare quella giusta. Usa solo la chiave voluta:
+
+```bash
+ssh -o IdentitiesOnly=yes -i <chiave> <utente>@<host>
+```
+
+(o impostalo in `~/.ssh/config` con `IdentitiesOnly yes`). Credenziali e chiave sono in hPanel/1Password dei maintainer.
+
+**404 su `/cms/wp-json/...`.**
+Manca (o è sbagliato) `cms/.htaccess` con le regole di riscrittura di WordPress. In alternativa funziona `/cms/index.php?rest_route=/mdio/v1/content`. Ripristina `.htaccess` da Impostazioni > Permalink in wp-admin (salvando) o dal file standard di WordPress.
+
+**La build locale fallisce su un JSON.**
+Controlla la sintassi del file modificato (`node -e "JSON.parse(require('fs').readFileSync('content/home.json','utf8'))"`).
+
+## 13. Privacy e sicurezza
+
+- Il repo è pubblico: niente password, chiavi, utenti, indirizzi o credenziali di accesso nel codice, nei commit e in questo README. Servono solo come secret GitHub o nei gestori dei maintainer (hPanel, 1Password).
+- L'endpoint `/cms/wp-json/mdio/v1/content` è pubblico: tutto ciò che passa da WordPress è, di fatto, pubblico. Per questo il regolamento (`termini`) dell'iniziativa cartoline sta in `gratta-vinci.jsx` e non in WordPress.
+- Non lasciare backup, dump o archivi nella cartella pubblica del dominio (`public_html`): sono scaricabili da chiunque. I backup vanno fuori dalla cartella servita.
+- Il CMS non deve essere indicizzato dai motori di ricerca: mantieni attiva l'opzione "scoraggia i motori di ricerca" o equivalente lato server. Questa impostazione non è versionata nel repo.
+- Account WordPress con password forti e solo per chi serve.
+
+## 14. Limiti noti e cose da fare
+
+- Immagini: solo come path (sezione 6); non c'è caricamento da WordPress.
+- Pubblicazione: oggi solo cron oraria o avvio manuale. Il tipo `repository_dispatch` è già nel workflow ma manca un webhook da WordPress che lo invii.
+- Mu-plugin `mdio-headless` solo sul server (sezione 9).
+- FAQ e pacchetti sono identificati per posizione: l'import dopo un riordino li scambia (sezione 8).
+- Incoerenze nei dati: le cifre di club e soci differiscono tra le pagine. Esempio 2041: 13 club/350 soci in home e nell'hero del distretto, 28/612 nei "Numeri" della stessa pagina distretto e nel `noscript` di Apertura; totali in home: 61 club/1.013 soci nei numeri, 73/1.497 nei testi SEO. Vanno uniformate.
+- `public/llms.txt`, `public/llms-full.txt` e `public/sitemap.xml` sono obsoleti rispetto ai file omonimi in root, che però Vite non pubblica. Va deciso quale versione tenere e spostarla in `public/`.
+- Script `convert-webp.js` (`npm run optimize-images`) cerca una cartella `assets/` in root che non esiste più (le immagini sono in `public/assets/`): va corretto prima di usarlo. `check_error.js` richiede `puppeteer`, che non è tra le dipendenze. `signature.js` è importato da `components/Header.jsx` e stampa solo i crediti nella console del browser.
+- Il campo `seo` e il `noscript` non coprono tutte le pagine allo stesso modo (cartoline: solo title e description).

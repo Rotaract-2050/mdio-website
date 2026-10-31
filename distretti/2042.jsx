@@ -3,129 +3,34 @@ import ReactDOM from 'react-dom/client';
 import '../globals.css';
 import '../home.css';
 import './2042.css';
-import Countdown from '../components/Countdown';
 import CookieBanner from '../components/CookieBanner';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import RichText from '../components/RichText';
+import EventBanner from '../components/EventBanner';
+import content from '../content/distretti/2042.json';
+import site from '../content/site.json';
 
 const Distretto2042 = () => {
   const [zoneHover, setZoneHover] = React.useState(null);
   const [heroImg] = React.useState(() => {
-    const imgs = [
-      '../assets/2042-01-Lecco.jpeg', '../assets/2042-02-Bergamo.jpeg',
-      '../assets/2042-03-Sondrio.jpeg', '../assets/2042-04-Como.jpeg',
-      '../assets/2042-06-Varese.jpeg', '../assets/2042-13-Monza.jpeg',
-      '../assets/2042-14-BergamoAlta.jpeg',
-    ];
+    const imgs = content.hero.imagePool;
     return imgs[Math.floor(Math.random() * imgs.length)];
   });
-
-  const areas = [
-    {
-      n: '01',
-      name: 'BRIANTEA',
-      prov: 'Monza e Brianza',
-      clubs: ['Merate', 'Monza', 'Monza Brianza', 'Vimercate'],
-      desc: 'Il cuore del Made in Italy manifatturiero: design, PMI e artigianato d\'eccellenza come terreno fertile per i service più concreti.',
-      bg: '#7eb7ff',
-      fg: '#1a1a1a',
-    },
-    {
-      n: '02',
-      name: 'LARIANA',
-      prov: 'Como · Lecco · Sondrio',
-      clubs: ['Cantù', 'Como', 'Erba-Laghi', 'Lecco', 'Sondrio'],
-      desc: 'Dalle Alpi ai laghi: fellowship scenografica, che fa da cornice a service sia storici che innovativi.',
-      bg: '#1d6b8f',
-      fg: '#fff',
-    },
-    {
-      n: '03',
-      name: 'OLONA',
-      prov: 'Varese',
-      clubs: ['Magenta', 'Malpensa', 'Saronno', 'Varese'],
-      desc: 'Dalle contrade del palio all\'innovazione tecnologica, una zona eterogenea che sa ascoltare i bisogni del territorio.',
-      bg: '#2a5c3a',
-      fg: '#fff',
-    },
-    {
-      n: '04',
-      name: 'OROBICA',
-      prov: 'Bergamo',
-      clubs: ['Bergamo', 'Clusone', 'Treviglio'],
-      desc: 'Zona madre del service più ambizioso del Rotary, l\'End Polio Now. Dalle valli alle città continua a produrre service solidi e concreti.',
-      bg: '#1a3d8f',
-      fg: '#fff',
-    },
-  ];
-
-  const awards = [
-    {
-      n: '01',
-      title: 'Premi per l\'Imprenditoria e l\'Artigianato Giovanile',
-      body: 'Attivo tramite bandi condivisi con il Rotary, il distretto premia giovani talenti dell\'artigianato, del design e delle PMI, fornendo borse di studio e supporto all\'avvio di nuove imprese.',
-      tag: 'Imprenditoria',
-    },
-    {
-      n: '02',
-      title: 'Riconoscimenti per la Sostenibilità Ambientale',
-      body: 'Data la fragilità e la bellezza dell\'ecosistema lacustre e montano, i club del 2042 ricevono regolarmente encomi e certificati a livello nazionale per i progetti di salvaguardia ambientale.',
-      tag: 'Ambiente',
-    },
-    {
-      n: '03',
-      title: 'RYLA Immersivo',
-      body: 'Il RYLA del 2042 si distingue per l\'approccio outdoor. Sfruttando le location montane e lacustri, la formazione sulla leadership viene affiancata a prove di team building all\'aria aperta.',
-      tag: 'Leadership',
-    },
-    {
-      n: '04',
-      title: 'Paul Harris Fellow',
-      body: 'L\'impegno nei momenti di crisi — come il supporto agli ospedali bergamaschi e lombardi — è valso a molti club e soci del distretto le massime onorificenze rotariane.',
-      tag: 'Eccellenza',
-    },
-  ];
-
-  const services = [
-    {
-      n: '01',
-      icon: '🌲',
-      title: 'Tutela del Patrimonio Naturale',
-      body: 'Continua collaborazione con comuni e realtà come Plastic Free per concretizzare un sentito interesse per il nostro territorio.',
-      tags: ['Natura', 'Laghi', 'Montagna'],
-    },
-    {
-      n: '02',
-      icon: '🚑',
-      title: 'Sanità & Soccorso sul Territorio',
-      body: 'Grande impegno per la sensibilizzazione su tematiche che spaziano dalla salute mentale alla ricerca scientifica, in particolare con il service di punta "Brainy, coltiviamo la ricerca". Promozione di corsi BLSD e di progetti tra cui il Teddy Bear.',
-      tags: ['Ospedali', 'Soccorso Alpino', 'P.C.'],
-    },
-    {
-      n: '03',
-      icon: '⛷️',
-      title: 'Inclusione e Attenzione',
-      body: 'Il 2042 lavora collaborando anche con associazioni del territorio per essere di supporto a persone con fragilità. Il Camp dell\'Amicizia e la collaborazione con l\'Arca del Seprio sono esempi di service storici del distretto.',
-      tags: ['Paralimpico', 'Vela', 'Ippoterapia'],
-    },
-  ];
 
   return (
     <div className="vb-root d-root">
 
       {/* ── HEADER ──────────────────────────────── */}
-      <Header 
-        homeLink="../index.html" 
-        logoPath="../assets/logo-mdio.jpeg"
-        ctaText="Apertura Nazionale 2026 →"
-        ctaLink="../apertura-nazionale.html"
+      <Header
+        homeLink={content.header.homeLink}
+        logoPath={content.header.logoPath}
+        ctaText={content.header.ctaText}
+        ctaLink={content.header.ctaLink}
       >
-        <a href="../index.html">← MDIO</a>
-        <a href="#identita">Identità</a>
-        <a href="#numeri">Numeri</a>
-        <a href="#aree">Aree</a>
-        <a href="#storia">Storia</a>
-        <a href="#service">Service</a>
+        {content.header.nav.map((n, i) => (
+          <a key={i} href={n.href}>{n.label}</a>
+        ))}
       </Header>
 
       {/* ── HERO ────────────────────────────────── */}
@@ -133,26 +38,24 @@ const Distretto2042 = () => {
         <div className="d-hero-inner">
           <div className="d-hero-left">
             <div className="d-hero-eyebrow">Distretto Rotaract</div>
-            <div className="d-hero-num">2042</div>
+            <div className="d-hero-num">{content.number}</div>
             <h1 className="d-hero-title">
-              Lombardia<br />Centro &amp; Nord
+              <RichText text={content.hero.title} />
             </h1>
             <p className="d-hero-claim">
-              Dalle Alpi alla Brianza, una rete tra laghi,<br />
-              valli e città d'arte.
+              <RichText text={content.hero.claim} />
             </p>
             <div className="d-hero-stats">
-              <span><strong>18</strong> club</span>
-              <span>·</span>
-              <span><strong>260</strong> soci</span>
-              <span>·</span>
-              <span><strong>6</strong> province</span>
-              <span>·</span>
-              <span><strong>4</strong> aree geografiche</span>
+              {content.hero.stats.map((s, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && <span>·</span>}
+                  <span><strong>{s.n}</strong> {s.l}</span>
+                </React.Fragment>
+              ))}
             </div>
             <div className="d-hero-actions">
               <a
-                href="https://www.distrettorotaract2042.it/"
+                href={content.hero.siteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="d-btn-primary"
@@ -160,7 +63,7 @@ const Distretto2042 = () => {
                 Sito Ufficiale ↗
               </a>
               <a
-                href="https://www.instagram.com/rotaract2042/"
+                href={content.hero.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="d-btn-ghost"
@@ -170,7 +73,7 @@ const Distretto2042 = () => {
             </div>
           </div>
           <div className="d-hero-img">
-            <img src={heroImg} alt="Distretto Rotaract 2042" />
+            <img src={heroImg} alt={content.hero.imageAlt} />
           </div>
         </div>
       </section>
@@ -180,14 +83,12 @@ const Distretto2042 = () => {
         <div className="d-marquee-track">
           {[0, 1].map((i) => (
             <React.Fragment key={i}>
-              <span>DISTRETTO ROTARACT 2042</span>
-              <span className="d-star"> ✦ </span>
-              <span>LOMBARDIA CENTRO &amp; NORD</span>
-              <span className="d-star"> ✦ </span>
-              <span>18 CLUB · 260 SOCI</span>
-              <span className="d-star"> ✦ </span>
-              <span>BERGAMO · COMO · LECCO · MONZA B. · SONDRIO · VARESE</span>
-              <span className="d-star"> ✦ </span>
+              {content.marquee.map((t, k) => (
+                <React.Fragment key={k}>
+                  <span>{t}</span>
+                  <span className="d-star"> ✦ </span>
+                </React.Fragment>
+              ))}
             </React.Fragment>
           ))}
         </div>
@@ -201,26 +102,23 @@ const Distretto2042 = () => {
         </div>
         <div className="vb-manifesto-main">
           <h2 className="vb-manifesto-title">
-            Tra Laghi,<br />Vette e Imprese.
+            <RichText text={content.identity.title} />
           </h2>
           <div className="vb-manifesto-body">
             <p className="vb-manifesto-lede">
-              Il Distretto 2042 abbraccia <strong>l'anima settentrionale della Lombardia</strong>: due anime complementari che si fondono alla perfezione — l'eccellenza industriale delle valli e la Brianza da un lato, il patrimonio naturalistico mozzafiato dei grandi laghi prealpini e della Valtellina dall'altro.
+              <RichText text={content.identity.lede} />
             </p>
-            <p>
-              Visitare il 2042 significa scoprire una Fellowship autentica, vissuta a stretto contatto con il territorio e la natura. Dai weekend in baita alle gite in barca sul Lago di Como, fino alle degustazioni dei prodotti tipici locali, il senso di appartenenza qui è profondo e indissolubilmente legato alla bellezza dei luoghi.
-            </p>
+            {content.identity.paragraphs.map((p, i) => (
+              <p key={i}>
+                <RichText text={p} />
+              </p>
+            ))}
             <p className="d-founding">
-              Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2042 riunisce 18 Club Rotaract nelle province di Bergamo, Como, Lecco, Monza e Brianza, Sondrio e Varese.
+              <RichText text={content.identity.founding} />
             </p>
           </div>
           <div className="vb-pillars">
-            {[
-              { n: '01', t: 'Concretezza', d: 'Il fare prima del dire, sempre.' },
-              { n: '02', t: 'Natura', d: 'Il territorio è la nostra identità.' },
-              { n: '03', t: 'Impresa', d: 'La vocazione produttiva della Lombardia.' },
-              { n: '04', t: 'Appartenenza', d: 'Fellowship viscerale e radicata.' },
-            ].map((p) => (
+            {content.identity.pillars.map((p) => (
               <div key={p.n} className="vb-pillar">
                 <div className="vb-pillar-n">{p.n}</div>
                 <div className="vb-pillar-t">{p.t}</div>
@@ -238,12 +136,7 @@ const Distretto2042 = () => {
           <div className="vb-section-name vb-light">IL DISTRETTO IN CIFRE</div>
         </div>
         <div className="vb-numbers-grid">
-          {[
-            { n: '18', l: 'CLUB', s: 'Rotaract sul territorio' },
-            { n: '260', l: 'SOCI', s: 'attivi under 30' },
-            { n: '6', l: 'PROVINCE', s: 'BG · CO · LC · MB · SO · VA' },
-            { n: '4', l: 'AREE', s: 'Laghi · Valtellina · Brianza · Bergamasca' },
-          ].map((x, i) => (
+          {content.numbers.map((x, i) => (
             <div key={i} className="vb-num-cell">
               <div className="vb-num-n">{x.n}</div>
               <div className="vb-num-l">{x.l}</div>
@@ -253,17 +146,17 @@ const Distretto2042 = () => {
         </div>
       </section>
 
-      {/* ── AREE GEOGRAFICHE ────────────────────── */}
+      {/* ── ZONE / AREE ─────────────────────────── */}
       <section id="aree" className="d-zones">
         <div className="d-zones-head">
           <div className="vb-section-no vb-light">[ 03 ]</div>
-          <div className="vb-section-name vb-light">AREE GEOGRAFICHE</div>
+          <div className="vb-section-name vb-light">{content.zones.label}</div>
           <h2 className="d-zones-title">
-            Quattro anime.<br />Un distretto.
+            <RichText text={content.zones.title} />
           </h2>
         </div>
         <div className="d-zone-blocks">
-          {areas.map((z, i) => (
+          {content.zones.items.map((z, i) => (
             <div
               key={z.name}
               className={`d-zone-block${zoneHover === i ? ' is-hover' : ''}${zoneHover !== null && zoneHover !== i ? ' is-dim' : ''}`}
@@ -287,17 +180,17 @@ const Distretto2042 = () => {
         </div>
       </section>
 
-      {/* ── STORIA & COLLABORAZIONI ─────────────── */}
+      {/* ── STORIA & RICONOSCIMENTI ─────────────── */}
       <section id="storia" className="d-awards">
         <div className="d-awards-head">
           <div className="vb-section-no">[ 04 ]</div>
-          <div className="vb-section-name">STORIA &amp; COLLABORAZIONI</div>
+          <div className="vb-section-name">{content.awards.label}</div>
           <h2 className="d-awards-title">
-            Una storia<br /><em>di fare e di costruire.</em>
+            <RichText text={content.awards.title} />
           </h2>
         </div>
         <div className="d-awards-grid">
-          {awards.map((a) => (
+          {content.awards.items.map((a) => (
             <div key={a.n} className="d-award-card">
               <div className="d-award-n">{a.n}</div>
               <div className="d-award-title">{a.title}</div>
@@ -312,13 +205,13 @@ const Distretto2042 = () => {
       <section id="service" className="d-services">
         <div className="d-services-head">
           <div className="vb-section-no vb-light">[ 05 ]</div>
-          <div className="vb-section-name vb-light">SERVICE &amp; SFIDE</div>
+          <div className="vb-section-name vb-light">{content.services.label}</div>
           <h2 className="d-services-title">
-            Rimboccarsi le maniche<br /><em>è nel nostro DNA.</em>
+            <RichText text={content.services.title} />
           </h2>
         </div>
         <div className="d-services-grid">
-          {services.map((s) => (
+          {content.services.items.map((s) => (
             <div key={s.n} className="d-service-card">
               <div className="d-service-icon">{s.icon}</div>
               <div className="d-service-num">{s.n}</div>
@@ -339,17 +232,17 @@ const Distretto2042 = () => {
         <div className="d-rete-inner">
           <div className="d-rete-label">[ 06 ] — Perché fare rete con noi</div>
           <div className="d-rete-quote">
-            Outdoor, cultura, Made in Italy e un networking di eccellenza lontano dalla frenesia metropolitana.
+            {content.rete.quote}
           </div>
           <p className="d-rete-sub">
-            Venire a trovare il Distretto 2042 significa immergersi nella Dolce Vita lacustre e nella solidità della montagna. Siamo il partner ideale per gemellaggi all'insegna dell'outdoor, dell'amicizia più vera e di progetti di grande concretezza.
+            {content.rete.sub}
           </p>
           <div className="d-rete-actions">
-            <a href="mailto:info@distrettorotaract2042.it" className="d-btn-primary">
+            <a href={content.rete.email} className="d-btn-primary">
               Contattaci →
             </a>
             <a
-              href="https://www.distrettorotaract2042.it/"
+              href={content.hero.siteUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="d-btn-ghost"
@@ -361,38 +254,7 @@ const Distretto2042 = () => {
       </section>
 
       {/* ── CTA APERTURA ────────────────────────── */}
-      <section className="vb-event">
-        <div className="vb-event-marquee">
-          <div className="vb-event-track">
-            {[0, 1].map((i) => (
-              <React.Fragment key={i}>
-                <span>APERTURA NAZIONALE 2026</span>
-                <span className="vb-event-star"> ✦ </span>
-                <span>18 · 19 · 20 SETTEMBRE</span>
-                <span className="vb-event-star"> ✦ </span>
-                <span>MILANO · MONZA · ISEO</span>
-                <span className="vb-event-star"> ✦ </span>
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-        <div className="vb-event-body">
-          <div className="vb-event-left">
-            <div className="vb-event-eyebrow">— L'EVENTO DELL'ANNO</div>
-            <h2 className="vb-event-title">
-              Tre giorni.<br />
-              Tre città.<br />
-              <span className="vb-event-emph">Un solo MDIO.</span>
-            </h2>
-            <a href="../apertura-nazionale.html" className="vb-btn-block">
-              SCOPRI L'APERTURA NAZIONALE →
-            </a>
-          </div>
-          <div className="vb-event-right">
-            <Countdown />
-          </div>
-        </div>
-      </section>
+      <EventBanner starText=" ✦ " button={site.event.buttons.district} />
 
       {/* ── FOOTER ──────────────────────────────── */}
       <Footer />

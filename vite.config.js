@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
+import seoPlugin from './scripts/seo-plugin.mjs';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), seoPlugin()],
   build: {
     rollupOptions: {
       input: {

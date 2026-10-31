@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import site from '../content/site.json';
 
-const Countdown = ({ targetDate = '2026-09-18T18:00:00' }) => {
+const Countdown = ({ targetDate = site.countdownTarget }) => {
   const [countdown, setCountdown] = useState({ d: 0, h: 0, m: 0, s: 0 });
 
   useEffect(() => {

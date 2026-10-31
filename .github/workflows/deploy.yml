@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+  repository_dispatch:
+    types: [content-updated]
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
   build-and-deploy:
@@ -21,6 +26,11 @@ jobs:
 
       - name: Installazione delle dipendenze
         run: npm ci
+
+      - name: Aggiornamento contenuti da WordPress
+        run: node scripts/fetch-content.mjs
+        env:
+          WP_CONTENT_URL: https://multidistrettolombardo.org/cms/wp-json/mdio/v1/content
 
       - name: Compilazione del progetto con Vite
         run: npm run build

@@ -1,0 +1,104 @@
+{
+  "countdownTarget": "2026-09-18T18:00:00",
+  "ticketTailorUrl": "https://www.tickettailor.com/checkout/new-session/id/7914588/chk/054c/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true",
+  "salesOpen": true,
+  "wavePaused": false,
+  "footer": {
+    "title": "MDIO",
+    "subtitle": "LOMBARDIA & PIACENZA",
+    "columns": [
+      {
+        "heading": "DISTRETTI",
+        "links": [
+          {
+            "label": "2041 — Milano",
+            "href": "/distretti/2041.html"
+          },
+          {
+            "label": "2042 — Centro/Nord",
+            "href": "/distretti/2042.html"
+          },
+          {
+            "label": "2050 — Sud + PC",
+            "href": "/distretti/2050.html"
+          }
+        ]
+      },
+      {
+        "heading": "EVENTI",
+        "links": [
+          {
+            "label": "Apertura Naz. 2026",
+            "href": "/apertura-nazionale.html"
+          },
+          {
+            "label": "Calendario",
+            "href": "#"
+          },
+          {
+            "label": "Formazione",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "heading": "SOCIAL",
+        "links": [
+          {
+            "label": "Instagram",
+            "href": "https://www.instagram.com/multidistrettolombardo/"
+          },
+          {
+            "label": "Facebook",
+            "href": "#"
+          },
+          {
+            "label": "LinkedIn",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "heading": "CONTATTI",
+        "links": [
+          {
+            "label": "segreteria@rotarat2050.org",
+            "href": "mailto:segreteria@rotarat2050.org"
+          },
+          {
+            "label": "Press kit",
+            "href": "#"
+          }
+        ]
+      }
+    ],
+    "bottom": [
+      "© 2026 MDIO ROTARACT · A.R. 26—27",
+      "3 DISTRETTI · 12 PROVINCE · 1 MISSIONE",
+      "Fatto con il 🤍 dal Distretto 2050"
+    ]
+  },
+  "event": {
+    "ticker": [
+      "APERTURA NAZIONALE 2026",
+      "18 · 19 · 20 SETTEMBRE",
+      "MILANO · MONZA · ISEO"
+    ],
+    "eyebrow": "— L'EVENTO DELL'ANNO",
+    "titleLines": [
+      "Tre giorni.",
+      "Tre città."
+    ],
+    "emph": "Un solo MDIO.",
+    "buttons": {
+      "home": {
+        "text": "SCOPRI L'EVENTO →",
+        "href": "./apertura-nazionale.html"
+      },
+      "district": {
+        "text": "SCOPRI L'APERTURA NAZIONALE →",
+        "href": "../apertura-nazionale.html"
+      }
+    }
+  }
+}

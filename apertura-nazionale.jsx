@@ -6,6 +6,61 @@ import Countdown from './components/Countdown';
 import CookieBanner from './components/CookieBanner';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import RichText from './components/RichText';
+import content from './content/apertura.json';
+
+const Package = ({ pack: p, shopUrl }) => {
+  if (p.featured) {
+    return (
+      <div className="an-pack-hero an-pack featured">
+        <div className="an-pack-best an-pack-best--hero">{p.badge}</div>
+        <div>
+          <div className="an-pack-dates">{p.dates}</div>
+          <h3 className="an-pack-name"><RichText text={p.name} /></h3>
+          <div className="an-pack-tag">{p.tag}</div>
+          <ul className="an-pack-includes">
+            {p.includes.map((t, i) => <li key={i}>{t}</li>)}
+          </ul>
+        </div>
+        <div className="an-pack-hero-right">
+          <div className="an-pack-price">{p.price}</div>
+          <div className="an-pack-price-sub">{p.priceSub}</div>
+          <a href={shopUrl} className="an-pack-cta">{p.ctaLabel}</a>
+        </div>
+      </div>
+    );
+  }
+  if (p.group === 'singoli') {
+    return (
+      <div className="an-pack an-pack--singolo">
+        <div className="an-pack-dates">{p.dates}</div>
+        <h3 className="an-pack-name"><RichText text={p.name} /></h3>
+        <div className="an-pack-tag">{p.tag}</div>
+        <div className="an-pack-price">{p.price}</div>
+        <div className="an-pack-price-sub">{p.priceSub}</div>
+        <p className="an-pack-desc">
+          {p.description}<br /><br />
+          <span className="an-pack-desc-muted"><RichText text={p.note} /></span>
+        </p>
+        <div className="an-pack-guarantee">{p.guarantee}</div>
+        <a href={shopUrl} className="an-pack-cta">{p.ctaLabel}</a>
+      </div>
+    );
+  }
+  return (
+    <div className="an-pack">
+      <div className="an-pack-dates">{p.dates}</div>
+      <h3 className="an-pack-name"><RichText text={p.name} /></h3>
+      <div className="an-pack-tag">{p.tag}</div>
+      <div className="an-pack-price">{p.price}</div>
+      <div className="an-pack-price-sub">{p.priceSub}</div>
+      <ul className="an-pack-includes">
+        {p.includes.map((t, i) => <li key={i}>{t}</li>)}
+      </ul>
+      <a href={shopUrl} className="an-pack-cta">{p.ctaLabel}</a>
+    </div>
+  );
+};
 
 const AperturaNazionale = () => {
   const [openFaq, setOpenFaq] = React.useState(-1);
@@ -24,133 +79,25 @@ const AperturaNazionale = () => {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
 
-  const days = [
-    {
-      id: 'g1',
-      num: '01',
-      city: 'Milano',
-      sub: 'Serata di apertura',
-      tag: 'Mille e una Notte',
-      date: 'Ven 18 Set',
-      img: 'assets/2041-05-Milano.jpeg',
-      color: 'cranberry',
-      bullets: [
-        'Ingresso nella magia di Agrabah',
-        'Cena con live show e delizie d\'oriente',
-        'Dopocena con DJ set esclusivo',
-      ],
-      timeline: [
-        { t: '20:00', title: 'Ingresso & accoglienza', d: 'Immergiti nella magia di Agrabah e se fortunato tieniti pronto ad esprimere 3 desideri.' },
-        { t: 'A seguire', title: 'Cena con live show', d: 'Gusta le delizie d\'oriente e lasciati trasportare in un\'atmosfera unica.' },
-        { t: 'Dopocena', title: 'DJ set esclusivo', d: 'La serata continua con musica e divertimento per tutti.' },
-        { t: '02:00', title: 'Navette di rientro', d: 'Navette disponibili verso le 2:00 circa per chi alloggia negli hotel.' },
-      ],
-      info: [
-        { l: 'Prezzo', v: '€80', s: 'biglietto singolo' },
-        { l: 'Posti', v: 'Limitati', s: 'su prenotazione' },
-        { l: 'Come arrivare', v: 'Auto o mezzi', s: 'Tibaldi-Bocconi, bus 65' },
-        { l: 'Dress code', v: 'Mille e una notte', s: 'tocco arabeggiante' },
-      ],
-    },
-    {
-      id: 'g2',
-      num: '02',
-      city: 'Monza',
-      sub: 'Evento principale',
-      tag: 'Gala all\'Autodromo',
-      date: 'Sab 19 Set',
-      img: 'assets/2042-13-Monza.jpeg',
-      color: 'royal',
-      featured: true,
-      bullets: [
-        'Lavori nazionali mattutini — Sala Maddalena, Monza',
-        'Cena di gala all\'Autodromo + DJ set',
-        'Navette incluse — Hotel Falcone 4★ Monza centro',
-      ],
-      timeline: [
-        { t: '10:00', title: 'Lavori nazionali', d: 'Sala Maddalena · Via Santa Maddalena, 7, Monza (Istituto Scolastico "T. Confalonieri", centro città).' },
-        { t: '14:00', title: 'Attività pomeridiane facoltative', d: 'Coming soon — pacchetti di attività opzionali in corso di definizione.' },
-        { t: '18:30', title: 'Navetta → Autodromo', d: 'Partenza indicativa dall\'Hotel Falcone.' },
-        { t: '19:00', title: 'Aperitivo standing', d: 'Nell\'area box con auto da esposizione dello sponsor. DJ set. Allestimento floreale.' },
-        { t: '20:00', title: 'Cena di gala', d: 'Antipasto · Primo · Secondo · Dolce. Vino senza limiti + drink incluso. Mise en place curata.' },
-      ],
-      info: [
-        { l: 'Prezzo', v: '€155', s: 'biglietto singolo serata' },
-        { l: 'Hotel', v: 'Falcone 4★', s: 'Monza centro' },
-        { l: 'Trasporti', v: 'Navette incluse', s: 'hotel ↔ autodromo' },
-        { l: 'Da Milano', v: '15 min', s: 'in treno da Centrale' },
-      ],
-    },
-    {
-      id: 'g3',
-      num: '03',
-      city: 'Sale Marasino',
-      sub: 'Conviviale sul Lago',
-      tag: 'Chiusura sul Lago',
-      date: 'Dom 20 Set',
-      img: 'assets/2050-01-Iseo.jpeg',
-      color: 'gold',
-      bullets: [
-        'Relatori d\'eccezione',
-        'Pranzo conviviale sul Lago d\'Iseo',
-        'Chiusura ufficiale dell\'Apertura Nazionale',
-      ],
-      timeline: [
-        { t: '12:30', title: 'Arrivo e accoglienza', d: 'Apri gli occhi e preparati a contemplare la bellezza di un panorama mozzafiato.' },
-        { t: 'A seguire', title: 'Conviviale con relatori d\'eccezione', d: 'Coccolato dal dolce bisbiglio del Lago d\'Iseo, ti riempirai di entusiasmo interagendo con persone dalle vite eccezionali.' },
-        { t: 'In chiusura', title: 'Chiusura ufficiale dell\'Apertura Nazionale', d: 'Vedrai passare le consegne al Distretto Rotaract 2071 per l\'organizzazione del S.I.R.D.E.' },
-      ],
-      info: [
-        { l: 'Location', v: 'Lago d\'Iseo', s: 'Provincia di Brescia' },
-        { l: 'Da Monza', v: '~1h', s: 'in auto o treno' },
-        { l: 'Navette', v: 'Incluse', s: 'da e per l\'albergo' },
-        { l: 'Ospite', v: 'Seguiranno Sorprese' },
-        { l: 'Prezzo', v: '€55', s: 'biglietto singolo' },
-      ],
-    },
-  ];
 
-  const faq = [
-    {
-      q: 'Posso partecipare a un solo giorno?',
-      a: 'Certo. Puoi scegliere i Biglietti Singoli per partecipare solo alle singole giornate: Milano (€80), Monza (€155) e Iseo (€55). Oppure puoi scegliere uno dei Pacchetti Experience con hotel incluso.',
-    },
-    {
-      q: 'L\'hotel è incluso nel pacchetto?',
-      a: 'Sì, tutti i Pacchetti Experience (Full Weekend, Venerdì & Sabato, Sabato & Domenica) includono il pernottamento all\'Hotel Falcone 4★ e le navette. Per i Biglietti Singoli, l\'hotel non è incluso.',
-    },
-    {
-      q: 'Come arrivo a Monza dall\'aeroporto?',
-      a: 'Da Malpensa: Malpensa Express + cambio a Centrale (~1h). Da Linate: bus + metro o taxi. Da Bergamo Orio: navetta + treno per Monza (~1h15). Per il sabato sono previste navette tra l\'Hotel Falcone e l\'Autodromo.',
-    },
-    {
-      q: 'Qual è il dress code?',
-      a: 'Venerdì sera tema "Mille e una Notte" — mettiti un tocco arabeggiante!\nSabato gala all\'Autodromo: black tie / abito lungo per le donne, smoking o abito scuro per gli uomini.\nDomenica casual elegante.',
-    },
-    {
-      q: 'Entro quando posso iscrivermi?',
-      a: 'Le iscrizioni sono aperte fino ad esaurimento posti. Non ci sono aumenti di prezzo last minute: la quota è bloccata. I posti per il sabato a Monza sono limitati a 350.',
-    },
-    {
-      q: 'Voglio partecipare a tutte e tre le serate: come acquisto?',
-      a: 'Aggiungi al carrello separatamente i biglietti per Milano, Monza e Iseo, poi procedi al pagamento. I Biglietti Singoli non includono il pernottamento: i Pacchetti sono pensati solo per chi desidera anche l\'hotel.',
-    },
-  ];
+  const { days, faq, shopUrl } = content;
+  const experience = content.packages.filter((p) => p.group === 'experience');
+  const singoli = content.packages.filter((p) => p.group === 'singoli');
+  const featuredPack = experience.find((p) => p.featured);
+  const experienceGrid = experience.filter((p) => !p.featured);
 
   return (
     <div className="an-root">
       {/* HEADER */}
       <Header
-        homeLink="./index.html"
-        logoPath="assets/logo-mdio.jpeg"
-        ctaText="Acquista i biglietti →"
-        ctaLink="shop.html?back=apertura-nazionale.html%23pacchetti"
+        homeLink={content.header.homeLink}
+        logoPath={content.header.logoPath}
+        ctaText={content.header.ctaText}
+        ctaLink={content.header.ctaLink}
       >
-        <a href="./index.html">← MDIO</a>
-        <a href="#programma">Programma</a>
-        <a href="#pacchetti">Pacchetti</a>
-        <a href="#info">Info pratiche</a>
-        <a href="#faq">FAQ</a>
+        {content.header.nav.map((n, i) => (
+          <a key={i} href={n.href}>{n.label}</a>
+        ))}
       </Header>
 
       {/* HERO */}
@@ -159,46 +106,35 @@ const AperturaNazionale = () => {
           <div>
             <div className="an-eyebrow">
               <span className="an-eyebrow-dot" />
-              MDIO Lombardo · A.R. 2026—2027
+              {content.hero.eyebrow}
             </div>
             <h1 className="an-hero-title">
-              Apertura<br />
-              <em>Nazionale</em><br />
-              2026.
+              <RichText text={content.hero.title} />
             </h1>
-            <div className="an-hero-dates">18 · 19 · 20 Settembre</div>
+            <div className="an-hero-dates">{content.hero.dates}</div>
             <div className="an-hero-badge">
-              Il primo evento nazionale diffuso in 3 distretti
+              {content.hero.badge}
             </div>
             <p className="an-hero-lede">
-              Tre giorni per aprire l'anno rotaractiano <em>tutti insieme</em>:
-              {' '}<strong>Milano</strong> tra danze e profumi orientali,
-              {' '}<strong>Monza</strong> al gala dell'Autodromo,
-              {' '}<strong>Sale Marasino</strong> per i lavori e il conviviale sul lago.
+              <RichText text={content.hero.lede} />
             </p>
             <div className="an-hero-actions">
-              <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-btn-primary">Acquista i biglietti →</a>
-              <a href="#programma" className="an-btn-ghost">Programma completo</a>
+              <a href={shopUrl} className="an-btn-primary">{content.hero.primaryCta}</a>
+              <a href={content.hero.ghostCta.href} className="an-btn-ghost">{content.hero.ghostCta.text}</a>
             </div>
           </div>
 
           <div className="an-hero-right">
             <div className="an-hero-imagewrap">
-              <img src="assets/2041-05-Milano.jpeg" alt="" className="an-hero-img an-hero-img-1" />
-              <img src="assets/2042-13-Monza.jpeg" alt="" className="an-hero-img an-hero-img-2" />
-              <img src="assets/2050-01-Iseo.jpeg" alt="" className="an-hero-img an-hero-img-3" />
-              <div className="an-hero-cit-tag an-hero-cit-tag-1">
-                <span>GIORNO 01</span>
-                <span>Milano</span>
-              </div>
-              <div className="an-hero-cit-tag an-hero-cit-tag-2">
-                <span>GIORNO 02</span>
-                <span>Monza</span>
-              </div>
-              <div className="an-hero-cit-tag an-hero-cit-tag-3">
-                <span>GIORNO 03</span>
-                <span>Sale Marasino</span>
-              </div>
+              {content.hero.images.map((im, i) => (
+                <img key={i} src={im.src} alt="" className={`an-hero-img an-hero-img-${i + 1}`} />
+              ))}
+              {content.hero.images.map((im, i) => (
+                <div key={i} className={`an-hero-cit-tag an-hero-cit-tag-${i + 1}`}>
+                  <span>{im.day}</span>
+                  <span>{im.city}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -208,7 +144,7 @@ const AperturaNazionale = () => {
       <section className="an-countdown">
         <div className="an-countdown-inner">
           <div className="an-countdown-label">
-            Manca poco all'apertura <em className="an-countdown-em">nazionale</em>
+            {content.countdown.labelPrefix}<em className="an-countdown-em">{content.countdown.labelEmph}</em>
           </div>
           <div className="an-countdown-numbers">
             <Countdown />
@@ -219,18 +155,11 @@ const AperturaNazionale = () => {
       {/* MARQUEE */}
       <div className="an-marquee">
         <div className="an-marquee-track">
-          <span>Milano</span><span>•</span>
-          <span>Monza</span><span>•</span>
-          <span>Sale Marasino</span><span>•</span>
-          <span>3 giorni</span><span>•</span>
-          <span>14 distretti</span><span>•</span>
-          <span>Mille e una Notte</span><span>•</span>
-          <span>Autodromo Gala</span><span>•</span>
-          <span>Lago d'Iseo</span><span>•</span>
-          <span>Milano</span><span>•</span>
-          <span>Monza</span><span>•</span>
-          <span>Sale Marasino</span><span>•</span>
-          <span>3 giorni</span><span>•</span>
+          {content.marquee.map((w, i) => (
+            <React.Fragment key={i}>
+              <span>{w}</span><span>•</span>
+            </React.Fragment>
+          ))}
         </div>
       </div>
 
@@ -242,11 +171,10 @@ const AperturaNazionale = () => {
             <div className="an-section-lab">Programma</div>
           </div>
           <h2 className="an-programma-title">
-            Tre città,<br /><em>tre serate</em>,<br />una sola apertura.
+            <RichText text={content.programma.title} />
           </h2>
           <p className="an-programma-lede">
-            Da venerdì 18 a domenica 20 settembre 2026.
-            {' '}Sfoglia le giornate, scopri il programma e scegli quale vivere.
+            {content.programma.lede}
           </p>
         </div>
 
@@ -293,10 +221,10 @@ const AperturaNazionale = () => {
           </div>
           <div>
             <h2 className="an-pacchetti-title">
-              Scegli il tuo<br /><em>pacchetto</em>.
+              <RichText text={content.pacchetti.title} />
             </h2>
             <p className="an-pacchetti-lede">
-              Crediamo nel valore della partecipazione, non nell'ansia della prenotazione. Nessun dynamic pricing, nessun aumento dell'ultimo minuto: abbiamo scelto di mantenere un <strong>prezzo unico e bloccato</strong>. Stessa esperienza, massima trasparenza.
+              <RichText text={content.pacchetti.lede} />
             </p>
           </div>
         </div>
@@ -304,166 +232,62 @@ const AperturaNazionale = () => {
         {/* ── EXPERIENCE: titolo ── */}
         <div className="an-pack-section-heading">
           <h3 className="an-pack-group-title">
-            Pacchetti <em>Experience</em>{' '}
-            <span className="an-pack-group-title-sub">(Multi-giorno con Hotel)</span>
+            <RichText text={content.pacchetti.experienceTitle} />{' '}
+            <span className="an-pack-group-title-sub">{content.pacchetti.experienceSub}</span>
           </h3>
         </div>
 
         {/* ── EXPERIENCE: hero (3 giorni) ── */}
-        <div className="an-pack-hero an-pack featured">
-          <div className="an-pack-best an-pack-best--hero">Best Seller Assoluto</div>
-          <div>
-            <div className="an-pack-dates">18 · 19 · 20 SET · 3 GIORNI</div>
-            <h3 className="an-pack-name">Sotto il cielo<br />di <em>Lombardia</em></h3>
-            <div className="an-pack-tag">Milano · Monza · Lago d'Iseo</div>
-            <ul className="an-pack-includes">
-              <li>Serata Mille e una Notte (Milano)</li>
-              <li>Gala all'Autodromo (Monza)</li>
-              <li>Pranzo conviviale sul Lago (Iseo)</li>
-              <li>2 Notti in Hotel 4★ a Monza</li>
-              <li>Navette incluse tra hotel ed eventi</li>
-            </ul>
-          </div>
-          <div className="an-pack-hero-right">
-            <div className="an-pack-price">€435</div>
-            <div className="an-pack-price-sub">a persona</div>
-            <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-pack-cta">Acquista ora →</a>
-          </div>
-        </div>
+        {featuredPack && <Package pack={featuredPack} shopUrl={shopUrl} />}
 
-        {/* ── EXPERIENCE: 3 pacchetti bigiorno ── */}
+        {/* ── EXPERIENCE: pacchetti bigiorno ── */}
         <div className="an-pack-grid an-pack-grid--experience">
-          <div className="an-pack">
-            <div className="an-pack-dates">18 · 19 SET</div>
-            <h3 className="an-pack-name">Aladino<br /><em>in pista</em></h3>
-            <div className="an-pack-tag">Venerdì + Sabato</div>
-            <div className="an-pack-price">€380</div>
-            <div className="an-pack-price-sub">a persona</div>
-            <ul className="an-pack-includes">
-              <li>Serata Mille e una Notte (Milano)</li>
-              <li>Gala all'Autodromo (Monza)</li>
-              <li>2 Notti in Hotel 4★</li>
-              <li>Navette incluse</li>
-            </ul>
-            <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-pack-cta">Acquista ora →</a>
-          </div>
-
-          <div className="an-pack">
-            <div className="an-pack-dates">19 · 20 SET</div>
-            <h3 className="an-pack-name">3…2…1…<br /><em>lancio</em></h3>
-            <div className="an-pack-tag">Sabato + Domenica</div>
-            <div className="an-pack-price">€285</div>
-            <div className="an-pack-price-sub">a persona</div>
-            <ul className="an-pack-includes">
-              <li>Gala all'Autodromo (Monza)</li>
-              <li>Pranzo conviviale sul Lago (Iseo)</li>
-              <li>1 Notte in Hotel 4★</li>
-              <li>Navette incluse</li>
-            </ul>
-            <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-pack-cta">Acquista ora →</a>
-          </div>
-
-          <div className="an-pack">
-            <div className="an-pack-dates">19 SET + HOTEL</div>
-            <h3 className="an-pack-name"><em>Pit</em><br />Stop</h3>
-            <div className="an-pack-tag">Sabato + notte in hotel</div>
-            <div className="an-pack-price">€230</div>
-            <div className="an-pack-price-sub">a persona</div>
-            <ul className="an-pack-includes">
-              <li>Gala all'Autodromo (Monza)</li>
-              <li>1 Notte in Hotel 4★ a Monza</li>
-              <li>Navette incluse hotel ↔ autodromo</li>
-            </ul>
-            <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-pack-cta">Acquista ora →</a>
-          </div>
+          {experienceGrid.map((p, i) => (
+            <Package key={i} pack={p} shopUrl={shopUrl} />
+          ))}
         </div>
 
         {/* ── Banner navette ── */}
         <div className="an-logistica-wrap">
           <div className="an-logistica-banner">
-            <div className="an-logistica-icon">🚌</div>
+            <div className="an-logistica-icon">{content.logistica.icon}</div>
             <div className="an-logistica-text">
-              <strong className="an-logistica-label">Logistica</strong>
-              <strong>Il servizio navetta è sempre incluso</strong> per chi acquista i pacchetti comprensivi di hotel! Non dovrai preoccuparti degli spostamenti tra gli eventi e la struttura.
+              <strong className="an-logistica-label">{content.logistica.label}</strong>
+              <strong>{content.logistica.strong}</strong>{content.logistica.text}
             </div>
           </div>
         </div>
 
         {/* ── SINGOLI: titolo ── */}
         <h3 className="an-pack-group-title an-pack-group-title--singoli">
-          Biglietti Singoli
+          {content.pacchetti.singoliTitle}
         </h3>
 
-        {/* ── SINGOLI: 3 giornate ── */}
+        {/* ── SINGOLI: giornate ── */}
         <div className="an-pack-grid an-pack-grid--singoli">
-          <div className="an-pack an-pack--singolo">
-            <div className="an-pack-dates">18 SET · UN GIORNO</div>
-            <h3 className="an-pack-name">Le mille<br />ed <em>una notte</em></h3>
-            <div className="an-pack-tag">Venerdì · Milano</div>
-            <div className="an-pack-price">€80</div>
-            <div className="an-pack-price-sub">a persona</div>
-            <p className="an-pack-desc">
-              Ingresso ad Agrabah, cena con live show orientale e DJ set esclusivo.<br /><br />
-              <span className="an-pack-desc-muted">Hotel e navette non inclusi.<br></br>Le navette sono incluse solo nei pacchetti con pernotto.</span>
-            </p>
-            <div className="an-pack-guarantee">✓ Prezzo Bloccato</div>
-            <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-pack-cta">Acquista ora →</a>
-          </div>
-
-          <div className="an-pack an-pack--singolo">
-            <div className="an-pack-dates">19 SET · UN GIORNO</div>
-            <h3 className="an-pack-name">Il tempio<br />della <em>velocità</em></h3>
-            <div className="an-pack-tag">Sabato · Monza</div>
-            <div className="an-pack-price">€155</div>
-            <div className="an-pack-price-sub">a persona</div>
-            <p className="an-pack-desc">
-              Aperitivo standing nell'area box, cena di gala 4 portate e DJ set.<br /><br />
-              <span className="an-pack-desc-muted">Hotel e navette non inclusi.<br></br>Le navette sono incluse solo nei pacchetti con pernotto.</span>
-            </p>
-            <div className="an-pack-guarantee">✓ Prezzo Bloccato</div>
-            <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-pack-cta">Acquista ora →</a>
-          </div>
-
-          <div className="an-pack an-pack--singolo">
-            <div className="an-pack-dates">20 SET · UN GIORNO</div>
-            <h3 className="an-pack-name">Un lago<br />di <em>stelle</em></h3>
-            <div className="an-pack-tag">Domenica · Sale Marasino</div>
-            <div className="an-pack-price">€55</div>
-            <div className="an-pack-price-sub">a persona</div>
-            <p className="an-pack-desc">
-              Relatore d'eccezione e pranzo conviviale sul Lago d'Iseo.<br /><br />
-              <span className="an-pack-desc-muted">Hotel e navette non inclusi.<br></br>Le navette sono incluse solo nei pacchetti con pernotto.</span>
-            </p>
-            <div className="an-pack-guarantee">✓ Prezzo Bloccato</div>
-            <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-pack-cta">Acquista ora →</a>
-          </div>
+          {singoli.map((p, i) => (
+            <Package key={i} pack={p} shopUrl={shopUrl} />
+          ))}
         </div>
 
         {/* ── ATTIVITÀ FACOLTATIVE (SEGRETE) ── */}
         <div className="an-activities-wrap">
           <div className="an-activities-head">
             <h3 className="an-pack-group-title an-pack-group-title--activities">
-              Attività <em>Facoltative</em>
+              <RichText text={content.activities.title} />
             </h3>
-            <p className="an-activities-sub">Coming Soon</p>
+            <p className="an-activities-sub">{content.activities.sub}</p>
           </div>
           <div className="an-activities-grid">
-            {[
-              { name: 'PizzAut', price: 'TBD' },
-              { name: 'Gita a Monza', price: 'TBD' },
-              { name: 'Gita a Milano', price: 'TBD' },
-              { name: 'Museo Campari', price: 'TBD' },
-              { name: 'Experience Rinascente', price: 'TBD' },
-              { name: 'Giro in pista sul bus', price: 'TBD' },
-            ].map((a, i) => (
+            {content.activities.items.map((a, i) => (
               <div key={i} className="an-activity-card">
                 <div className="an-activity-content">
                   <div className="an-activity-name">{a.name}</div>
                   <div className="an-activity-price">{a.price}</div>
                 </div>
                 <div className="an-activity-overlay">
-                  <div className="an-activity-lock">🔒</div>
-                  <div className="an-activity-coming">Presto svelato</div>
+                  <div className="an-activity-lock">{content.activities.lockIcon}</div>
+                  <div className="an-activity-coming">{content.activities.overlayText}</div>
                 </div>
               </div>
             ))}
@@ -479,30 +303,17 @@ const AperturaNazionale = () => {
             <div className="an-section-lab">Info pratiche</div>
           </div>
           <h2 className="an-info-title">
-            Tutto quello<br />che ti serve <em>sapere</em>.
+            <RichText text={content.info.title} />
           </h2>
         </div>
         <div className="an-info-grid">
-          <div className="an-info-cell">
-            <div className="an-info-cell-h">→ Date</div>
-            <div className="an-info-cell-t">18—20 Settembre 2026</div>
-            <div className="an-info-cell-d">Tre giorni: Milano, Monza, Iseo</div>
-          </div>
-          <div className="an-info-cell">
-            <div className="an-info-cell-h">→ Hotel ufficiale</div>
-            <div className="an-info-cell-t">Hotel Falcone 4★</div>
-            <div className="an-info-cell-d">Monza centro</div>
-          </div>
-          <div className="an-info-cell">
-            <div className="an-info-cell-h">→ Posti</div>
-            <div className="an-info-cell-t"></div>
-            <div className="an-info-cell-d">Iscrizioni in 3 wave</div>
-          </div>
-          <div className="an-info-cell">
-            <div className="an-info-cell-h">→ Trasporti</div>
-            <div className="an-info-cell-t">Navette incluse</div>
-            <div className="an-info-cell-d">Hotel ↔ Autodromo (sabato)</div>
-          </div>
+          {content.info.cells.map((c, i) => (
+            <div key={i} className="an-info-cell">
+              <div className="an-info-cell-h">{c.h}</div>
+              <div className="an-info-cell-t">{c.t}</div>
+              <div className="an-info-cell-d">{c.d}</div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -514,11 +325,11 @@ const AperturaNazionale = () => {
             <div className="an-section-lab">Domande frequenti</div>
           </div>
           <h2 className="an-faq-title">
-            Hai un <em>dubbio</em>?<br />Probabilmente è qui.
+            <RichText text={content.faq.title} />
           </h2>
         </div>
         <div className="an-faq-list">
-          {faq.map((f, i) => (
+          {faq.items.map((f, i) => (
             <div key={i} className={`an-faq-item ${openFaq === i ? '' : 'closed'}`}>
               <div className="an-faq-q" onClick={() => setOpenFaq(openFaq === i ? -1 : i)}>
                 <span><em>{String(i + 1).padStart(2, '0')}.</em>&nbsp;&nbsp;{f.q}</span>
@@ -533,15 +344,14 @@ const AperturaNazionale = () => {
       {/* CTA finale */}
       <section className="an-cta-final">
         <div className="an-cta-final-inner">
-          <div className="an-cta-final-eyebrow">Non perdere il via</div>
+          <div className="an-cta-final-eyebrow">{content.ctaFinal.eyebrow}</div>
           <h2 className="an-cta-final-title">
-            Ti aspettiamo a<br /><em>Milano, Monza e Sale Marasino</em>.
+            <RichText text={content.ctaFinal.title} />
           </h2>
           <p className="an-cta-final-text">
-            Tre giorni per aprire l'anno rotaractiano insieme,
-            tra eventi, amicizia e ricordi che resteranno.
+            {content.ctaFinal.text}
           </p>
-          <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-cta-final-btn">Acquista i biglietti →</a>
+          <a href={shopUrl} className="an-cta-final-btn">{content.ctaFinal.button}</a>
         </div>
       </section>
 
@@ -558,7 +368,7 @@ const AperturaNazionale = () => {
             <div className="an-modal open visible">
               <div className={`an-modal-header col-${d.color}`}>
                 <button className="an-modal-close" onClick={() => setOpenModal(null)}>✕</button>
-                <div className="an-modal-day-meta">Giorno {d.num} · {d.date === 'Ven 18 Set' ? 'Venerdì 18 Settembre' : d.date === 'Sab 19 Set' ? 'Sabato 19 Settembre' : 'Domenica 20 Settembre'}</div>
+                <div className="an-modal-day-meta">Giorno {d.num} · {d.longDate}</div>
                 <h3 className="an-modal-city">{d.city}</h3>
                 <div className="an-modal-subtitle">{d.tag}</div>
                 <span className="an-modal-pill">{d.sub}</span>
@@ -589,7 +399,7 @@ const AperturaNazionale = () => {
                     ))}
                   </div>
                 </div>
-                <a href="shop.html?back=apertura-nazionale.html%23pacchetti" className="an-mod-cta">Acquista ora →</a>
+                <a href={shopUrl} className="an-mod-cta">{content.buyLabel}</a>
               </div>
             </div>
           </React.Fragment>

@@ -3,121 +3,34 @@ import ReactDOM from 'react-dom/client';
 import '../globals.css';
 import '../home.css';
 import './2050.css';
-import Countdown from '../components/Countdown';
 import CookieBanner from '../components/CookieBanner';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import RichText from '../components/RichText';
+import EventBanner from '../components/EventBanner';
+import content from '../content/distretti/2050.json';
+import site from '../content/site.json';
+
 const Distretto2050 = () => {
   const [zoneHover, setZoneHover] = React.useState(null);
   const [heroImg] = React.useState(() => {
-    const imgs = [
-      '../assets/2050-07-Piacenza.jpeg', '../assets/2050-08-Pavia.jpeg',
-      '../assets/2050-09-Lodi.jpeg', '../assets/2050-10-Brescia.jpeg',
-      '../assets/2050-11-Cremona.jpeg', '../assets/2050-12-Mantova.jpeg',
-    ];
+    const imgs = content.hero.imagePool;
     return imgs[Math.floor(Math.random() * imgs.length)];
   });
-
-  const zones = [
-    {
-      n: '01',
-      name: 'FRANCIGENA',
-      prov: 'Piacenza · Lodi · Cremona Nord',
-      clubs: ['Codogno', 'Fiorenzuola d\'Arda', 'Lodi-Adda', 'Piacenza', 'Terre Cremasche'],
-      desc: 'Tra Lombardia ed Emilia, lungo la più antica via di pellegrinaggio.',
-      bg: '#a4174c',
-      fg: '#fff',
-    },
-    {
-      n: '02',
-      name: 'LEONESSA',
-      prov: 'Brescia',
-      clubs: ['Brescia', 'Brescia Franciacorta', 'Brescia Ovest Castello', 'Brescia Sud-Est Montichiari', 'Brescia Veronica Gambara', 'Brescia Vittoria Alata', 'Garda Valle Sabbia', 'Valtrompia'],
-      desc: 'Sotto il manto della Leonessa d\'Italia.',
-      bg: '#1a3d8f',
-      fg: '#fff',
-    },
-    {
-      n: '03',
-      name: 'NAVIGLI',
-      prov: 'Pavia · Milano Sud',
-      clubs: ['Abbiategrasso', 'Morimondo Abbazia', 'Pavia', 'Pavia Nord', 'Pavia Terre Viscontee', 'Vigevano Castello', 'Vigevano Lomellina', 'Voghera'],
-      desc: 'Nel cuore della Langombardia Maior.',
-      bg: '#2a6b4a',
-      fg: '#fff',
-    },
-    {
-      n: '04',
-      name: 'PADANA',
-      prov: 'Cremona · Mantova',
-      clubs: ['Andes Di Virgilio-Curtatone', 'Casalmaggiore-Viadana-Sabbioneta', 'Castiglione delle Stiviere e Alto Mantovano', 'Cremona', 'Gonzaga-Suzzara', 'Mantova', 'Piadena-Casalmaggiore-Asola'],
-      desc: 'In riva al Po, fra arte, storia e natura.',
-      bg: '#e8a93a',
-      fg: '#1a1a1a',
-    },
-  ];
-
-  const awards = [
-    {
-      n: '01',
-      title: 'Premio Maturità & Premio Università',
-      body: 'Storici riconoscimenti alle eccellenze scolastiche e accademiche del territorio, portati avanti spesso in sinergia con i distretti vicini 2041 e 2042. Un investimento concreto sul futuro dei giovani più meritevoli.',
-      tag: 'Formazione & Talento',
-    },
-    {
-      n: '02',
-      title: 'RYLA — Rotary Youth Leadership Awards',
-      body: 'La storica collaborazione con il Rotary 2050 ci vede in prima linea nell\'organizzazione di questo prestigioso programma di formazione e leadership. Per molti soci, il RYLA è un momento fondamentale di crescita personale.',
-      tag: 'Leadership',
-    },
-    {
-      n: '03',
-      title: 'Attestati Presidenziali & Riconoscimenti Service',
-      body: 'Nel corso della sua storia, i club del distretto hanno più volte ottenuto Certificati di Apprezzamento e Attestati Presidenziali dal Rotary International per la continuità e l\'impatto dei progetti sul territorio.',
-      tag: 'Eccellenza',
-    },
-  ];
-
-  const services = [
-    {
-      n: '01',
-      icon: '🏥',
-      title: 'Azione Pubblica e Sanitaria',
-      body: 'Imponenti raccolte fondi per macchinari medici negli ospedali locali, donazioni di defibrillatori per i piccoli comuni e riqualificazione di spazi di degenza pediatrica. L\'impegno sanitario è storicamente il cuore del distretto.',
-      tags: ['Salute', 'APD', 'Comunità'],
-    },
-    {
-      n: '02',
-      icon: '🏛',
-      title: 'Patrimonio Culturale',
-      body: 'Operando in territori ricchi di siti UNESCO e antichi atenei — come l\'Università di Pavia — il distretto investe costantemente in Service volti a tutelare e promuovere la cultura, i teatri storici e l\'arte locale.',
-      tags: ['UNESCO', 'Arte', 'Università'],
-    },
-    {
-      n: '03',
-      icon: '🤝',
-      title: 'Sensibilizzazione & Intervento Diretto',
-      body: 'Dalle campagne di sensibilizzazione sanitaria — con forte impegno nel periodo post-pandemico — alla riqualificazione degli spazi urbani: l\'azione è sempre tangibile e radicata nel territorio.',
-      tags: ['Territorio', 'Impatto', 'Diretto'],
-    },
-  ];
 
   return (
     <div className="vb-root d-root">
 
       {/* ── HEADER ──────────────────────────────── */}
-      <Header 
-        homeLink="../index.html" 
-        logoPath="../assets/logo-mdio.jpeg"
-        ctaText="Apertura Nazionale 2026 →"
-        ctaLink="../apertura-nazionale.html"
+      <Header
+        homeLink={content.header.homeLink}
+        logoPath={content.header.logoPath}
+        ctaText={content.header.ctaText}
+        ctaLink={content.header.ctaLink}
       >
-        <a href="../index.html">← MDIO</a>
-        <a href="#identita">Identità</a>
-        <a href="#numeri">Numeri</a>
-        <a href="#zone">Zone</a>
-        <a href="#storia">Storia</a>
-        <a href="#service">Service</a>
+        {content.header.nav.map((n, i) => (
+          <a key={i} href={n.href}>{n.label}</a>
+        ))}
       </Header>
 
       {/* ── HERO ────────────────────────────────── */}
@@ -125,26 +38,24 @@ const Distretto2050 = () => {
         <div className="d-hero-inner">
           <div className="d-hero-left">
             <div className="d-hero-eyebrow">Distretto Rotaract</div>
-            <div className="d-hero-num">2050</div>
+            <div className="d-hero-num">{content.number}</div>
             <h1 className="d-hero-title">
-              Lombardia Sud<br />&amp; Piacenza
+              <RichText text={content.hero.title} />
             </h1>
             <p className="d-hero-claim">
-              Francigena, Leonessa, Navigli e Padana:<br />
-              dalla Lombardia all'Emilia.
+              <RichText text={content.hero.claim} />
             </p>
             <div className="d-hero-stats">
-              <span><strong>30</strong> club</span>
-              <span>·</span>
-              <span><strong>403</strong> soci</span>
-              <span>·</span>
-              <span><strong>6</strong> province</span>
-              <span>·</span>
-              <span><strong>4</strong> macro-zone</span>
+              {content.hero.stats.map((s, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && <span>·</span>}
+                  <span><strong>{s.n}</strong> {s.l}</span>
+                </React.Fragment>
+              ))}
             </div>
             <div className="d-hero-actions">
               <a
-                href="https://www.rotaract2050.org/"
+                href={content.hero.siteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="d-btn-primary"
@@ -152,7 +63,7 @@ const Distretto2050 = () => {
                 Sito Ufficiale ↗
               </a>
               <a
-                href="https://www.instagram.com/rotaract2050/"
+                href={content.hero.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="d-btn-ghost"
@@ -162,7 +73,7 @@ const Distretto2050 = () => {
             </div>
           </div>
           <div className="d-hero-img">
-            <img src={heroImg} alt="Distretto Rotaract 2050" />
+            <img src={heroImg} alt={content.hero.imageAlt} />
           </div>
         </div>
       </section>
@@ -172,14 +83,12 @@ const Distretto2050 = () => {
         <div className="d-marquee-track">
           {[0, 1].map((i) => (
             <React.Fragment key={i}>
-              <span>DISTRETTO ROTARACT 2050</span>
-              <span className="d-star"> ✦ </span>
-              <span>LOMBARDIA SUD &amp; PIACENZA</span>
-              <span className="d-star"> ✦ </span>
-              <span>21 CLUB · 398 SOCI</span>
-              <span className="d-star"> ✦ </span>
-              <span>BRESCIA · CREMONA · LODI · MANTOVA · PAVIA · PIACENZA</span>
-              <span className="d-star"> ✦ </span>
+              {content.marquee.map((t, k) => (
+                <React.Fragment key={k}>
+                  <span>{t}</span>
+                  <span className="d-star"> ✦ </span>
+                </React.Fragment>
+              ))}
             </React.Fragment>
           ))}
         </div>
@@ -193,29 +102,23 @@ const Distretto2050 = () => {
         </div>
         <div className="vb-manifesto-main">
           <h2 className="vb-manifesto-title">
-            Il Mosaico<br />della Pianura.
+            <RichText text={content.identity.title} />
           </h2>
           <div className="vb-manifesto-body">
             <p className="vb-manifesto-lede">
-              Il Distretto 2050 è un <strong>affascinante mosaico territoriale</strong> che fa da ponte tra la Lombardia e l'Emilia-Romagna, abbracciando le province di Brescia, Cremona, Lodi, Mantova, Pavia, Piacenza e alcune aree limitrofe.
+              <RichText text={content.identity.lede} />
             </p>
-            <p>
-              È un distretto dall'identità poliedrica: unisce la forza produttiva di importanti poli industriali, la profonda tradizione agricola ed enogastronomica della Pianura Padana e la raffinata bellezza di antiche città universitarie e capitali del Rinascimento.
-            </p>
-            <p>
-              Visitare il 2050 significa immergersi in una Fellowship genuina e calorosa. Che si tratti di un aperitivo in Piazza della Loggia a Brescia, di una visita ai palazzi ducali di Mantova o di una cena a base di eccellenze culinarie locali a Piacenza o Cremona, l'accoglienza è sempre il nostro marchio di fabbrica.
-            </p>
+            {content.identity.paragraphs.map((p, i) => (
+              <p key={i}>
+                <RichText text={p} />
+              </p>
+            ))}
             <p className="d-founding">
-              Dal 1968 serviamo al di sopra di ogni interesse personale. Il Distretto Rotaract 2050 riunisce 21 Club Rotaract delle Province di Cremona, Brescia, Lodi, Mantova, Pavia, Piacenza e alcuni Comuni della Città Metropolitana di Milano.
+              <RichText text={content.identity.founding} />
             </p>
           </div>
           <div className="vb-pillars">
-            {[
-              { n: '01', t: 'Tradizione', d: 'Enogastronomia e cultura padana.' },
-              { n: '02', t: 'Convivialità', d: 'L\'accoglienza è il nostro marchio.' },
-              { n: '03', t: 'Territorio', d: 'Dalla città alla pianura.' },
-              { n: '04', t: 'Sinergia', d: 'Rete intergenerazionale con il Rotary.' },
-            ].map((p) => (
+            {content.identity.pillars.map((p) => (
               <div key={p.n} className="vb-pillar">
                 <div className="vb-pillar-n">{p.n}</div>
                 <div className="vb-pillar-t">{p.t}</div>
@@ -233,12 +136,7 @@ const Distretto2050 = () => {
           <div className="vb-section-name vb-light">IL DISTRETTO IN CIFRE</div>
         </div>
         <div className="vb-numbers-grid">
-          {[
-            { n: '21', l: 'CLUB', s: 'Rotaract sul territorio' },
-            { n: '398', l: 'SOCI', s: 'attivi under 30' },
-            { n: '6+', l: 'PROVINCE', s: 'Lombardia Sud + Piacenza' },
-            { n: '4', l: 'MACRO-ZONE', s: 'Francigena · Leonessa · Navigli · Padana' },
-          ].map((x, i) => (
+          {content.numbers.map((x, i) => (
             <div key={i} className="vb-num-cell">
               <div className="vb-num-n">{x.n}</div>
               <div className="vb-num-l">{x.l}</div>
@@ -248,17 +146,17 @@ const Distretto2050 = () => {
         </div>
       </section>
 
-      {/* ── MACRO-ZONE ──────────────────────────── */}
+      {/* ── ZONE / AREE ─────────────────────────── */}
       <section id="zone" className="d-zones">
         <div className="d-zones-head">
           <div className="vb-section-no vb-light">[ 03 ]</div>
-          <div className="vb-section-name vb-light">MACRO-ZONE</div>
+          <div className="vb-section-name vb-light">{content.zones.label}</div>
           <h2 className="d-zones-title">
-            Quattro zone.<br />Una pianura.
+            <RichText text={content.zones.title} />
           </h2>
         </div>
         <div className="d-zone-blocks">
-          {zones.map((z, i) => (
+          {content.zones.items.map((z, i) => (
             <div
               key={z.name}
               className={`d-zone-block${zoneHover === i ? ' is-hover' : ''}${zoneHover !== null && zoneHover !== i ? ' is-dim' : ''}`}
@@ -286,13 +184,13 @@ const Distretto2050 = () => {
       <section id="storia" className="d-awards">
         <div className="d-awards-head">
           <div className="vb-section-no">[ 04 ]</div>
-          <div className="vb-section-name">STORIA &amp; RICONOSCIMENTI</div>
+          <div className="vb-section-name">{content.awards.label}</div>
           <h2 className="d-awards-title">
-            Un'eredità<br /><em>di grande spessore.</em>
+            <RichText text={content.awards.title} />
           </h2>
         </div>
         <div className="d-awards-grid">
-          {awards.map((a) => (
+          {content.awards.items.map((a) => (
             <div key={a.n} className="d-award-card">
               <div className="d-award-n">{a.n}</div>
               <div className="d-award-title">{a.title}</div>
@@ -307,13 +205,13 @@ const Distretto2050 = () => {
       <section id="service" className="d-services">
         <div className="d-services-head">
           <div className="vb-section-no vb-light">[ 05 ]</div>
-          <div className="vb-section-name vb-light">SERVICE &amp; SFIDE</div>
+          <div className="vb-section-name vb-light">{content.services.label}</div>
           <h2 className="d-services-title">
-            Non abbiamo paura<br /><em>di sporcarci le mani.</em>
+            <RichText text={content.services.title} />
           </h2>
         </div>
         <div className="d-services-grid">
-          {services.map((s) => (
+          {content.services.items.map((s) => (
             <div key={s.n} className="d-service-card">
               <div className="d-service-icon">{s.icon}</div>
               <div className="d-service-num">{s.n}</div>
@@ -334,17 +232,17 @@ const Distretto2050 = () => {
         <div className="d-rete-inner">
           <div className="d-rete-label">[ 06 ] — Perché fare rete con noi</div>
           <div className="d-rete-quote">
-            Partner ideale per scambi culturali, esperienze enogastronomiche e grandi service.
+            {content.rete.quote}
           </div>
           <p className="d-rete-sub">
-            Fare rete con il Distretto 2050 significa scoprire un'Italia autentica, operosa e ricca di tesori nascosti. Siamo pronti a trasformare rapidamente le idee in grandi progetti di servizio.
+            {content.rete.sub}
           </p>
           <div className="d-rete-actions">
-            <a href="mailto:segreteria@rotaract2050.org" className="d-btn-primary">
+            <a href={content.rete.email} className="d-btn-primary">
               Contattaci →
             </a>
             <a
-              href="https://www.rotaract2050.org/"
+              href={content.hero.siteUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="d-btn-ghost"
@@ -356,38 +254,7 @@ const Distretto2050 = () => {
       </section>
 
       {/* ── CTA APERTURA ────────────────────────── */}
-      <section className="vb-event">
-        <div className="vb-event-marquee">
-          <div className="vb-event-track">
-            {[0, 1].map((i) => (
-              <React.Fragment key={i}>
-                <span>APERTURA NAZIONALE 2026</span>
-                <span className="vb-event-star"> ✦ </span>
-                <span>18 · 19 · 20 SETTEMBRE</span>
-                <span className="vb-event-star"> ✦ </span>
-                <span>MILANO · MONZA · ISEO</span>
-                <span className="vb-event-star"> ✦ </span>
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-        <div className="vb-event-body">
-          <div className="vb-event-left">
-            <div className="vb-event-eyebrow">— L'EVENTO DELL'ANNO</div>
-            <h2 className="vb-event-title">
-              Tre giorni.<br />
-              Tre città.<br />
-              <span className="vb-event-emph">Un solo MDIO.</span>
-            </h2>
-            <a href="../apertura-nazionale.html" className="vb-btn-block">
-              SCOPRI L'APERTURA NAZIONALE →
-            </a>
-          </div>
-          <div className="vb-event-right">
-            <Countdown />
-          </div>
-        </div>
-      </section>
+      <EventBanner starText=" ✦ " button={site.event.buttons.district} />
 
       {/* ── FOOTER ──────────────────────────────── */}
       <Footer />
