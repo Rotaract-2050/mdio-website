@@ -58,7 +58,7 @@ Dominio di produzione: `https://multidistrettolombardo.org`.
  FTP (FTP-Deploy-Action) -> cartella del dominio su Hostinger (public_html)
 ```
 
-La Action parte a ogni push su `main`, a mano, su `repository_dispatch` (`content-updated`) e ogni ora.
+La Action parte a ogni push su `main`, a mano, su `repository_dispatch` (`content-updated`, inviato da WordPress al salvataggio, se il token è configurato: sezione 8) e ogni ora (cron di riserva).
 
 Perché i contenuti si scaricano in fase di build e non dal browser:
 
@@ -220,7 +220,11 @@ Il countdown non esiste più: non c'è alcun conto alla rovescia, né data di ri
 
 ### Quando compaiono le modifiche
 
-Il sito non cambia appena si preme "Aggiorna". Una Action su GitHub ricostruisce il sito ogni ora (cron oraria, al minuto 0): serve da zero a circa un'ora, più qualche minuto di build. Per pubblicare subito, chi ha accesso al repo può andare su GitHub > Actions > "Deploy to FTP" > "Run workflow". Non c'è ancora un webhook che avvii la pubblicazione al salvataggio.
+Premendo "Aggiorna" WordPress avvisa GitHub, che ricostruisce il sito: servono circa un minuto o due di build. In alto nella schermata compare "Pubblicazione avviata". Se invece compare "Pubblicazione automatica non riuscita", il sito si aggiorna comunque al prossimo passaggio orario (cron, al minuto 0), oppure chi ha accesso al repo può andare su GitHub > Actions > "Deploy to FTP" > "Run workflow".
+
+Stato attuale: il webhook è spento finché in `wp-config.php` non c'è il token GitHub (sezione 8, "Pubblicazione automatica"). Fino ad allora vale solo la cron oraria: da zero a circa un'ora, più la build.
+
+Se più persone salvano in pochi minuti, GitHub tiene una sola build in attesa, che legge i contenuti più recenti: nessuna modifica va persa.
 
 ### Attenzione a FAQ e Pacchetti
 
@@ -228,15 +232,16 @@ Se riordini FAQ o Pacchetti dal campo "Ordine" va tutto bene. Ma se qualcuno ril
 
 ## 8. Plugin mdio-content
 
-Sta in `wordpress/mdio-content/`. Richiede il plugin Secure Custom Fields (SCF, compatibile ACF). Fa quattro cose:
+Sta in `wordpress/mdio-content/`. Richiede il plugin Secure Custom Fields (SCF, compatibile ACF). Fa cinque cose:
 
 | File | Funzione |
 |---|---|
-| `mdio-content.php` | Intestazione del plugin, carica gli altri file (e `cli.php` solo in WP-CLI). |
+| `mdio-content.php` | Intestazione del plugin (versione 1.1.0), carica gli altri file (e `cli.php` solo in WP-CLI). |
 | `includes/schema.php` | Schema unico dei contenuti: elenco di documenti (`mdio_docs()`: site, home, apertura, shop, gratta-vinci) e di tipi di contenuto (`mdio_cpts()`: distretto, giornata, pacchetto, faq), con i loro campi. |
 | `includes/fields.php` | Crea dallo schema i tipi di contenuto, il menu "Contenuti MDIO", le pagine opzioni e i gruppi di campi SCF. |
 | `includes/export.php` | Converte i valori dei campi nella stessa struttura JSON dei file di `content/`. |
 | `includes/rest.php` | Registra `GET /wp-json/mdio/v1/content`. |
+| `includes/deploy.php` | Pubblicazione automatica: al salvataggio avvia la build su GitHub (`repository_dispatch`). |
 | `includes/cli.php` | Comando `wp mdio import <cartella>`. |
 
 ### Endpoint
@@ -254,9 +259,47 @@ Lo schema in `schema.php` è l'unica fonte per campi, export e import. Per aggiu
 
 I nomi (`n`) devono coincidere con le chiavi JSON; le chiavi SCF interne si ricavano da soli (`field_mdio_<doc>_<campo>`).
 
+### Pubblicazione automatica (`includes/deploy.php`)
+
+Quando un editor salva contenuti, il modulo invia a GitHub un `repository_dispatch` di tipo `content-updated` e la Action ricostruisce il sito. Scatta a:
+
+- salvataggio di una pagina di Contenuti MDIO (Sito, Home, Apertura, Shop, Cartoline);
+- salvataggio, cestino, ripristino o eliminazione di una voce Distretti, Giornate, Pacchetti, FAQ.
+
+Dettagli: l'invio è uno solo per richiesta, a fine richiesta, e registra l'esito nell'opzione `mdio_deploy_last` (solo codice HTTP o testo dell'errore, mai il token). Non parte con WP-CLI, quindi `wp mdio import` non avvia deploy. Nelle schermate del plugin chi può modificare gli articoli vede l'esito: verde "Pubblicazione avviata" per due minuti, rosso "Pubblicazione automatica non riuscita" finché un invio successivo non riesce. Non ci sono code, transient o cron di WordPress: la coda è gestita dal workflow (sezione 11).
+
+Configurazione, in `wp-config.php`:
+
+- `MDIO_GITHUB_TOKEN` (obbligatoria): senza, o se vuota, il modulo non fa nulla e non mostra errori.
+- `MDIO_GITHUB_REPO` (facoltativa): default `gorlix/MDIO-website`.
+
+Attivazione (una tantum, a cura di un maintainer):
+
+1. Su `https://github.com/settings/personal-access-tokens/new` crea un token fine-grained: resource owner `gorlix`, solo il repository `MDIO-website`, permesso Repository > Contents: Read and write, scadenza la più lunga consentita. Il permesso è richiesto da `repository_dispatch`, ma consente anche di scrivere nel repo: per questo il token vive solo nel `wp-config.php` del server, non va incollato altrove.
+2. Sul server, nella cartella di WordPress (`/cms`), senza far comparire il token nella cronologia:
+
+```bash
+read -rs T && wp config set MDIO_GITHUB_TOKEN "$T" --type=constant && unset T
+```
+
+3. Salva una voce di prova e controlla che su GitHub > Actions parta una run "Deploy to FTP".
+
+Stato attuale: non configurato, quindi il webhook è spento. Il token scade: alla scadenza compare l'avviso rosso (401) e va rigenerato e sostituito con lo stesso comando.
+
+### Cosa va online e quando
+
+| Cosa cambia | Quando è online |
+|---|---|
+| Codice (push su `main`) | Da solo, la Action parte al push. |
+| Testi modificati in WordPress | Al salvataggio (con il webhook attivo), altrimenti alla cron oraria. |
+| Testi cambiati solo nei `content/*.json` del repo | Non compaiono: alla build WordPress sovrascrive i file. Servono prima `wp mdio import` sul server (sotto) e poi una pubblicazione. |
+| Plugin `wordpress/mdio-content/` | Da copiare a mano sul server (sotto). |
+
+Non c'è sincronizzazione automatica al push dei JSON verso WordPress perché `wp mdio import` sovrascriverebbe le modifiche fatte in WordPress.
+
 ### Installare e aggiornare
 
-Si copia la cartella `wordpress/mdio-content/` in `wp-content/plugins/` del WordPress su `/cms` (dal file manager di hPanel o via SSH/SFTP; credenziali in hPanel/1Password dei maintainer) e si attiva da Plugin. Per aggiornare si sostituisce la cartella con la versione del repo. Serve SCF attivo.
+Si copia la cartella `wordpress/mdio-content/` in `wp-content/plugins/` del WordPress su `/cms` (dal file manager di hPanel o via SSH/SFTP; credenziali in hPanel/1Password dei maintainer) e si attiva da Plugin. Per aggiornare si sostituisce la cartella con la versione del repo: resta un'operazione manuale, non c'è deploy del plugin. Serve SCF attivo.
 
 ### `wp mdio import`
 
@@ -299,8 +342,10 @@ Trigger:
 
 - `push` su `main`.
 - `workflow_dispatch` (manuale: Actions > Run workflow).
-- `repository_dispatch` con tipo `content-updated` (previsto per un futuro webhook, oggi non c'è chi lo invia).
-- `schedule`: ogni ora (`0 * * * *`).
+- `repository_dispatch` con tipo `content-updated`: lo invia il plugin al salvataggio dei contenuti (sezione 8), quando il token è configurato. Finché non lo è, nessuno lo invia.
+- `schedule`: ogni ora (`0 * * * *`). È solo una riserva: le cron di GitHub possono ritardare o saltare esecuzioni, e vengono disattivate dopo 60 giorni di inattività del repo.
+
+`concurrency` con gruppo `deploy` e `cancel-in-progress: false`: non si interrompe mai un upload FTP a metà. Se arrivano più avvii durante una run, GitHub ne tiene una sola in attesa; quella leggerà i contenuti più recenti.
 
 Secret GitHub richiesti: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD` (Settings > Secrets and variables > Actions). I valori non sono nel repo.
 
@@ -312,6 +357,9 @@ Regola: ogni push su `main` fa partire un deploy in produzione. Lavora su un bra
 
 **Il contenuto modificato in WordPress non compare.**
 Controlla di aver premuto "Aggiorna". Poi aspetta il cron orario o lancia a mano "Deploy to FTP". Apri il log: se il passo di aggiornamento contenuti mostra `[contenuti] ATTENZIONE`, il sito è stato costruito con lo snapshot. Verifica anche che l'endpoint risponda (apri l'URL del `WP_CONTENT_URL` nel browser). Se il sito sembra ancora vecchio, forza il ricaricamento (cache del browser).
+
+**Compare "Pubblicazione automatica non riuscita (...)".**
+Il salvataggio è riuscito, ma l'avvio della build no. Il messaggio riporta il codice HTTP di GitHub: `401` token scaduto o errato (rigeneralo, sezione 8); `403` o `404` permessi insufficienti o repository sbagliato (il token deve avere solo `MDIO-website` con Contents: Read and write; controlla `MDIO_GITHUB_REPO`). Un testo diverso è un errore di rete del server. Nel frattempo il sito si aggiorna con la cron oraria, oppure avvia a mano "Deploy to FTP". L'avviso sparisce al primo invio riuscito.
 
 **WordPress è giù.**
 Il sito pubblico non è toccato. La Action ripiega sullo snapshot. Quando WordPress torna, la prima esecuzione utile riallinea i contenuti.
@@ -340,6 +388,7 @@ Controlla la sintassi del file modificato (`node -e "JSON.parse(require('fs').re
 ## 13. Privacy e sicurezza
 
 - Il repo è pubblico: niente password, chiavi, utenti, indirizzi o credenziali di accesso nel codice, nei commit e in questo README. Servono solo come secret GitHub o nei gestori dei maintainer (hPanel, 1Password).
+- Il token GitHub della pubblicazione automatica (`MDIO_GITHUB_TOKEN`) sta solo nel `wp-config.php` del server, mai nel repo. Ha il permesso Contents: Read and write su `MDIO-website`, che consente anche di scrivere nel repo: limitalo a quel solo repository, con la scadenza più lunga consentita, e rigeneralo se sospetti una fuga. Il plugin non lo salva né lo scrive nei log.
 - L'endpoint `/cms/wp-json/mdio/v1/content` è pubblico: tutto ciò che passa da WordPress è, di fatto, pubblico. Non inserire dati personali (nomi di persone fisiche con codice fiscale, data o luogo di nascita) né nei campi WordPress né nel codice. Il regolamento (`termini`) dell'iniziativa cartoline resta in `gratta-vinci.jsx`.
 - Non lasciare backup, dump o archivi nella cartella pubblica del dominio (`public_html`): sono scaricabili da chiunque. I backup vanno fuori dalla cartella servita.
 - Il CMS non deve essere indicizzato dai motori di ricerca: mantieni attiva l'opzione "scoraggia i motori di ricerca" o equivalente lato server. Questa impostazione non è versionata nel repo.
@@ -348,7 +397,7 @@ Controlla la sintassi del file modificato (`node -e "JSON.parse(require('fs').re
 ## 14. Limiti noti e cose da fare
 
 - Immagini: solo come path (sezione 6); non c'è caricamento da WordPress.
-- Pubblicazione: oggi solo cron oraria o avvio manuale. Il tipo `repository_dispatch` è già nel workflow ma manca un webhook da WordPress che lo invii.
+- Pubblicazione: il webhook da WordPress esiste ma resta spento finché non è configurato `MDIO_GITHUB_TOKEN` (sezione 8). Il token scade e va rinnovato a mano. L'aggiornamento del plugin sul server è manuale.
 - Mu-plugin `mdio-headless` solo sul server (sezione 9).
 - FAQ e pacchetti sono identificati per posizione: l'import dopo un riordino li scambia (sezione 8).
 - Cifre di club e soci duplicate: compaiono in `content/` (WordPress), nei `<meta>` e `noscript` statici degli `.html` e in `scripts/seo-plugin.mjs`. Serie corrente: MDIO 61 club / 1.013 soci; 2041 13/350; 2042 18/260; 2050 30/403. Se cambiano vanno aggiornate in tutti questi punti e in `public/llms*.txt`.
