@@ -271,11 +271,11 @@ Dettagli: l'invio è uno solo per richiesta, a fine richiesta, e registra l'esit
 Configurazione, in `wp-config.php`:
 
 - `MDIO_GITHUB_TOKEN` (obbligatoria): senza, o se vuota, il modulo non fa nulla e non mostra errori.
-- `MDIO_GITHUB_REPO` (facoltativa): default `gorlix/MDIO-website`.
+- `MDIO_GITHUB_REPO` (facoltativa): default `Rotaract-2050/mdio-website`.
 
 Attivazione (una tantum, a cura di un maintainer):
 
-1. Su `https://github.com/settings/personal-access-tokens/new` crea un token fine-grained: resource owner `gorlix`, solo il repository `MDIO-website`, permesso Repository > Contents: Read and write, scadenza la più lunga consentita. Il permesso è richiesto da `repository_dispatch`, ma consente anche di scrivere nel repo: per questo il token vive solo nel `wp-config.php` del server, non va incollato altrove.
+1. Su `https://github.com/settings/personal-access-tokens/new` crea un token fine-grained: resource owner `Rotaract-2050`, solo il repository `mdio-website` (l'org può chiedere di approvare il token), permesso Repository > Contents: Read and write, scadenza la più lunga consentita. Il permesso è richiesto da `repository_dispatch`, ma consente anche di scrivere nel repo: per questo il token vive solo nel `wp-config.php` del server, non va incollato altrove.
 2. Sul server, nella cartella di WordPress (`/cms`), senza far comparire il token nella cronologia:
 
 ```bash
@@ -353,13 +353,23 @@ Comportamento del fallback: se WordPress non risponde, risponde con errore o con
 
 Regola: ogni push su `main` fa partire un deploy in produzione. Lavora su un branch e fai merge su `main` solo quando il contenuto è pronto. Su un branch diverso da `main` la Action non parte per il push (parte però il cron sulla branch di default).
 
+### Come si contribuisce
+
+Il repo è `Rotaract-2050/mdio-website` e segue lo standard del sito del Distretto 2050, senza il branch `dev`: con il deploy FTP non c'è un ambiente di anteprima.
+
+- Branch: `feat/`, `fix/`, `docs/`, `ci/`, `content/` seguiti da una descrizione breve.
+- Commit: `type(scope): descrizione`.
+- `main` è protetto: si entra con una pull request approvata da un'altra persona. Solo gli admin dell'org possono scavalcare la regola, per le emergenze.
+- Ogni merge su `main` va subito in produzione.
+- Chi ha il permesso Write può leggere i secret FTP modificando un workflow in un branch: va dato solo a persone fidate. L'accesso passa dal team `mdio` dell'org.
+
 ## 12. Risoluzione problemi
 
 **Il contenuto modificato in WordPress non compare.**
 Controlla di aver premuto "Aggiorna". Poi aspetta il cron orario o lancia a mano "Deploy to FTP". Apri il log: se il passo di aggiornamento contenuti mostra `[contenuti] ATTENZIONE`, il sito è stato costruito con lo snapshot. Verifica anche che l'endpoint risponda (apri l'URL del `WP_CONTENT_URL` nel browser). Se il sito sembra ancora vecchio, forza il ricaricamento (cache del browser).
 
 **Compare "Pubblicazione automatica non riuscita (...)".**
-Il salvataggio è riuscito, ma l'avvio della build no. Il messaggio riporta il codice HTTP di GitHub: `401` token scaduto o errato (rigeneralo, sezione 8); `403` o `404` permessi insufficienti o repository sbagliato (il token deve avere solo `MDIO-website` con Contents: Read and write; controlla `MDIO_GITHUB_REPO`). Un testo diverso è un errore di rete del server. Nel frattempo il sito si aggiorna con la cron oraria, oppure avvia a mano "Deploy to FTP". L'avviso sparisce al primo invio riuscito.
+Il salvataggio è riuscito, ma l'avvio della build no. Il messaggio riporta il codice HTTP di GitHub: `401` token scaduto o errato (rigeneralo, sezione 8); `403` o `404` permessi insufficienti o repository sbagliato (il token deve avere solo `mdio-website` con Contents: Read and write; controlla `MDIO_GITHUB_REPO`). Un testo diverso è un errore di rete del server. Nel frattempo il sito si aggiorna con la cron oraria, oppure avvia a mano "Deploy to FTP". L'avviso sparisce al primo invio riuscito.
 
 **WordPress è giù.**
 Il sito pubblico non è toccato. La Action ripiega sullo snapshot. Quando WordPress torna, la prima esecuzione utile riallinea i contenuti.
@@ -388,7 +398,7 @@ Controlla la sintassi del file modificato (`node -e "JSON.parse(require('fs').re
 ## 13. Privacy e sicurezza
 
 - Il repo è pubblico: niente password, chiavi, utenti, indirizzi o credenziali di accesso nel codice, nei commit e in questo README. Servono solo come secret GitHub o nei gestori dei maintainer (hPanel, 1Password).
-- Il token GitHub della pubblicazione automatica (`MDIO_GITHUB_TOKEN`) sta solo nel `wp-config.php` del server, mai nel repo. Ha il permesso Contents: Read and write su `MDIO-website`, che consente anche di scrivere nel repo: limitalo a quel solo repository, con la scadenza più lunga consentita, e rigeneralo se sospetti una fuga. Il plugin non lo salva né lo scrive nei log.
+- Il token GitHub della pubblicazione automatica (`MDIO_GITHUB_TOKEN`) sta solo nel `wp-config.php` del server, mai nel repo. Ha il permesso Contents: Read and write su `mdio-website`, che consente anche di scrivere nel repo: limitalo a quel solo repository, con la scadenza più lunga consentita, e rigeneralo se sospetti una fuga. Il plugin non lo salva né lo scrive nei log.
 - L'endpoint `/cms/wp-json/mdio/v1/content` è pubblico: tutto ciò che passa da WordPress è, di fatto, pubblico. Non inserire dati personali (nomi di persone fisiche con codice fiscale, data o luogo di nascita) né nei campi WordPress né nel codice. Il regolamento (`termini`) dell'iniziativa cartoline resta in `gratta-vinci.jsx`.
 - Non lasciare backup, dump o archivi nella cartella pubblica del dominio (`public_html`): sono scaricabili da chiunque. I backup vanno fuori dalla cartella servita.
 - Il CMS non deve essere indicizzato dai motori di ricerca: mantieni attiva l'opzione "scoraggia i motori di ricerca" o equivalente lato server. Questa impostazione non è versionata nel repo.

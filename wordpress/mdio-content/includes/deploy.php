@@ -64,7 +64,7 @@ add_action( 'shutdown', function () {
 	if ( ! mdio_deploy_enabled() || ! mdio_deploy_mark( false ) ) {
 		return;
 	}
-	$repo = defined( 'MDIO_GITHUB_REPO' ) && is_string( MDIO_GITHUB_REPO ) && '' !== MDIO_GITHUB_REPO ? MDIO_GITHUB_REPO : 'gorlix/MDIO-website';
+	$repo = defined( 'MDIO_GITHUB_REPO' ) && is_string( MDIO_GITHUB_REPO ) && '' !== MDIO_GITHUB_REPO ? MDIO_GITHUB_REPO : 'Rotaract-2050/mdio-website';
 	$res  = wp_remote_post(
 		'https://api.github.com/repos/' . $repo . '/dispatches',
 		array(

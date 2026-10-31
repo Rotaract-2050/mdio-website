@@ -1,3 +1,3 @@
 console.log("%c 🔴🟡 MDIO — Multidistretto Italia Ovest ", "color:#fff;background:#c8174a;padding:6px 12px;border-radius:4px 4px 0 0;font-weight:bold;font-size:13px;");
 console.log("%c  Confezionato con cura da Gorlix & Gabbo — Distretto Rotaract 2050  ", "color:#1a1a1a;background:#e8a93a;padding:6px 12px;border-radius:0 0 4px 4px;font-weight:bold;font-size:12px;");
-console.log("%cSe stai ispezionando la console, sei chiaramente dei nostri. 🍷\\nBenvenuto nel club! Piuttosto che sbirciare di nascosto, entra dal portone principale:\\n👉 https://github.com/gorlix/MDIO-website", "color:#888;font-style:italic;font-size:11px;line-height:1.6;");
+console.log("%cSe stai ispezionando la console, sei chiaramente dei nostri. 🍷\\nBenvenuto nel club! Piuttosto che sbirciare di nascosto, entra dal portone principale:\\n👉 https://github.com/Rotaract-2050/mdio-website", "color:#888;font-style:italic;font-size:11px;line-height:1.6;");
