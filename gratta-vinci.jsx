@@ -11,11 +11,11 @@ const premi = content.prizes;
 
 const termini = `L'iniziativa denominata "Apertura Nazionale Rotaract 2026" è organizzata congiuntamente dal Multidistretto Lombardia e Provincia di Piacenza, costituito dai Distretti Rotaract 2041, 2042 e 2050, nell'ambito delle attività istituzionali, associative e promozionali connesse all'evento nazionale previsto nei giorni 18, 19 e 20 settembre 2026.
 
-Il Distretto Rotaract 2041, C.F. 97659950154, con sede in Via Antonio Canova 19A, 20145 Milano (MI), è rappresentato per l'anno sociale 2026-2027 da Marco Marnini, nato a Milano (MI) il 08/05/1993, C.F. MRNMRC93E08F205W.
+Il Distretto Rotaract 2041, C.F. 97659950154, con sede in Via Antonio Canova 19A, 20145 Milano (MI), è rappresentato per l'anno sociale 2026-2027 dal proprio rappresentante legale pro tempore.
 
-L'Associazione Distretto Rotaract 2042, C.F. 97659960153, con sede in Via Antonio Canova 19A, Milano (MI), Italia, è rappresentata per l'anno sociale 2026-2027 da Camilla Bellazzi, nata a Monza il 14/11/1998.
+L'Associazione Distretto Rotaract 2042, C.F. 97659960153, con sede in Via Antonio Canova 19A, Milano (MI), Italia, è rappresentata per l'anno sociale 2026-2027 dal proprio rappresentante legale pro tempore.
 
-Il Distretto Rotaract 2050, C.F. 96032330183 con sede legale in Via Egidio Gorra 55, 29121 Piacenza (PC), è rappresentato per l'anno sociale 2026-2027 da Sebastiano Fortugno, nato a Casalmaggiore (CR) il 18/09/1996.
+Il Distretto Rotaract 2050, C.F. 96032330183 con sede legale in Via Egidio Gorra 55, 29121 Piacenza (PC), è rappresentato per l'anno sociale 2026-2027 dal proprio rappresentante legale pro tempore.
 
 L'iniziativa prevede la distribuzione gratuita di cartoline promozionali celebrative dell'evento, alcune delle quali riportano l'assegnazione di specifiche utilità promozionali rese disponibili esclusivamente grazie a liberalità, sponsorizzazioni, contributi volontari e donazioni effettuate da sponsor, partner e distretti aderenti all'iniziativa.
 

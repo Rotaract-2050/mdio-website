@@ -342,7 +342,7 @@ Controlla la sintassi del file modificato (`node -e "JSON.parse(require('fs').re
 ## 13. Privacy e sicurezza
 
 - Il repo è pubblico: niente password, chiavi, utenti, indirizzi o credenziali di accesso nel codice, nei commit e in questo README. Servono solo come secret GitHub o nei gestori dei maintainer (hPanel, 1Password).
-- L'endpoint `/cms/wp-json/mdio/v1/content` è pubblico: tutto ciò che passa da WordPress è, di fatto, pubblico. Per questo il regolamento (`termini`) dell'iniziativa cartoline sta in `gratta-vinci.jsx` e non in WordPress.
+- L'endpoint `/cms/wp-json/mdio/v1/content` è pubblico: tutto ciò che passa da WordPress è, di fatto, pubblico. Non inserire dati personali (nomi di persone fisiche con codice fiscale, data o luogo di nascita) né nei campi WordPress né nel codice. Il regolamento (`termini`) dell'iniziativa cartoline resta in `gratta-vinci.jsx`.
 - Non lasciare backup, dump o archivi nella cartella pubblica del dominio (`public_html`): sono scaricabili da chiunque. I backup vanno fuori dalla cartella servita.
 - Il CMS non deve essere indicizzato dai motori di ricerca: mantieni attiva l'opzione "scoraggia i motori di ricerca" o equivalente lato server. Questa impostazione non è versionata nel repo.
 - Account WordPress con password forti e solo per chi serve.
