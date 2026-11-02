@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 const SITE = 'https://multidistrettolombardo.org';
-const IMG = `${SITE}/assets/og-cover.jpeg`;
+const IMG = `${SITE}/assets/og-cover-1200.jpeg`;
 const ORGANIZER = {
   '@type': 'Organization',
   name: 'MDIO — Multidistretto Rotaract Italia Ovest',

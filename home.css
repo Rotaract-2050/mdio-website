@@ -752,3 +752,12 @@
   .vb-num-cell:nth-child(odd) { border-right: none; }
   .vb-num-cell:nth-child(n+2) { border-top: 1.5px solid #2a2a2a; }
 }
+
+/* Evento concluso: su schermi stretti la data resta su una riga */
+@media (max-width: 480px) {
+  .vb-event .vb-closed {
+    padding: 36px 12px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+}

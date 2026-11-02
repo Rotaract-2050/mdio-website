@@ -85,7 +85,7 @@ Perché i contenuti si scaricano in fase di build e non dal browser:
 │   │   shop.json, gratta-vinci.json
 │   └── distretti/{2041,2042,2050}.json
 ├── public/                                          copiato com'è in dist/ da Vite
-│   ├── assets/                                      immagini, logo, og-cover, mappa
+│   ├── assets/                                      immagini, logo, og-cover-1200 (anteprima 1200×630), mappa
 │   └── robots.txt, sitemap.xml, llms.txt, llms-full.txt
 ├── scripts/
 │   ├── fetch-content.mjs                            scarica i contenuti da WordPress
