@@ -188,7 +188,7 @@ Nei JSON le immagini sono path relativi a `public/assets/` (esempio `assets/2042
 
 Questa sezione è per chi non è tecnico.
 
-Il pannello è su `https://multidistrettolombardo.org/cms/wp-admin/`. Le credenziali non sono nel repo: chiedile ai maintainer.
+Il pannello è su `https://multidistrettolombardo.org/cms/wp-admin/` (anche `/wp-admin/` porta lì). Le credenziali non sono nel repo: chiedile ai maintainer.
 
 Qui non c'è un editor visuale: non si trascina nulla e non si vede un'anteprima del sito. Si compilano campi di testo, si preme "Aggiorna" e il sito cambia dopo la prossima pubblicazione automatica (vedi sotto). Le voci "Pagine" e "Articoli" di WordPress non alimentano il sito: modificarle non cambia nulla. Si usa solo il menu "Contenuti MDIO".
 
