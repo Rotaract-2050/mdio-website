@@ -85,7 +85,7 @@ Perché i contenuti si scaricano in fase di build e non dal browser:
 │   │   shop.json, gratta-vinci.json
 │   └── distretti/{2041,2042,2050}.json
 ├── public/                                          copiato com'è in dist/ da Vite
-│   ├── assets/                                      immagini, logo, og-cover, mappa
+│   ├── assets/                                      immagini, logo, og-cover-1200 (anteprima 1200×630), mappa
 │   └── robots.txt, sitemap.xml, llms.txt, llms-full.txt
 ├── scripts/
 │   ├── fetch-content.mjs                            scarica i contenuti da WordPress
@@ -188,7 +188,7 @@ Nei JSON le immagini sono path relativi a `public/assets/` (esempio `assets/2042
 
 Questa sezione è per chi non è tecnico.
 
-Il pannello è su `https://multidistrettolombardo.org/cms/wp-admin/`. Le credenziali non sono nel repo: chiedile ai maintainer.
+Il pannello è su `https://multidistrettolombardo.org/cms/wp-admin/` (anche `/wp-admin/` porta lì). Le credenziali non sono nel repo: chiedile ai maintainer.
 
 Qui non c'è un editor visuale: non si trascina nulla e non si vede un'anteprima del sito. Si compilano campi di testo, si preme "Aggiorna" e il sito cambia dopo la prossima pubblicazione automatica (vedi sotto). Le voci "Pagine" e "Articoli" di WordPress non alimentano il sito: modificarle non cambia nulla. Si usa solo il menu "Contenuti MDIO".
 
